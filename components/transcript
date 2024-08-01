@@ -1,0 +1,2796 @@
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+do run.do
+# Cannot open macro file: run.do
+pwd
+# F:/ic_design/my_uvm/components
+cd ..
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:00:46 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 21:00:46 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:00:46 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: sequence/read_sequence.svh(14): (vlog-2730) Undefined variable: 'sequencer_h'.
+# ** Error: sequence/read_sequence.svh(14): (vlog-2730) Undefined variable: 'sequencer_h'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 21:00:47 on Jul 25,2024, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:02:03 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 21:02:03 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:02:03 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error (suppressible): sequence/read_sequence.svh(14): (vlog-7027) The name ('env_h.agent_h.sequencer_h') was not found in the current scope.  Please verify the spelling of the name 'env_h.agent_h.sequencer_h'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 21:02:04 on Jul 25,2024, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:25:04 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 21:25:04 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:25:04 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error (suppressible): sequence/read_sequence.svh(14): (vlog-7027) The name ('env_h.agent_h.sequencer_h') was not found in the current scope.  Please verify the spelling of the name 'env_h.agent_h.sequencer_h'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 21:25:05 on Jul 25,2024, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:05:24 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 22:05:24 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:05:25 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 22:05:26 on Jul 25,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:05:32 on Jul 25,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 22:05:37 on Jul 25,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 22:05:43 on Jul 25,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f79358d File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# start of body task
+# start item has been invoked
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 41 ns  Iteration: 11  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f79332e File: F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh
+# Fatal error in Task a7a/read_sequence::body at sequence/read_sequence.svh line 26
+# 
+# HDL call sequence:
+# Stopped at sequence/read_sequence.svh 26 Task a7a/read_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:11:45 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 22:11:45 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:11:46 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 22:11:46 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:11:48 on Jul 25,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 22:11:55 on Jul 25,2024, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# End time: 22:12:14 on Jul 25,2024, Elapsed time: 0:06:31
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 22:12:15 on Jul 25,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:19:18 on Jul 25,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 22:19:18 on Jul 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:19:18 on Jul 25,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error (suppressible): components/base_test.svh(18): (vlog-7027) The name ('env_h.agent_h.sequencer_h') was not found in the current scope.  Please verify the spelling of the name 'env_h.agent_h.sequencer_h'.
+# ** Error (suppressible): components/reset_write_read_test.svh(49): (vlog-7027) The name ('env_h.agent_h.sequencer_h') was not found in the current scope.  Please verify the spelling of the name 'env_h.agent_h.sequencer_h'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 22:19:19 on Jul 25,2024, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 00:14:28 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 00:14:28 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 00:14:29 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 00:14:29 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 00:14:35 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 00:14:40 on Jul 26,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# End time: 00:14:59 on Jul 26,2024, Elapsed time: 2:02:44
+# Errors: 1, Warnings: 0
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 00:15:03 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793590 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# start of body task
+# start item has been invoked
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 41 ns  Iteration: 11  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f793330 File: F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh
+# Fatal error in Task a7a/read_sequence::body at sequence/read_sequence.svh line 26
+# 
+# HDL call sequence:
+# Stopped at sequence/read_sequence.svh 26 Task a7a/read_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:12:04 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 01:12:05 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:12:05 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 01:12:05 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:12:07 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 01:12:11 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 01:12:31 on Jul 26,2024, Elapsed time: 0:57:28
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 01:12:33 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793597 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:16:17 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 01:16:17 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:16:17 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 01:16:18 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:16:22 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 01:16:27 on Jul 26,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# End time: 01:16:45 on Jul 26,2024, Elapsed time: 0:04:12
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 01:16:48 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793597 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:35:07 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 01:35:07 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:35:07 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 01:35:08 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:35:10 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 01:35:14 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 01:35:32 on Jul 26,2024, Elapsed time: 0:18:44
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 01:35:34 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f79359a File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:38:54 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 01:38:54 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:38:55 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 01:38:55 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:38:57 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 01:39:01 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 01:39:19 on Jul 26,2024, Elapsed time: 0:03:45
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 01:39:20 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f7935b0 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_sequence.svh(31) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_sequence_h [WRITE_SEQUENCE] uvm_test_top.env_h.agent_h.sequencer_h.write_sequence_h
+# start of pre_body task
+# UVM_FATAL sequence/read_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    8
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [WRITE_SEQUENCE]     1
+# [uvm_test_top]     1
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_sequence_h]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:41:26 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 01:41:26 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:41:26 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 01:41:27 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:41:30 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 01:41:34 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 01:41:56 on Jul 26,2024, Elapsed time: 0:02:36
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 01:41:57 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# UVM_FATAL components/reset_write_read_test.svh(24) @ 0: uvm_test_top [uvm_test_top] Error
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f7935b3 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:775, use_uvm_seeding:1, m_inst_count:781, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:808, use_uvm_seeding:1, m_inst_count:812, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_sequence.svh(31) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_sequence_h [WRITE_SEQUENCE] uvm_test_top.env_h.agent_h.sequencer_h.write_sequence_h
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:820, use_uvm_seeding:1, m_inst_count:825, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@44, begin_event:@uvm_event@23, end_event:@uvm_event@24, m_transaction_id:1, begin_time:41, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:4, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@read_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:0, rst:0, addr:8, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# UVM_INFO components/scoreboard.svh(95) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   60  addr:  8  data_in: 2041378405   data_out: 2041378405 	valid_out: 1  rst: 0  en:0
+# UVM_INFO components/scoreboard.svh(80) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD-READ_ITEM] READ_PASS: time:                   60  addr:  8  data_in: 2041378405   data_out: 2041378405 	valid_out: 1  rst: 0  en:0
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# my_item = 2041378405
+# finish item has been invoked
+# finish item has been invoked
+# write_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 61: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   11
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     5
+# [SCOREBOARD-READ_ITEM]     1
+# [TEST_DONE]     1
+# [WRITE_SEQUENCE]     1
+# [uvm_test_top]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 61 ns  Iteration: 65  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+run
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:01:01 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:01:01 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:01:02 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 02:01:02 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:01:04 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 02:01:08 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 02:01:31 on Jul 26,2024, Elapsed time: 0:19:34
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 02:01:32 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793558 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:8, data_in:2041378405, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  8  data_in: 2041378405   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2041378405
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_sequence.svh(31) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_sequence_h [WRITE_SEQUENCE] uvm_test_top.env_h.agent_h.sequencer_h.write_sequence_h
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:819, use_uvm_seeding:1, m_inst_count:824, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@44, begin_event:@uvm_event@23, end_event:@uvm_event@24, m_transaction_id:1, begin_time:41, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:4, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@read_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:0, rst:0, addr:8, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# UVM_INFO components/scoreboard.svh(95) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   60  addr:  8  data_in: 2041378405   data_out: 2041378405 	valid_out: 1  rst: 0  en:0
+# UVM_INFO components/scoreboard.svh(80) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD-READ_ITEM] READ_PASS: time:                   60  addr:  8  data_in: 2041378405   data_out: 2041378405 	valid_out: 1  rst: 0  en:0
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# my_item = 2041378405
+# finish item has been invoked
+# finish item has been invoked
+# write_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 61: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   11
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     5
+# [SCOREBOARD-READ_ITEM]     1
+# [TEST_DONE]     1
+# [WRITE_SEQUENCE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 61 ns  Iteration: 65  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:28:54 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:28:54 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:28:54 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: memory_uvm_pkg.sv(12): Cannot find `include file "write_sequence.svh" in directories:
+#     sequence, sequence_item, components, interface, F:/questasim/questasim64_2021.1/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src
+# ** Error: memory_uvm_pkg.sv(13): Cannot find `include file "read_sequence.svh" in directories:
+#     sequence, sequence_item, components, interface, F:/questasim/questasim64_2021.1/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(5): Invalid type 'write_once_sequence'. Please check the type of the variable 'write_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(6): Invalid type 'read_once_sequence'. Please check the type of the variable 'read_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(17): (vlog-2730) Undefined variable: 'write_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(17): (vlog-2164) Class or package 'write_once_sequence' not found.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(17): (vlog-2730) Undefined variable: 'write_once_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(17): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2730) Undefined variable: 'read_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2164) Class or package 'read_once_sequence' not found.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2730) Undefined variable: 'read_once_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(6): Invalid type 'read_sequence'. Please check the type of the variable 'read_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2730) Undefined variable: 'read_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2164) Class or package 'read_sequence' not found.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2730) Undefined variable: 'read_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): near "::": syntax error, unexpected ::, expecting ';'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 02:28:55 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 19, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:30:42 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:30:42 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:30:42 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): (vlog-2730) Undefined variable: 'write_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): near ";": syntax error, unexpected ';', expecting '('.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): (vlog-2730) Undefined variable: 'tmp'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): near ";": syntax error, unexpected ';', expecting '('.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): Illegal declaration after the statement near line '2'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at sequence/write_once_sequence.svh(2)
+# ** at sequence/write_once_sequence.svh(2): near "end": syntax error, unexpected end.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(7): Illegal declaration after the statement near line '2'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(8): 'super.new()' call can be made only from within a class constructor.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(6): Invalid type 'read_once_sequence'. Please check the type of the variable 'read_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2730) Undefined variable: 'read_once_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2164) Class or package 'read_once_sequence' not found.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): (vlog-2730) Undefined variable: 'read_once_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): near "::": syntax error, unexpected ::, expecting ';'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 02:30:43 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 15, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:31:29 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:31:29 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:31:30 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(6): Invalid type 'read_sequence'. Please check the type of the variable 'read_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2730) Undefined variable: 'read_sequence_h'.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2164) Class or package 'read_sequence' not found.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): (vlog-2730) Undefined variable: 'read_sequence'.
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): near "::": syntax error, unexpected ::, expecting ';'.
+# -- Compiling interface inf
+# ** Error: interface/memory_interface.sv(5): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# -- Compiling module top_test_uvm
+# ** Error: top_test_uvm.sv(4): (vlog-13006) Could not find the package (a7a).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 02:31:30 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:32:18 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:32:18 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:32:18 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 02:32:19 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:32:23 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 02:32:28 on Jul 26,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# End time: 02:32:55 on Jul 26,2024, Elapsed time: 0:31:23
+# Errors: 3, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 02:32:58 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793572 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:0, data_in:2763384580, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2763384580
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_once_sequence.svh(31) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_once_sequence_h [write_once_sequence] uvm_test_top.env_h.agent_h.sequencer_h.write_once_sequence_h
+# start of pre_body task
+# UVM_FATAL sequence/read_once_sequence.svh(15) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_once_sequence_h [uvm_test_top.env_h.agent_h.sequencer_h.read_once_sequence_h] Failed to get sequence_item from write_sequence
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    8
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [uvm_test_top.env_h.agent_h.sequencer_h.read_once_sequence_h]     1
+# [write_once_sequence]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 8  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run
+# start of body task
+# start item has been invoked
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 41 ns  Iteration: 11  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f793312 File: F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh
+# Fatal error in Task a7a/read_once_sequence::body at sequence/read_once_sequence.svh line 26
+# 
+# HDL call sequence:
+# Stopped at sequence/read_once_sequence.svh 26 Task a7a/read_once_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:34:51 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 02:34:51 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:34:51 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 02:34:52 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 02:34:53 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 02:34:57 on Jul 26,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+# End time: 02:35:18 on Jul 26,2024, Elapsed time: 0:02:20
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 02:35:19 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f793572 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:0, data_in:2763384580, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2763384580
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_once_sequence.svh(31) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_once_sequence_h [write_once_sequence] uvm_test_top.env_h.agent_h.sequencer_h.write_once_sequence_h
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:819, use_uvm_seeding:1, m_inst_count:824, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@44, begin_event:@uvm_event@23, end_event:@uvm_event@24, m_transaction_id:1, begin_time:41, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:4, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@read_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:0, rst:0, addr:0, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# UVM_INFO components/scoreboard.svh(95) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   60  addr:  0  data_in: 2763384580   data_out: 2763384580 	valid_out: 1  rst: 0  en:0
+# UVM_INFO components/scoreboard.svh(80) @ 60: uvm_test_top.env_h.scoreboard_h [SCOREBOARD-READ_ITEM] READ_PASS: time:                   60  addr:  0  data_in: 2763384580   data_out: 2763384580 	valid_out: 1  rst: 0  en:0
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   60
+# my_item = 2763384580
+# finish item has been invoked
+# finish item has been invoked
+# write_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 61: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   11
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     5
+# [SCOREBOARD-READ_ITEM]     1
+# [TEST_DONE]     1
+# [write_once_sequence]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 61 ns  Iteration: 65  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:26:08 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 03:26:08 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:26:09 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(1): near "write_sequence": syntax error, unexpected IDENTIFIER.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(1): Error in class extension specification.
+# -- Compiling interface inf
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(3): Illegal use of 'automatic' for variable declaration (clk).
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(12)
+# ** at sequence/write_once_sequence.svh(7): Illegal use of 'automatic' for variable declaration (en).
+# ** Error: (vlog-13069) ** while parsing file included at memory_uvm_pkg.sv(13)
+# ** at sequence/read_once_sequence.svh(1): near "read_sequence": syntax error, unexpected IDENTIFIER.
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(13)
+# ** at sequence/read_once_sequence.svh(1): Error in class extension specification.
+# -- Compiling module top_test_uvm
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(13)
+# ** at sequence/read_once_sequence.svh(7): Illegal use of 'automatic' for variable declaration (clk).
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(17): Failed to find the name 'type_id' in scope 'write_once_sequence' at sequence/write_once_sequence.svh(1).
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(14)
+# ** at sequence/reset_write_read_sequence.svh(19): Failed to find the name 'type_id' in scope 'read_once_sequence' at sequence/read_once_sequence.svh(1).
+# ** Error: ** while parsing file included at memory_uvm_pkg.sv(29)
+# ** at components/read_test.svh(18): Failed to find the name 'type_id' in scope 'read_once_sequence' at sequence/read_once_sequence.svh(1).
+# ** Error: (vlog-13069) memory_uvm_pkg.sv(32): near "endpackage": syntax error, unexpected "SystemVerilog keyword 'endpackage'", expecting class.
+# End time: 03:26:10 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 11, Warnings: 0
+# ** Error: F:/questasim/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./run.do line 4
+# F:/questasim/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog -f tb.f"
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:27:08 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 03:27:09 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:27:09 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 03:27:10 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:27:12 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 03:27:17 on Jul 26,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# End time: 03:27:47 on Jul 26,2024, Elapsed time: 0:52:28
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 03:27:48 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f795a8d File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:0, data_in:2763384580, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2763384580
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_once_sequence.svh(22) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_once_sequence_h [write_once_sequence] uvm_test_top.env_h.agent_h.sequencer_h.write_once_sequence_h
+# start of pre_body task
+# start of body task
+# UVM_FATAL @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@read_once_sequence_h [NULLITM] attempting to start a null item from sequence 'uvm_test_top.env_h.agent_h.sequencer_h.read_once_sequence_h'
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    8
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [NULLITM]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     4
+# [write_once_sequence]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 41 ns  Iteration: 9  Region: /uvm_pkg::uvm_sequence_base::start
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh line 292
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:34:56 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 03:34:56 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:34:56 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 03:34:57 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:35:01 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 03:35:07 on Jul 26,2024, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 0
+# End time: 03:35:36 on Jul 26,2024, Elapsed time: 0:07:48
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 03:35:39 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f795a86 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:0, data_in:2763384580, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2763384580
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_once_sequence.svh(22) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_once_sequence_h [write_once_sequence] uvm_test_top.env_h.agent_h.sequencer_h.write_once_sequence_h
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 41 ns  Iteration: 11  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f795827 File: F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh
+# Fatal error in Task a7a/read_once_sequence::body at sequence/read_once_sequence.svh line 25
+# 
+# HDL call sequence:
+# Stopped at sequence/read_once_sequence.svh 25 Task a7a/read_once_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:42:04 on Jul 26,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module memory_16x32
+# 
+# Top level modules:
+# 	memory_16x32
+# End time: 03:42:04 on Jul 26,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:42:04 on Jul 26,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling package a7a
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) memory_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package a7a
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 03:42:05 on Jul 26,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:42:07 on Jul 26,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec+memory_16x32(rtl)." 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package a7a
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module memory_16x32
+# Optimizing 7 design-units (inlining 0/3 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package a7a(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module memory_16x32(fast)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 03:42:12 on Jul 26,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# End time: 03:42:42 on Jul 26,2024, Elapsed time: 0:07:03
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_test" 
+# Start time: 03:42:43 on Jul 26,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.a7a(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.memory_16x32(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_test...
+# write_test build phase
+# ** Warning: (vsim-8474) A higher value '16' is found in bin 'addr_16' of Coverpoint 'addr_df'. It is invalid and will be ignored.
+#    Time: 0 ns  Iteration: 7  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_4f795a97 File: components/coverage.svh Line: 35
+# ** Warning: (vsim-8549) After dropping the illegal, ignore or invalid values, the values list associated with scalar bin 'addr_16' in Coverpoint 'addr_df' of Covergroup instance '\/a7a::coverage::addr_cov ' has converged to empty list. The bin will be taken out of coverage calculation.
+#    Time: 0 ns  Iteration: 7  Region: /uvm_pkg::uvm_phase::m_run_phases
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_driver connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# write_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                    0
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:774, use_uvm_seeding:1, m_inst_count:780, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@40, begin_event:@uvm_event@14, end_event:@uvm_event@15, m_transaction_id:1, begin_time:0, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:2, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@reset_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:x, rst:1, addr:x, data_in:x, data_out:x, valid_out:x, type_name:"sequence_item"}
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BEFORE:                    0
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# DRIVER_TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AFTER:                   20
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# UVM_INFO components/scoreboard.svh(95) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# SCOREBOARD_RESET_CHECKER_CALL TIMEEEEEEEEEEEEEEEEEEEEEEEEEE                  20
+# UVM_INFO components/scoreboard.svh(62) @ 20: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RESET_PASS: time:                   20  addr:  0  data_in:          0   data_out:          0 	valid_out: 0  rst: 1  en:x
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   20
+# my_item = x
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# my_item = '{m_leaf_name:"seq_item", m_inst_id:807, use_uvm_seeding:1, m_inst_count:811, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__1@42, begin_event:@uvm_event@19, end_event:@uvm_event@20, m_transaction_id:1, begin_time:21, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:3, m_use_sequence_info:1, m_depth:2, m_sequencer:@sequencer@1, m_parent_sequence:@write_once_sequence@1, print_sequence_info:0, m_client_str:"", m_client:null, m_rh:null, issued1:0, issued2:0, en:1, rst:0, addr:0, data_in:2763384580, data_out:x, valid_out:x, type_name:"sequence_item"}
+run
+# CMD_MONITOR TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# SCOREBOARD_AFTER_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# UVM_INFO components/scoreboard.svh(95) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] RECIEVED_SEQ_ITEM: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# WRITE_ITEM YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# UVM_INFO components/scoreboard.svh(74) @ 40: uvm_test_top.env_h.scoreboard_h [SCOREBOARD] WRITE_PASS: time:                   40  addr:  0  data_in: 2763384580   data_out:          0 	valid_out: 0  rst: 0  en:1
+# my_scoreboard run phase
+# SCOREBOARD_BEFORE_GET TIMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE:                   40
+# my_item = 2763384580
+# finish item has been invoked
+# start of post_do task
+# UVM_INFO sequence/write_once_sequence.svh(22) @ 41: uvm_test_top.env_h.agent_h.sequencer_h@@write_once_sequence_h [write_once_sequence] uvm_test_top.env_h.agent_h.sequencer_h.write_once_sequence_h
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 41 ns  Iteration: 11  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f795838 File: F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh
+# Fatal error in Task a7a/read_once_sequence::body at sequence/read_once_sequence.svh line 25
+# 
+# HDL call sequence:
+# Stopped at sequence/read_once_sequence.svh 25 Task a7a/read_once_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at sequence/read_once_sequence.svh 25 Task a7a/read_once_sequence::body
+# called from  F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/seq/uvm_sequence_base.svh 314 Task uvm_pkg/uvm_sequence_base::start
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# Fatal error reported during simulation. Cannot run 'fcover' command. Please look above output for the fatal error message(s).
+# 
+# End time: 08:09:07 on Jul 26,2024, Elapsed time: 4:26:24
+# Errors: 1, Warnings: 2

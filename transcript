@@ -1,0 +1,963 @@
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+d run.do
+# ambiguous command name "d": dataset datasetOf dataset_open dataset_parse_filename datasetcheck debugVersionString deflate deicon_all delete delete_helper describe destroy destroy_kernel df_context_type dict directoryDialog directory_image disable disablebp disablebp_image divTime dnd do down downarrow draw_source_lines drivers dumpFileToTranscript dumpObjTypes dump_registry dump_win_hier dumpcov dumpcov_srcobj dumplog64 dumpmsgloghash dw
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:54:49 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 19:54:49 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:54:49 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 19:54:49 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:54:50 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 19:54:53 on Aug 01,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 19:54:54 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+# XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+run
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:57:20 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 19:57:20 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:57:20 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 19:57:21 on Aug 01,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 19:57:21 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 19:57:25 on Aug 01,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1
+# Saving coverage database on exit...
+# ** Warning: (vsim-6874) Could not find debugging symbol files for some design-units in the design. Use 'gendbs' command to generate missing symbol files to ensure correct coverage debugging information in the GUI.
+# End time: 19:57:42 on Aug 01,2024, Elapsed time: 0:02:48
+# Errors: 0, Warnings: 1
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 19:57:43 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/top_test_uvm/f_if/clk
+run
+run
+run
+run
+do run.do
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work".
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:05:09 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 20:05:09 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:05:10 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 20:05:10 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:05:11 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# ** Warning: (vopt-133) Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# init_auxdbinfo(): INTERNAL ERROR: Cannot open page file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib1_0.qpg" in read mode
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 20:05:14 on Aug 01,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 3
+# Saving coverage database on exit...
+# ** Warning: (vsim-6874) Could not find debugging symbol files for some design-units in the design. Use 'gendbs' command to generate missing symbol files to ensure correct coverage debugging information in the GUI.
+# End time: 20:05:29 on Aug 01,2024, Elapsed time: 0:07:46
+# Errors: 0, Warnings: 1
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 20:05:30 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+# FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+run
+do run.do
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:06:44 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 20:06:44 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:06:45 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 20:06:45 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:06:46 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 20:06:49 on Aug 01,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+# Saving coverage database on exit...
+# ** Warning: (vsim-6874) Could not find debugging symbol files for some design-units in the design. Use 'gendbs' command to generate missing symbol files to ensure correct coverage debugging information in the GUI.
+# End time: 20:07:05 on Aug 01,2024, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 1
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 20:07:06 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+# FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+run
+do run.do
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work".
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:30:01 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 20:30:01 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:30:01 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 20:30:02 on Aug 01,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:30:05 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-133) Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# init_auxdbinfo(): INTERNAL ERROR: Cannot open page file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib1_0.qpg" in read mode
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 20:30:08 on Aug 01,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 6
+# Saving coverage database on exit...
+# End time: 20:30:24 on Aug 01,2024, Elapsed time: 0:23:18
+# Errors: 0, Warnings: 0
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 20:30:26 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+# FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+# FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+do run.do
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
+# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work".
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:37:23 on Aug 01,2024
+# vlog -reportprogress 300 -f dut.f 
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# End time: 20:37:23 on Aug 01,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:37:23 on Aug 01,2024
+# vlog -reportprogress 300 -f tb.f 
+# -- Compiling module FIFO_sva
+# -- Compiling package FIFO_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling interface inf
+# -- Importing package FIFO_pkg
+# -- Compiling module top_test_uvm
+# 
+# Top level modules:
+# 	top_test_uvm
+# End time: 20:37:24 on Aug 01,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 20:37:26 on Aug 01,2024
+# vopt -reportprogress 300 top_test_uvm -o top_optimized "+acc" "+cover=sbfec" 
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-133) Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
+# 
+# Top level modules:
+# 	top_test_uvm
+# 
+# Analyzing design...
+# -- Loading module top_test_uvm
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package FIFO_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface inf
+# -- Loading module FIFO
+# -- Loading module FIFO_sva
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 8 design-units (inlining 0/4 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package FIFO_pkg(fast)
+# -- Optimizing module FIFO_sva(fast)
+# -- Optimizing module FIFO(fast)
+# -- Optimizing interface inf(fast__2)
+# -- Optimizing module top_test_uvm(fast)
+# -- Optimizing interface inf(fast)
+# Optimized design name is top_optimized
+# End time: 20:37:30 on Aug 01,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 6
+# Saving coverage database on exit...
+# End time: 20:37:40 on Aug 01,2024, Elapsed time: 0:07:14
+# Errors: 0, Warnings: 0
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 20:37:42 on Aug 01,2024
+# Loading sv_std.std
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_test_uvm(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# write_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     1
+# [PREDICTOR]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 226  Instance: /top_test_uvm
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
