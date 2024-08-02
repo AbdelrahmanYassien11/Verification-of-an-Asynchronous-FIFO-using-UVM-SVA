@@ -5,7 +5,7 @@
  			
  	//uvm_analysis_imp(my_first_sequence_item, my_first_subscriber); //giving the type of packet & the uvm_subscriber data type so he can instatntiate there
  	
- 	virtual inf my_vif;
+ 	virtual inf.TEST my_vif;
 
       logic                   rst_n;
 	   bit   [FIFO_WIDTH-1:0]  data_in_cov;
@@ -160,7 +160,7 @@
  	function void build_phase(uvm_phase phase);
  		super.build_phase(phase);
  		$display("coverage build_phase");
- 		if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+ 		if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
 			`uvm_fatal(get_full_name(),"Error");
 		end
 	endfunction

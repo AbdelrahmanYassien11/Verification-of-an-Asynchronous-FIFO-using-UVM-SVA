@@ -2,7 +2,7 @@ class predictor extends uvm_subscriber #(sequence_item);
   `uvm_component_utils(predictor);
 
 
-  virtual inf my_vif;
+  virtual inf.TEST my_vif;
 
   uvm_analysis_port #(sequence_item) analysis_port_expected_outputs;
 
@@ -48,7 +48,7 @@ class predictor extends uvm_subscriber #(sequence_item);
 
     seq_item_expected = sequence_item::type_id::create("seq_item_expected");
 
-    if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+    if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
       `uvm_fatal(get_full_name(),"Error");
     end
 
@@ -69,7 +69,6 @@ class predictor extends uvm_subscriber #(sequence_item);
       $display("my_predictor run phase");
       @(inputs_written);
       `uvm_info("PREDICTOR", {"WRITTEN_DATA: ", data_str}, UVM_HIGH)
-      @(negedge my_vif.clk);
       predictor_idk();
       $display("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
       //wait(expected_outputs_written.triggered);
@@ -131,7 +130,7 @@ class predictor extends uvm_subscriber #(sequence_item);
    //FIFO_reeset task
   task reset_FIFO();
          $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-    //@(negedge my_vif.clk);
+    @(negedge my_vif.clk);
     $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
       seq_item_expected.rst_n = 1'b1;
     @(posedge my_vif.clk);

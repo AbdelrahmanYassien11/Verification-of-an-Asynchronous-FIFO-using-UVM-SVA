@@ -19,10 +19,6 @@ import FIFO_pkg::*;
   logic                   full;
   logic                   half_full;
 
-  modport DUT (input clk, rst_n, data_in, wr_en, rd_en, output wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out );
-  //modport TEST (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out, output clk, rst_n, data_in, wr_en, rd_en);
-  //modport MONITOR (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out, clk, rst_n, data_in, wr_en, rd_en);
-  modport SVA (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out ,  clk, rst_n, data_in, wr_en, rd_en);
 
 
 	task generic_reciever(input bit irst_n, input bit [31:0] idata_in, input bit iwr_en, input bit ird_en);
@@ -79,6 +75,14 @@ import FIFO_pkg::*;
                                          wr_ack, overflow, underflow, almostempty, empty, almostfull, full,
                                          half_full);
    endfunction : send_outputs
+
+  modport DUT (input clk, rst_n, data_in, wr_en, rd_en, output wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out );
+  modport TEST (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out, output clk, rst_n, data_in, wr_en, rd_en);
+  //modport MONITOR (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out, clk, rst_n, data_in, wr_en, rd_en);
+  modport SVA (input wr_ack, overflow, underflow, almostempty, empty, almostfull, full, half_full, data_out ,  clk, rst_n, data_in, wr_en, rd_en);
+
+
+
 
 endinterface : inf
 

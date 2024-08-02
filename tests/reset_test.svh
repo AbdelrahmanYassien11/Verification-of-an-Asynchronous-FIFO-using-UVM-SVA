@@ -1,7 +1,7 @@
 class reset_test extends base_test;
  	`uvm_component_utils(reset_test);
  	
- 	virtual inf my_vif;
+ 	virtual inf.TEST my_vif;
 
  	reset_sequence reset_sequence_h;
 
@@ -16,12 +16,12 @@ class reset_test extends base_test;
 
 		reset_sequence_h = reset_sequence::type_id::create("reset_sequence_h");
 
-		if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+		if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
 			`uvm_fatal(get_full_name(),"Error");
 		end
 
-		uvm_config_db#(virtual inf)::set(this,"env_h", "my_vif", my_vif);
-
+		uvm_config_db#(virtual inf.TEST)::set(this,"env_h", "my_vif", my_vif);
+		
 		$display("my_test build phase");
 	endfunction
 

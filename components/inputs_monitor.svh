@@ -2,7 +2,9 @@
 class inputs_monitor extends uvm_monitor;
   	`uvm_component_utils(inputs_monitor);
 
-  	virtual inf my_vif;
+  	virtual inf.TEST my_vif;
+
+  	virtual inf my_vif1;
 
   	uvm_analysis_port #(sequence_item) tlm_analysis_port;
 
@@ -14,7 +16,11 @@ class inputs_monitor extends uvm_monitor;
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
-		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif", my_vif)) begin
+		if(!uvm_config_db#(virtual inf.TEST)::get(this,"", "my_vif", my_vif)) begin
+			`uvm_fatal(get_full_name(),"Error");
+		end
+
+		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif1", my_vif1)) begin
 			`uvm_fatal(get_full_name(),"Error");
 		end
 
@@ -26,7 +32,7 @@ class inputs_monitor extends uvm_monitor;
 
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		my_vif.inputs_monitor_h = this;
+		my_vif1.inputs_monitor_h = this;
 		$display("my_monitor connect phase");
 	endfunction
 

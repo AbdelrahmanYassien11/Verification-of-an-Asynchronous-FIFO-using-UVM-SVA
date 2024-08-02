@@ -5,23 +5,24 @@ virtual class base_test extends uvm_test;
 class base_test extends uvm_test;
 `endif
 
+   virtual inf.TEST my_vif;
 
    env       env_h;
    sequencer sequencer_h;
    
-   virtual interface inf my_vif;
+
 
    function void build_phase(uvm_phase phase);
       env_h = env::type_id::create("env_h",this);
       // Get the virtual interface from the configuration database
-      if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+      /*if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
          `uvm_fatal(get_full_name(),"Error");
       end
 
         // Set the virtual interface into the environment
       uvm_config_db#(virtual inf)::set(this, "env_h", "my_vif", my_vif);
-
-      $display("write_test build phase");
+      */
+      $display("base_test build phase");
    endfunction : build_phase
 
    function void end_of_elaboration_phase(uvm_phase phase);
