@@ -130,7 +130,7 @@ class predictor extends uvm_subscriber #(sequence_item);
    //FIFO_reeset task
   task reset_FIFO();
          $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-    @(negedge my_vif.clk);
+    @(negedge my_vif.TEST.clk);
     $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
       seq_item_expected.rst_n = 1'b1;
     @(posedge my_vif.clk);

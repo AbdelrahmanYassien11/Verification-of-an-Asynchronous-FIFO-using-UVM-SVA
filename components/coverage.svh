@@ -160,13 +160,14 @@
  	function void build_phase(uvm_phase phase);
  		super.build_phase(phase);
  		$display("coverage build_phase");
- 		if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+ 		if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin
 			`uvm_fatal(get_full_name(),"Error");
 		end
 	endfunction
 
 	task run_phase(uvm_phase phase);
 		super.run_phase(phase);
+      @(posedge my_vif.wr_en);
 		$display("coverage run_phase");
 	endtask : run_phase
  endclass

@@ -8,6 +8,7 @@ module top_test_uvm();
 
     always #5 clk = ~clk;
 
+	inf inf1(clk);
 
 	inf f_if(clk);
 	FIFO DUT(f_if);
@@ -15,8 +16,6 @@ module top_test_uvm();
 
 
 
-
-	inf inf1(clk);
 
 	initial begin
 

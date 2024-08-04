@@ -5,6 +5,7 @@
  	agent agent_h;
  	scoreboard scoreboard_h;
  	coverage coverage_h;
+ 	uvm_port_list list;
 
  	virtual inf.TEST my_vif;
 
@@ -43,8 +44,19 @@
 	function void end_of_elaboration_phase(uvm_phase phase);
 		super.end_of_elaboration_phase(phase);
 		scoreboard_h.set_report_verbosity_level_hier(UVM_HIGH);
-		//coverage_h.analysis_export.get_provided_to(list);
-		//scoreboard_h.tlm_analysis_export.get_provided_to(list);
+		coverage_h.analysis_export.get_provided_to(list);   // This imp/export provided for what port/export
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+		scoreboard_h.analysis_export_inputs.get_provided_to(list);
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+		scoreboard_h.analysis_export_outputs.get_provided_to(list);
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+		$display("FINISHED GET_PROVIDED_TO");
+		coverage_h.analysis_export.get_connected_to(list); // This port/export connected for what imp/export
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+		scoreboard_h.analysis_export_inputs.get_connected_to(list);
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+		scoreboard_h.analysis_export_outputs.get_connected_to(list);
+		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
 		$display("my_monitor end_of_elaboration_phase");
 	endfunction
 
