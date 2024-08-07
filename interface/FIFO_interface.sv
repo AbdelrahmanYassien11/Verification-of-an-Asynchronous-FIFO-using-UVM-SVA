@@ -1,5 +1,5 @@
 interface inf (
-    input logic clk
+    input bit clk
     );
 
 import FIFO_pkg::*;
@@ -28,8 +28,10 @@ import FIFO_pkg::*;
    outputs_monitor outputs_monitor_h;
 
 	task generic_reciever(input bit irst_n, input bit [31:0] idata_in, input bit iwr_en, input bit ird_en);
-      send_inputs();
-			if(irst_n === 1'b1) begin
+      send_inputs(irst_n, idata_in, iwr_en, ird_en);
+			if(irst_n === 1'b0) begin
+        wr_en = iwr_en;
+        rd_en = ird_en;
 				reset_FIFO();
 			end
 			else if(iwr_en === 1'b1 && ird_en === 1'b0) begin
@@ -43,17 +45,19 @@ import FIFO_pkg::*;
 
 	task reset_FIFO();
  		@(negedge clk);
-      rst_n = 1'b1;
+      rst_n = 1'b0;
  		@(negedge clk);
  		 send_outputs();
- 		 rst_n = 1'b0;
+ 		 rst_n = 1'b1;
  	endtask : reset_FIFO
 
 
 
  	task write_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
  		@(negedge clk);
+      rst_n = 1'b1;
  			wr_en = 1'b1;
+      rd_en = 1'b0;
  			data_in = idata_in;
  		@(negedge clk);
  			send_outputs();
@@ -63,14 +67,16 @@ import FIFO_pkg::*;
 
  	task read_FIFO();
  		@(negedge clk);
-  		rd_en = 1'b0;
+      rst_n = 1'b1;
+      wr_en = 1'b0;
+  		rd_en = 1'b1;
  		@(negedge clk);
  			send_outputs();
       rd_en = 1'b0;
  	endtask : read_FIFO
 
-   function void send_inputs();
-      inputs_monitor_h.write_to_monitor(rst_n, data_in, wr_en, rd_en);
+   function void send_inputs(input bit irst_n, input bit [31:0] idata_in, input bit iwr_en, input bit ird_en);
+      inputs_monitor_h.write_to_monitor(irst_n, idata_in, iwr_en, ird_en);
    endfunction : send_inputs
 
    function void send_outputs();

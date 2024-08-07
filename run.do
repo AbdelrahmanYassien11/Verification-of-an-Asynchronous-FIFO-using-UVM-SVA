@@ -2,9 +2,9 @@ if [file exists "work"] {vdel -all}
 vlib work
 vlog -f dut.f
 vlog -f tb.f
-vopt top_test_uvm -o top_optimized +acc +cover=sbfec
+vopt top -o top_optimized +acc +cover=sbfec
 #+FIFO_DUT(rtl)
-vsim top_optimized -coverage +UVM_TESTNAME=reset_test 
+vsim top_optimized -coverage +UVM_TESTNAME=write_all_test
 #coverage save FIFO_tb.ucdb -onexit
 #run -all
 #quit -sim

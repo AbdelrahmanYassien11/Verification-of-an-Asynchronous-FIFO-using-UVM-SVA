@@ -70,12 +70,9 @@ class predictor extends uvm_subscriber #(sequence_item);
       @(inputs_written);
       `uvm_info("PREDICTOR", {"WRITTEN_DATA: ", data_str}, UVM_HIGH)
       predictor_idk();
-      $display("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-      //wait(expected_outputs_written.triggered);
-      @(expected_outputs_written);
-      $display("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      wait(expected_outputs_written.triggered);
+          analysis_port_expected_outputs.write(seq_item_expected);
       `uvm_info("PREDICTOR", {"EXPECTED_DATA: ", seq_item_expected.convert2string()}, UVM_HIGH)
-      analysis_port_expected_outputs.put(seq_item_expected);
     end
   endtask
 
@@ -91,7 +88,6 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   task predictor_idk();
       if(rst_n === 1'b0) begin
-        $display("RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
         reset_FIFO();
       end
       else if(wr_en === 1'b1 && rd_en === 1'b0) begin
@@ -101,8 +97,6 @@ class predictor extends uvm_subscriber #(sequence_item);
         FIFO_READ();
       end
       send_results();
-
-      $display("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
   endtask : predictor_idk
 
   function void send_results();
@@ -120,56 +114,41 @@ class predictor extends uvm_subscriber #(sequence_item);
     seq_item_expected.almost_full    =   almost_full_expected;
     seq_item_expected.full           =          full_expected;
     seq_item_expected.half_full      =     half_full_expected;
-    $display("send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaa %t", $time());
     -> expected_outputs_written;
-    $display("send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssbbbbbbbbbbbbbbbbbbb %t", $time());
   endfunction : send_results
 
 
 
    //FIFO_reeset task
   task reset_FIFO();
-         $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-    @(negedge my_vif.TEST.clk);
-    $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-      seq_item_expected.rst_n = 1'b1;
-    @(posedge my_vif.clk);
-    $display("FIFO INITIATING RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+
       data_out_expected     = 0;
       wr_ack_expected       = 0;
       overflow_expected     = 0;
       underflow_expected    = 0;
       almost_empty_expected = 0;
-      empty_expected        = 0;
+      empty_expected        = 1;
       almost_full_expected  = 0;
       full_expected         = 0;
       half_full_expected    = 0;
-    @(negedge my_vif.clk);
-     seq_item_expected.rst_n = 1'b0;
-     $display("FIFO HAS BEEN RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+  
+     rst_n = 1'b0;
   endtask : reset_FIFO
 
 
    //A task that writes address and data
 	 task FIFO_WRITE();
 
-     @(negedge my_vif.clk);
-
      if(full_expected === 0)begin
-      data_write_queue.push_back(data_in); 
+      data_write_queue.push_back(data_in);
+      if(write_pointer === FIFO_SIZE)begin
+        write_pointer = 0;
+      end
+      else begin
+        write_pointer = write_pointer+1;
+      end 
      end
 
-     @(negedge my_vif.clk);
-
-     if(full_expected === 0)begin
-     	if(write_pointer === FIFO_SIZE)begin
-        	write_pointer = 0;
-     	end
-        else begin
-          	write_pointer = write_pointer+1;
-        end
-     end
-     //wr_en = 0;
      FLAGS_WRITE();
    
    endtask : FIFO_WRITE
@@ -180,23 +159,18 @@ class predictor extends uvm_subscriber #(sequence_item);
    //A task that reads data
    task FIFO_READ();
 
-   	 @(negedge my_vif.clk);
 
      if(empty_expected === 0)begin
 	 	  data_out_expected = data_write_queue.pop_front();
+      if(read_pointer === FIFO_SIZE)begin
+        read_pointer = 0;
+      end
+      else begin
+        read_pointer = read_pointer +1;
+      end
      end
 
-     @(negedge my_vif.clk);
 
-     if(empty_expected === 0)begin
-        if(read_pointer === FIFO_SIZE)begin
-          read_pointer = 0;
-        end
-        else begin
-          read_pointer = read_pointer +1;
-        end
-     end
-     //rd_en = 0;
      FLAGS_READ();
    endtask : FIFO_READ
 
@@ -217,6 +191,16 @@ class predictor extends uvm_subscriber #(sequence_item);
     		    overflow_expected = 0;
             half_full_expected = 0;
           	end
+          (FIFO_SIZE-1): begin
+            empty_expected  = 0;
+            almost_empty_expected = 1;
+            underflow_expected = 0;
+            full_expected   = 0;
+            wr_ack_expected = 1;
+            almost_full_expected = 0;
+            overflow_expected = 0;
+            half_full_expected = 0;
+            end
           (FIFO_SIZE/2): begin //
             empty_expected  = 0;
             almost_empty_expected = 0;
@@ -248,6 +232,16 @@ class predictor extends uvm_subscriber #(sequence_item);
             full_expected   = 0;
             wr_ack_expected = 1;
             almost_full_expected = 0;
+            overflow_expected = 0;
+            half_full_expected = 0;
+          end
+          (FIFO_SIZE-1): begin
+            empty_expected  = 0;
+            almost_empty_expected = 0;
+            underflow_expected = 0;
+            full_expected   = 0;
+            wr_ack_expected = 1;
+            almost_full_expected = 1;
             overflow_expected = 0;
             half_full_expected = 0;
           end
@@ -330,6 +324,16 @@ class predictor extends uvm_subscriber #(sequence_item);
             full_expected   = 0;
             wr_ack_expected = 1;
             almost_full_expected = 1;
+            overflow_expected = 0;
+            half_full_expected = 0;
+          end
+          (FIFO_SIZE-1): begin
+            empty_expected  = 0;
+            almost_empty_expected = 1;
+            underflow_expected = 0;
+            full_expected   = 0;
+            wr_ack_expected = 0;
+            almost_full_expected = 0;
             overflow_expected = 0;
             half_full_expected = 0;
           end

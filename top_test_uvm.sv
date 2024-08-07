@@ -1,27 +1,17 @@
-module top_test_uvm();
+module top_test_uvm(inf.TEST f_if);
 	import uvm_pkg::*;
 	import FIFO_pkg::*;
 
-
-
-	bit clk;
-
-    always #5 clk = ~clk;
-
-	inf inf1(clk);
-
-	inf f_if(clk);
-	FIFO DUT(f_if);
-	bind FIFO FIFO_sva sva(f_if);
-
-
-
+	
 
 	initial begin
-
-		uvm_config_db#(virtual inf.TEST)::set(null,"uvm_test_top", "my_vif", f_if.TEST);
-		uvm_config_db#(virtual interface inf)::set(null,"uvm_test_top.env_h.agent_h.*", "my_vif1", inf1);
+		virtual inf x;
+		x = f_if;
+		uvm_config_db#(virtual inf.TEST)::set(null,"uvm_test_top", "my_vif", x);
+		//$monitor("my_vif.clk: %0d",a.clk);
+		uvm_config_db#(virtual interface inf)::set(null,"uvm_test_top.env_h.agent_h.*", "my_vif1", f_if);
 		run_test();
+		$display("clk: %0d",f_if.clk);
 	end
 
 endmodule

@@ -167,7 +167,6 @@
 
 	task run_phase(uvm_phase phase);
 		super.run_phase(phase);
-      @(posedge my_vif.wr_en);
 		$display("coverage run_phase");
 	endtask : run_phase
  endclass

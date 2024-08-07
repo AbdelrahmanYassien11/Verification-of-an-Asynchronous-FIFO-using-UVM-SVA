@@ -1,4 +1,6 @@
-module FIFO(inf.DUT f_if);
+module FIFO(inf.DUT f_if
+);
+
 parameter FIFO_WIDTH = 16;
 parameter FIFO_DEPTH = 8;
 

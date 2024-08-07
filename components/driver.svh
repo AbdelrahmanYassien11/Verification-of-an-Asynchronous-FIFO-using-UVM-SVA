@@ -33,8 +33,6 @@ class driver extends  uvm_driver #(sequence_item);
 		super.run_phase(phase);
 		forever begin
 			seq_item_port.get_next_item(seq_item);
-
-
 			my_vif1.generic_reciever(seq_item.rst_n, seq_item.data_in, seq_item.wr_en,
 			 						seq_item.rd_en);
 

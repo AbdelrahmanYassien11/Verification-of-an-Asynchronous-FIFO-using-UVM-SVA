@@ -3,10 +3,10 @@ package FIFO_pkg;
 	import uvm_pkg::*;
 	`include "uvm_macros.svh"
 
-	typedef enum {BEFORE_RESET, READ , WRITE} STATE_e;
-	parameter FIFO_WIDTH = 8;
-   	parameter FIFO_DEPTH = 512;
-  	parameter FIFO_SIZE = 512;
+	typedef enum {RESET, READ , WRITE} STATE_e;
+	parameter FIFO_WIDTH = 16;
+   	parameter FIFO_DEPTH = 8;
+  	parameter FIFO_SIZE = 8;
 
 
 	`include "sequence_item.svh"
@@ -17,7 +17,13 @@ package FIFO_pkg;
 
 	`include "base_sequence.svh"
 	`include "reset_sequence.svh"
+
+	`include "write_once_sequence.svh"
+	`include "read_once_sequence.svh"
 	
+	`include "write_all_sequence.svh"
+	`include "read_all_sequence.svh"
+
 	`include "driver.svh"
 	`include "inputs_monitor.svh"
 	`include "outputs_monitor.svh"
@@ -30,6 +36,10 @@ package FIFO_pkg;
 
 	`include "base_test.svh"
 	`include "reset_test.svh"
+	`include "write_once_test.svh"
+	`include "read_once_test.svh"
+
+	`include "write_all_test.svh"
 
 
 endpackage : FIFO_pkg

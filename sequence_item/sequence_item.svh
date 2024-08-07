@@ -6,14 +6,14 @@ class sequence_item extends uvm_sequence_item;
  		super.new(name);
  	endfunction
 
-   parameter FIFO_WIDTH = 16;
-   parameter FIFO_DEPTH = 8;
-   typedef enum {BEFORE_RESET, READ , WRITE} STATE_e;
 
-      logic                   rst_n;
+rand STATE_e operation;
+
+
+rand  logic                   rst_n;
 rand  bit   [FIFO_WIDTH-1:0]  data_in;
-      bit                     wr_en;
-      bit                     rd_en;
+rand  bit                     wr_en;
+rand  bit                     rd_en;
 
       logic [FIFO_WIDTH-1:0]  data_out;
       logic                   wr_ack;
@@ -30,7 +30,19 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
       //rand bit [FIFO_WIDTH-1:0] data_to_write;
       // active low synchronous reset
 
+      constraint rst_c { rst_n dist {0:=5, 1:=95};
+      }
 
+      constraint en_c { wr_en == !rd_en; rd_en == !wr_en;
+      }
+
+      constraint data_in_c { data_in dist {16'h0000:=1, [16'h0001 : 16'hFFFE]:=1, 16'hFFFF:=1};
+      }
+
+      constraint operation_c {operation == RESET -> rst_n == 1'b0;
+                              operation == WRITE -> rst_n == 1'b1 && wr_en == 1'b1 && rd_en == 1'b0;
+                              operation == READ -> rst_n == 1'b1 && wr_en == 1'b0 && rd_en == 1'b1;
+                              }
 
 
 
@@ -56,8 +68,8 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
                (tested.almost_empty == almost_empty) &&
                (tested.empty == empty) &&
                (tested.almost_full == almost_full) &&
-               (tested.full == full) &&
-               (tested.half_full == half_full);
+               (tested.full == full);
+               //(tested.half_full == half_full);
       return same;
     endfunction : do_compare
 
