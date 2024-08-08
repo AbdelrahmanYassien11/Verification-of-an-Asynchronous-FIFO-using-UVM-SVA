@@ -2,9 +2,13 @@
  	
  	`uvm_component_utils(env);
 
+ 	env_config env_config_h;
+ 	agent_config agent_config_h;
+
  	agent agent_h;
  	scoreboard scoreboard_h;
  	coverage coverage_h;
+
  	uvm_port_list list;
 
  	virtual inf.TEST my_vif;
@@ -16,17 +20,23 @@
  	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
+
+
+		if(!uvm_config_db#(env_config)::get(this,"","config",env_config_h)) begin
+			`uvm_fatal(get_full_name(),"Failed to get env configuration");
+		end
+
+		agent_config_h = new(.agent_config_my_vif(env_config_h.env_config_my_vif), .is_active(UVM_ACTIVE));
+
+		uvm_config_db#(agent_config)::set(this,"agent_h", "config", agent_config_h);
+
+		//uvm_config_db#(virtual inf.TEST)::set(this,"agent_h", "my_vif", my_vif);
+		uvm_config_db#(virtual inf.TEST)::set(this,"coverage_h", "my_vif", my_vif);
+		uvm_config_db#(virtual inf.TEST)::set(this,"scoreboard_h", "my_vif", my_vif);
+
 		agent_h = agent::type_id::create("agent_h",this);
 		scoreboard_h = scoreboard::type_id::create("scoreboard_h",this);
 		coverage_h = coverage::type_id::create("coverage_h", this);
-
-		if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
-			`uvm_fatal(get_full_name(),"Error");
-		end
-
-		uvm_config_db#(virtual inf.TEST)::set(this,"agent_h", "my_vif", my_vif);
-		uvm_config_db#(virtual inf.TEST)::set(this,"coverage_h", "my_vif", my_vif);
-		uvm_config_db#(virtual inf.TEST)::set(this,"scoreboard_h", "my_vif", my_vif);
 
 		$display("env build phase");
 	endfunction

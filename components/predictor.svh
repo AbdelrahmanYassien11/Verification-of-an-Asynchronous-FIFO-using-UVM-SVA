@@ -131,6 +131,10 @@ class predictor extends uvm_subscriber #(sequence_item);
       almost_full_expected  = 0;
       full_expected         = 0;
       half_full_expected    = 0;
+
+      foreach(data_write_queue[i]) begin
+        data_write_queue.pop_back();
+      end
   
      rst_n = 1'b0;
   endtask : reset_FIFO
@@ -141,14 +145,15 @@ class predictor extends uvm_subscriber #(sequence_item);
 
      if(full_expected === 0)begin
       data_write_queue.push_back(data_in);
-      if(write_pointer === FIFO_SIZE)begin
+      if(write_pointer === FIFO_SIZE-1)begin
         write_pointer = 0;
       end
       else begin
         write_pointer = write_pointer+1;
       end 
      end
-
+     $display("WRITE_POINER = %0d", write_pointer);
+     $display("READ_POINER = %0d", read_pointer);
      FLAGS_WRITE();
    
    endtask : FIFO_WRITE
@@ -162,14 +167,15 @@ class predictor extends uvm_subscriber #(sequence_item);
 
      if(empty_expected === 0)begin
 	 	  data_out_expected = data_write_queue.pop_front();
-      if(read_pointer === FIFO_SIZE)begin
+      if(read_pointer === FIFO_SIZE-1)begin
         read_pointer = 0;
       end
       else begin
         read_pointer = read_pointer +1;
       end
      end
-
+     $display("WRITE_POINER = %0d", write_pointer);
+     $display("READ_POINER = %0d", read_pointer);
 
      FLAGS_READ();
    endtask : FIFO_READ
@@ -192,15 +198,15 @@ class predictor extends uvm_subscriber #(sequence_item);
             half_full_expected = 0;
           	end
           (FIFO_SIZE-1): begin
-            empty_expected  = 0;
-            almost_empty_expected = 1;
-            underflow_expected = 0;
-            full_expected   = 0;
-            wr_ack_expected = 1;
-            almost_full_expected = 0;
-            overflow_expected = 0;
-            half_full_expected = 0;
-            end
+              empty_expected  = 0;
+              almost_empty_expected = 1;
+              underflow_expected = 0;
+              full_expected   = 0;
+              wr_ack_expected = 1;
+              almost_full_expected = 0;
+              overflow_expected = 0;
+              half_full_expected = 0;
+          end
           (FIFO_SIZE/2): begin //
             empty_expected  = 0;
             almost_empty_expected = 0;
@@ -236,14 +242,14 @@ class predictor extends uvm_subscriber #(sequence_item);
             half_full_expected = 0;
           end
           (FIFO_SIZE-1): begin
-            empty_expected  = 0;
-            almost_empty_expected = 0;
-            underflow_expected = 0;
-            full_expected   = 0;
-            wr_ack_expected = 1;
-            almost_full_expected = 1;
-            overflow_expected = 0;
-            half_full_expected = 0;
+              empty_expected  = 0;
+              almost_empty_expected = 0;
+              underflow_expected = 0;
+              full_expected   = 0;
+              wr_ack_expected = 1;
+              almost_full_expected = 1;
+              overflow_expected = 0;
+              half_full_expected = 0;
           end
           (FIFO_SIZE/2): begin //
             empty_expected  = 0;
@@ -322,7 +328,7 @@ class predictor extends uvm_subscriber #(sequence_item);
             almost_empty_expected = 0;
             underflow_expected = 0;
             full_expected   = 0;
-            wr_ack_expected = 1;
+            wr_ack_expected = 0;
             almost_full_expected = 1;
             overflow_expected = 0;
             half_full_expected = 0;
@@ -352,7 +358,7 @@ class predictor extends uvm_subscriber #(sequence_item);
             almost_empty_expected = 0;
             underflow_expected = 0;
             full_expected   = 0;
-            wr_ack_expected = 1;
+            wr_ack_expected = 0;
             almost_full_expected = 0;
             overflow_expected = 0;
             half_full_expected = 0;
@@ -366,8 +372,18 @@ class predictor extends uvm_subscriber #(sequence_item);
             almost_empty_expected = 1;
             underflow_expected = 0;
             full_expected   = 0;
-            wr_ack_expected = 1;
+            wr_ack_expected = 0;
             almost_full_expected = 0;
+            overflow_expected = 0;
+            half_full_expected = 0;
+          end
+          (FIFO_SIZE-1): begin
+            empty_expected  = 0;
+            almost_empty_expected = 0;
+            underflow_expected = 0;
+            full_expected   = 0;
+            wr_ack_expected = 0;
+            almost_full_expected = 1;
             overflow_expected = 0;
             half_full_expected = 0;
           end
@@ -386,7 +402,7 @@ class predictor extends uvm_subscriber #(sequence_item);
             almost_empty_expected = 0;
             underflow_expected = 0;
             full_expected   = 0;
-            wr_ack_expected = 1;
+            wr_ack_expected = 0;
             almost_full_expected = 0;
             overflow_expected = 0;
             half_full_expected = 0;

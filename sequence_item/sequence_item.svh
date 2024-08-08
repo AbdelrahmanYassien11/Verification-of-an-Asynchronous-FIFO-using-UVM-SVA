@@ -6,7 +6,7 @@ class sequence_item extends uvm_sequence_item;
  		super.new(name);
  	endfunction
 
-
+rand int unsigned randomized_number_of_tests;
 rand STATE_e operation;
 
 
@@ -44,7 +44,8 @@ rand  bit                     rd_en;
                               operation == READ -> rst_n == 1'b1 && wr_en == 1'b0 && rd_en == 1'b1;
                               }
 
-
+      constraint randomized_test_number_c { randomized_number_of_tests inside {[50 :100]};    
+      }
 
     function bit do_compare(uvm_object rhs, uvm_comparer comparer);
       sequence_item tested;
@@ -57,10 +58,10 @@ rand  bit                     rd_en;
         same = 0;
       else
         same = super.do_compare(rhs, comparer) && 
-               (tested.rst_n == rst_n) &&
-               (tested.data_in == data_in) &&
-               (tested.wr_en == wr_en) &&
-               (tested.rd_en == rd_en) &&
+               //(tested.rst_n == rst_n) &&
+               //(tested.data_in == data_in) &&
+               //(tested.wr_en == wr_en) &&
+               //(tested.rd_en == rd_en) &&
                (tested.data_out == data_out) &&
                (tested.wr_ack == wr_ack) &&
                (tested.overflow == overflow) &&

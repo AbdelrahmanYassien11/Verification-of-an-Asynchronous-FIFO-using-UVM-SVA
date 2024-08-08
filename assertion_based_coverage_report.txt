@@ -1,0 +1,416 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top/DUT/sva
+=== Design Unit: work.FIFO_sva
+=================================================================================
+
+Directive Coverage:
+    Directives                       6         3         3    50.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/DUT/sva/overflow_high_cover         FIFO_sva Verilog  SVA  FIFO_sva.sv(82)    0 ZERO      
+/top/DUT/sva/underflow_high_cover        FIFO_sva Verilog  SVA  FIFO_sva.sv(83)    3 Covered   
+/top/DUT/sva/wr_ack_sva_high_cover       FIFO_sva Verilog  SVA  FIFO_sva.sv(84)   28 Covered   
+/top/DUT/sva/wr_ack_sva_low_cover        FIFO_sva Verilog  SVA  FIFO_sva.sv(85)    0 ZERO      
+/top/DUT/sva/full_high_cover             FIFO_sva Verilog  SVA  FIFO_sva.sv(86)    0 ZERO      
+/top/DUT/sva/empty_high_cover            FIFO_sva Verilog  SVA  FIFO_sva.sv(87)    5 Covered   
+
+=================================================================================
+=== Instance: /FIFO_pkg
+=== Design Unit: work.FIFO_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      2        na        na     0.00%
+        Coverpoints/Crosses         16        na        na        na
+            Covergroup Bins         32         0        32     0.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp               0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint df_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                        0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint df_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin WRITE_Operation                                 0          1          -    ZERO                 
+        bin READ_Operation                                  0          1          -    ZERO                 
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin WRITE_READ_Transtion                            0          1          -    ZERO                 
+        bin READ_WRITE_Transition                           0          1          -    ZERO                 
+ TYPE /FIFO_pkg/coverage/FLAGS_covgrp                   0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         28          -                      
+    missing/total bins:                                    28         28          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::FLAGS_covgrp  
+                                                        0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         28          -                      
+    missing/total bins:                                    28         28          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin full_expected_off_on                            0          1          -    ZERO                 
+        bin full_expected_on_off                            0          1          -    ZERO                 
+    Coverpoint dt_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_full_expected_off_on                     0          1          -    ZERO                 
+        bin almost_full_expected_on_off                     0          1          -    ZERO                 
+    Coverpoint dt_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin overflow_expected_off_on                        0          1          -    ZERO                 
+        bin overflow_expected_on_off                        0          1          -    ZERO                 
+    Coverpoint dt_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin wr_ack_expected_off_on                          0          1          -    ZERO                 
+        bin wr_ack_expected_on_off                          0          1          -    ZERO                 
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin empty_expected_off_on                           0          1          -    ZERO                 
+        bin empty_expected_on_off                           0          1          -    ZERO                 
+    Coverpoint dt_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_empty_expected_off_on                    0          1          -    ZERO                 
+        bin almost_empty_expected_on_off                    0          1          -    ZERO                 
+    Coverpoint dt_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin underflow_expected_off_on                       0          1          -    ZERO                 
+        bin underflow_expected_on_off                       0          1          -    ZERO                 
+    Coverpoint df_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin full_expected_ON                                0          1          -    ZERO                 
+        bin full_expected_OFF                               0          1          -    ZERO                 
+    Coverpoint df_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_full_expected_ON                         0          1          -    ZERO                 
+        bin almost_full_expected_OFF                        0          1          -    ZERO                 
+    Coverpoint df_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin overflow_expected_ON                            0          1          -    ZERO                 
+        bin overflow_expected_OFF                           0          1          -    ZERO                 
+    Coverpoint df_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin wr_ack_expected_ON                              0          1          -    ZERO                 
+        bin wr_ack_expected_OFF                             0          1          -    ZERO                 
+    Coverpoint df_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin empty_expected_ON                               0          1          -    ZERO                 
+        bin empty_expected_OFF                              0          1          -    ZERO                 
+    Coverpoint df_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_empty_expected_ON                        0          1          -    ZERO                 
+        bin almost_empty_expected_OFF                       0          1          -    ZERO                 
+    Coverpoint df_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin underflow_expected_ON                           0          1          -    ZERO                 
+        bin underflow_expected_OFF                          0          1          -    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp               0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint df_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                        0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint df_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin WRITE_Operation                                 0          1          -    ZERO                 
+        bin READ_Operation                                  0          1          -    ZERO                 
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin WRITE_READ_Transtion                            0          1          -    ZERO                 
+        bin READ_WRITE_Transition                           0          1          -    ZERO                 
+ TYPE /FIFO_pkg/coverage/FLAGS_covgrp                   0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         28          -                      
+    missing/total bins:                                    28         28          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint dt_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+    Coverpoint df_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::FLAGS_covgrp  
+                                                        0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         28          -                      
+    missing/total bins:                                    28         28          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin full_expected_off_on                            0          1          -    ZERO                 
+        bin full_expected_on_off                            0          1          -    ZERO                 
+    Coverpoint dt_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_full_expected_off_on                     0          1          -    ZERO                 
+        bin almost_full_expected_on_off                     0          1          -    ZERO                 
+    Coverpoint dt_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin overflow_expected_off_on                        0          1          -    ZERO                 
+        bin overflow_expected_on_off                        0          1          -    ZERO                 
+    Coverpoint dt_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin wr_ack_expected_off_on                          0          1          -    ZERO                 
+        bin wr_ack_expected_on_off                          0          1          -    ZERO                 
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin empty_expected_off_on                           0          1          -    ZERO                 
+        bin empty_expected_on_off                           0          1          -    ZERO                 
+    Coverpoint dt_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_empty_expected_off_on                    0          1          -    ZERO                 
+        bin almost_empty_expected_on_off                    0          1          -    ZERO                 
+    Coverpoint dt_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin underflow_expected_off_on                       0          1          -    ZERO                 
+        bin underflow_expected_on_off                       0          1          -    ZERO                 
+    Coverpoint df_full                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin full_expected_ON                                0          1          -    ZERO                 
+        bin full_expected_OFF                               0          1          -    ZERO                 
+    Coverpoint df_almost_full                           0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_full_expected_ON                         0          1          -    ZERO                 
+        bin almost_full_expected_OFF                        0          1          -    ZERO                 
+    Coverpoint df_overflow                              0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin overflow_expected_ON                            0          1          -    ZERO                 
+        bin overflow_expected_OFF                           0          1          -    ZERO                 
+    Coverpoint df_wr_ack                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin wr_ack_expected_ON                              0          1          -    ZERO                 
+        bin wr_ack_expected_OFF                             0          1          -    ZERO                 
+    Coverpoint df_empty                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin empty_expected_ON                               0          1          -    ZERO                 
+        bin empty_expected_OFF                              0          1          -    ZERO                 
+    Coverpoint df_almost_empty                          0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin almost_empty_expected_ON                        0          1          -    ZERO                 
+        bin almost_empty_expected_OFF                       0          1          -    ZERO                 
+    Coverpoint df_underflow                             0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin underflow_expected_ON                           0          1          -    ZERO                 
+        bin underflow_expected_OFF                          0          1          -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 0.00%  COVERGROUP TYPES: 2
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/DUT/sva/overflow_high_cover         FIFO_sva Verilog  SVA  FIFO_sva.sv(82)    0 ZERO      
+/top/DUT/sva/underflow_high_cover        FIFO_sva Verilog  SVA  FIFO_sva.sv(83)    3 Covered   
+/top/DUT/sva/wr_ack_sva_high_cover       FIFO_sva Verilog  SVA  FIFO_sva.sv(84)   28 Covered   
+/top/DUT/sva/wr_ack_sva_low_cover        FIFO_sva Verilog  SVA  FIFO_sva.sv(85)    0 ZERO      
+/top/DUT/sva/full_high_cover             FIFO_sva Verilog  SVA  FIFO_sva.sv(86)    0 ZERO      
+/top/DUT/sva/empty_high_cover            FIFO_sva Verilog  SVA  FIFO_sva.sv(87)    5 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 50.00%  COVERS: 6
+
+Total Coverage By Instance (filtered view): 25.00%
+

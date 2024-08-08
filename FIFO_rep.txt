@@ -1,4 +1,0 @@
-RESET TEST:
-wr_ack, data_out, overflow stay = x and do not reset.
-
-WRITE TEST:

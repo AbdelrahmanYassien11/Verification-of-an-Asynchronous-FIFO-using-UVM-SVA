@@ -12,23 +12,25 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do run.do
+do run.do
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:27:47 on Aug 07,2024
+# Start time: 21:52:52 on Aug 08,2024
 # vlog -reportprogress 300 -f dut.f 
 # -- Compiling module FIFO
 # 
 # Top level modules:
 # 	FIFO
-# End time: 00:27:47 on Aug 07,2024, Elapsed time: 0:00:00
+# End time: 21:52:52 on Aug 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:27:47 on Aug 07,2024
+# Start time: 21:52:52 on Aug 08,2024
 # vlog -reportprogress 300 -f tb.f 
 # -- Compiling module FIFO_sva
 # -- Compiling package FIFO_pkg
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: components/predictor.svh(136): (vlog-2240) Treating stand-alone use of function 'pop_back' as an implicit VOID cast.
+# ** Warning: sequence/write_read_rand_sequence.svh(28): (vlog-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
 # -- Compiling interface inf
 # -- Importing package FIFO_pkg
 # -- Compiling module top_test_uvm
@@ -36,11 +38,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 00:27:48 on Aug 07,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 21:52:53 on Aug 08,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
 # QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:27:52 on Aug 07,2024
-# vopt -reportprogress 300 top -o top_optimized "+acc" "+cover=sbfec" 
+# Start time: 21:52:54 on Aug 08,2024
+# vopt -reportprogress 300 top -o top_optimized "+acc" "+cover=sbfec+FIFO(rtl)" 
 # 
 # Top level modules:
 # 	top
@@ -54,11 +56,12 @@
 # -- Loading module FIFO
 # -- Loading module top_test_uvm
 # -- Loading module FIFO_sva
-# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
 # Optimizing 9 design-units (inlining 0/5 module instances):
 # -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 # -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
 # -- Optimizing package FIFO_pkg(fast)
+# ** Warning: components/predictor.svh(136): (vopt-2240) Treating stand-alone use of function 'pop_back' as an implicit VOID cast.
+# ** Warning: sequence/write_read_rand_sequence.svh(28): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
 # -- Optimizing module FIFO_sva(fast)
 # -- Optimizing module FIFO(fast)
 # -- Optimizing interface inf(fast__2)
@@ -66,539 +69,1240 @@
 # -- Optimizing module top(fast)
 # -- Optimizing interface inf(fast)
 # Optimized design name is top_optimized
-# End time: 00:27:56 on Aug 07,2024, Elapsed time: 0:00:04
+# End time: 21:52:57 on Aug 08,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
+# Start time: 21:52:57 on Aug 08,2024
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading work.top_test_uvm(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# 1
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
+# base_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# UVM_INFO components/env.svh(58) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# UVM_INFO components/env.svh(60) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
+# UVM_INFO components/env.svh(62) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# FINISHED GET_PROVIDED_TO
+# UVM_INFO components/env.svh(65) @ 0: uvm_test_top.env_h [env_h] '{ }
+# UVM_INFO components/env.svh(67) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
+# UVM_INFO components/env.svh(69) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   20  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: x  wr_ack: x  overflow:x  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 20: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   16
+# UVM_WARNING :    0
+# UVM_ERROR :    1
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]     4
+# [PREDICTOR]     2
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]     1
+# [TEST_DONE]     1
+# [env_h]     6
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 20 ns  Iteration: 61  Instance: /top/top1
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/OPERATION_covgrp'.
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/FLAGS_covgrp'.
+# ** Note: (vsim-17388) No matching coverage data found.
+# End time: 21:53:36 on Aug 08,2024, Elapsed time: 0:00:39
+# Errors: 0, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=reset_write_read_all_test" 
+# Start time: 21:53:36 on Aug 08,2024
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading work.top_test_uvm(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# 1
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test reset_write_read_all_test...
+# base_test build phase
+# my_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# UVM_INFO components/env.svh(58) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# UVM_INFO components/env.svh(60) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
+# UVM_INFO components/env.svh(62) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# FINISHED GET_PROVIDED_TO
+# UVM_INFO components/env.svh(65) @ 0: uvm_test_top.env_h [env_h] '{ }
+# UVM_INFO components/env.svh(67) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
+# UVM_INFO components/env.svh(69) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   20  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: x  wr_ack: x  overflow:x  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 20: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:985
+# WRITE_POINER = 1
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 20: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   20  rst_n:1  data_in: 985  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   20  rst_n:1  data_in: 985  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   40  rst_n:1  data_in: 985  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 40: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:34927
+# WRITE_POINER = 2
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 40: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   40  rst_n:1  data_in: 34927  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   40  rst_n:1  data_in: 34927  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   60  rst_n:1  data_in: 34927  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 60: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:10672
+# WRITE_POINER = 3
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 60: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   60  rst_n:1  data_in: 10672  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   60  rst_n:1  data_in: 10672  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   80  rst_n:1  data_in: 10672  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 80: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:24861
+# WRITE_POINER = 4
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 80: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   80  rst_n:1  data_in: 24861  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   80  rst_n:1  data_in: 24861  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  100  rst_n:1  data_in: 24861  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 100: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:22850
+# WRITE_POINER = 5
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 100: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  100  rst_n:1  data_in: 22850  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  100  rst_n:1  data_in: 22850  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  120  rst_n:1  data_in: 22850  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 120: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:5915
+# WRITE_POINER = 6
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 120: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  120  rst_n:1  data_in: 5915  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  120  rst_n:1  data_in: 5915  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  140  rst_n:1  data_in: 5915  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 140: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:34244
+# WRITE_POINER = 7
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 140: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  140  rst_n:1  data_in: 34244  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  140  rst_n:1  data_in: 34244  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  160  rst_n:1  data_in: 34244  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 160: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:587
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 160: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  160  rst_n:1  data_in: 587  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  160  rst_n:1  data_in: 587  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# ** Error: Assertion error.
+#    Time: 165 ns Started: 155 ns  Scope: top.DUT.sva.full_high_assert File: FIFO_sva.sv Line: 77
+# UVM_INFO components/comparator.svh(51) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  180  rst_n:1  data_in: 587  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 180: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:42437
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 180: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  180  rst_n:1  data_in: 42437  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:1  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  180  rst_n:1  data_in: 42437  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:1  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  200  rst_n:1  data_in: 42437  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 0  overflow:1  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 200: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 200: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  200  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 985  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  200  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 985  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  220  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 985  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 220: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 2
+# UVM_INFO components/predictor.svh(75) @ 220: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  220  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 34927  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  220  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 34927  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  240  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 34927  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 240: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 240: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  240  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 10672  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  240  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 10672  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  260  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 10672  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 260: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 260: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  260  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 24861  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  260  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 24861  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  280  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 24861  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 280: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 5
+# UVM_INFO components/predictor.svh(75) @ 280: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  280  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 22850  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  280  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 22850  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  300  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 22850  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 300: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 300: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  300  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 5915  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  300  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 5915  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  320  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 5915  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 320: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 320: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  320  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 34244  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  320  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 34244  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  340  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 34244  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 340: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 340: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  340  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  340  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  360  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# start of pre_body task
+# start of pre_body task
+# UVM_INFO components/predictor.svh(71) @ 360: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 360: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  360  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  360  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  380  rst_n:1  data_in: 42437  wr_en: 0  rd_en: 1  data_out: 587  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 380: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  112
+# UVM_WARNING :    0
+# UVM_ERROR :   13
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]    58
+# [PREDICTOR]    38
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]    19
+# [TEST_DONE]     1
+# [env_h]     6
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 380 ns  Iteration: 71  Instance: /top/top1
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/OPERATION_covgrp'.
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/FLAGS_covgrp'.
+# ** Note: (vsim-17388) No matching coverage data found.
+# End time: 21:54:06 on Aug 08,2024, Elapsed time: 0:00:30
+# Errors: 1, Warnings: 2
+# vsim top_optimized -coverage "+UVM_TESTNAME=write_read_rand_test" 
+# Start time: 21:54:06 on Aug 08,2024
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.inf(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.FIFO_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.inf(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.FIFO_sva(fast)
+# Loading work.top_test_uvm(fast)
+# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# 1
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test write_read_rand_test...
+# base_test build phase
+# env build phase
+# my_agent build phase
+# my_driver build phase
+# my_monitor build phase
+# my_monitor build phase
+# sequencer build phase
+# coverage build_phase
+# my_scoreboard build phase
+# my_compartor build phase
+# my_predictor build phase
+# my_driver connect phase
+# my_monitor connect phase
+# my_monitor connect phase
+# sequencer connect phase
+# my_agent connect phase
+# my_compartor connect phase
+# my_scoreboard connect phase
+# my_scoreboard connect phase
+# envconnect phase
+# my_test connect phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# my_monitor end_of_elaboration_phase
+# UVM_INFO components/env.svh(58) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# UVM_INFO components/env.svh(60) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
+# UVM_INFO components/env.svh(62) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
+# FINISHED GET_PROVIDED_TO
+# UVM_INFO components/env.svh(65) @ 0: uvm_test_top.env_h [env_h] '{ }
+# UVM_INFO components/env.svh(67) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
+# UVM_INFO components/env.svh(69) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
+# my_monitor end_of_elaboration_phase
+# env run phase
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# coverage run_phase
+# my_agent run phase
+# sequencer run phase
+# start of pre_body task
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   20  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: x  wr_ack: x  overflow:x  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 20: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 20: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   20  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 20: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   20  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   40  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: x  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 40: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:30650
+# WRITE_POINER = 1
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 40: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   40  rst_n:1  data_in: 30650  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 40: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   40  rst_n:1  data_in: 30650  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# ** Error: Assertion error.
+#    Time: 45 ns Started: 35 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   60  rst_n:1  data_in: 30650  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 60: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 60: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   60  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 60: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   60  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                   80  rst_n:0  data_in: 30650  wr_en: 0  rd_en: 0  data_out: x  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 80: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 1
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 80: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                   80  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 80: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                   80  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  100  rst_n:1  data_in: 30650  wr_en: 0  rd_en: 1  data_out: x  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 100: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:5306
+# WRITE_POINER = 2
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 100: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  100  rst_n:1  data_in: 5306  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 100: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  100  rst_n:1  data_in: 5306  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# ** Error: Assertion error.
+#    Time: 105 ns Started: 95 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  120  rst_n:1  data_in: 5306  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 120: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:6979
+# WRITE_POINER = 3
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 120: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  120  rst_n:1  data_in: 6979  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 120: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  120  rst_n:1  data_in: 6979  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  140  rst_n:1  data_in: 6979  wr_en: 1  rd_en: 0  data_out: x  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 140: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 140: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  140  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 5306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 140: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  140  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 5306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  160  rst_n:1  data_in: 6979  wr_en: 0  rd_en: 1  data_out: 5306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 160: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:32422
+# WRITE_POINER = 4
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 160: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  160  rst_n:1  data_in: 32422  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 160: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  160  rst_n:1  data_in: 32422  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  180  rst_n:1  data_in: 32422  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 180: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:12526
+# WRITE_POINER = 5
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 180: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  180  rst_n:1  data_in: 12526  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 180: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  180  rst_n:1  data_in: 12526  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  200  rst_n:1  data_in: 12526  wr_en: 1  rd_en: 0  data_out: 5306  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 200: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 5
+# READ_POINER = 2
+# UVM_INFO components/predictor.svh(75) @ 200: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  200  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 6979  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 200: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  200  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 6979  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  220  rst_n:1  data_in: 12526  wr_en: 0  rd_en: 1  data_out: 6979  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 220: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 5
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 220: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  220  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 32422  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 220: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  220  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 32422  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  240  rst_n:1  data_in: 12526  wr_en: 0  rd_en: 1  data_out: 32422  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 240: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:22532
+# WRITE_POINER = 6
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 240: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  240  rst_n:1  data_in: 22532  wr_en: 1  rd_en: 0  data_out: 32422  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 240: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  240  rst_n:1  data_in: 22532  wr_en: 1  rd_en: 0  data_out: 32422  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  260  rst_n:1  data_in: 22532  wr_en: 1  rd_en: 0  data_out: 32422  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 260: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 6
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 260: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  260  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 12526  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 260: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  260  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 12526  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  280  rst_n:1  data_in: 22532  wr_en: 0  rd_en: 1  data_out: 12526  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 280: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 6
+# READ_POINER = 5
+# UVM_INFO components/predictor.svh(75) @ 280: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  280  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 22532  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 280: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  280  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 22532  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  300  rst_n:1  data_in: 22532  wr_en: 0  rd_en: 1  data_out: 22532  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 300: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:59273
+# WRITE_POINER = 7
+# READ_POINER = 5
+# UVM_INFO components/predictor.svh(75) @ 300: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  300  rst_n:1  data_in: 59273  wr_en: 1  rd_en: 0  data_out: 22532  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 300: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  300  rst_n:1  data_in: 59273  wr_en: 1  rd_en: 0  data_out: 22532  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  320  rst_n:1  data_in: 59273  wr_en: 1  rd_en: 0  data_out: 22532  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 320: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 7
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 320: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  320  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 59273  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 320: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  320  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 59273  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  340  rst_n:1  data_in: 59273  wr_en: 0  rd_en: 1  data_out: 59273  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 340: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:4512
+# WRITE_POINER = 0
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 340: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  340  rst_n:1  data_in: 4512  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 340: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  340  rst_n:1  data_in: 4512  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  360  rst_n:1  data_in: 4512  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 360: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:39962
+# WRITE_POINER = 1
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 360: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  360  rst_n:1  data_in: 39962  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 360: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  360  rst_n:1  data_in: 39962  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  380  rst_n:1  data_in: 39962  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 380: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:35755
+# WRITE_POINER = 2
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 380: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  380  rst_n:1  data_in: 35755  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 380: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  380  rst_n:1  data_in: 35755  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 400: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  400  rst_n:1  data_in: 35755  wr_en: 1  rd_en: 0  data_out: 59273  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 400: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 400: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 400: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 2
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 400: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  400  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 4512  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 400: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  400  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 4512  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 420: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  420  rst_n:1  data_in: 35755  wr_en: 0  rd_en: 1  data_out: 4512  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 420: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 420: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 420: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 2
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 420: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  420  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 39962  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 420: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  420  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 39962  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 440: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  440  rst_n:1  data_in: 35755  wr_en: 0  rd_en: 1  data_out: 39962  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 440: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 440: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 440: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 2
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 440: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  440  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 35755  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 440: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  440  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 35755  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 460: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  460  rst_n:1  data_in: 35755  wr_en: 0  rd_en: 1  data_out: 35755  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 460: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 460: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 460: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 2
+# READ_POINER = 2
+# UVM_INFO components/predictor.svh(75) @ 460: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  460  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 460: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  460  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 480: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  480  rst_n:1  data_in: 35755  wr_en: 0  rd_en: 1  data_out: 35755  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 480: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 480: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 480: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 2
+# READ_POINER = 2
+# UVM_INFO components/predictor.svh(75) @ 480: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  480  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 480: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  480  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# ** Error: Assertion error.
+#    Time: 485 ns Started: 475 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 500: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  500  rst_n:1  data_in: 35755  wr_en: 0  rd_en: 1  data_out: 35755  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 500: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 500: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 500: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:33757
+# WRITE_POINER = 3
+# READ_POINER = 2
+# UVM_INFO components/predictor.svh(75) @ 500: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  500  rst_n:1  data_in: 33757  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 500: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  500  rst_n:1  data_in: 33757  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# ** Error: Assertion error.
+#    Time: 505 ns Started: 495 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 520: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  520  rst_n:1  data_in: 33757  wr_en: 1  rd_en: 0  data_out: 35755  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 520: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 520: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 520: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 520: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  520  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 33757  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 520: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  520  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 33757  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 540: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  540  rst_n:1  data_in: 33757  wr_en: 0  rd_en: 1  data_out: 33757  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 540: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 540: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 540: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:21564
+# WRITE_POINER = 4
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 540: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  540  rst_n:1  data_in: 21564  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 540: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  540  rst_n:1  data_in: 21564  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 560: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  560  rst_n:1  data_in: 21564  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 560: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 560: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 560: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:53819
+# WRITE_POINER = 5
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 560: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  560  rst_n:1  data_in: 53819  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 560: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  560  rst_n:1  data_in: 53819  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 580: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  580  rst_n:1  data_in: 53819  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 580: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 580: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 580: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:5579
+# WRITE_POINER = 6
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 580: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  580  rst_n:1  data_in: 5579  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 580: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  580  rst_n:1  data_in: 5579  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 600: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  600  rst_n:1  data_in: 5579  wr_en: 1  rd_en: 0  data_out: 33757  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_INFO components/comparator.svh(55) @ 600: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] PASS
+# UVM_INFO components/comparator.svh(46) @ 600: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 600: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:1 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 600: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  600  rst_n:0  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 600: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  600  rst_n:0  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 620: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  620  rst_n:0  data_in: 5579  wr_en: 0  rd_en: 1  data_out: 21564  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 620: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 620: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 620: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:29472
+# WRITE_POINER = 7
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 620: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  620  rst_n:1  data_in: 29472  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 620: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  620  rst_n:1  data_in: 29472  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# ** Error: Assertion error.
+#    Time: 635 ns Started: 625 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 640: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  640  rst_n:1  data_in: 29472  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 640: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 640: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 640: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:4306
+# WRITE_POINER = 0
+# READ_POINER = 3
+# UVM_INFO components/predictor.svh(75) @ 640: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  640  rst_n:1  data_in: 4306  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 640: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  640  rst_n:1  data_in: 4306  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 660: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  660  rst_n:1  data_in: 4306  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 660: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 660: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 660: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 660: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  660  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 21564  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 660: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  660  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 21564  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 680: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  680  rst_n:1  data_in: 4306  wr_en: 0  rd_en: 1  data_out: 29472  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 680: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 680: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 680: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:35812
+# WRITE_POINER = 1
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 680: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  680  rst_n:1  data_in: 35812  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 680: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  680  rst_n:1  data_in: 35812  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 700: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  700  rst_n:1  data_in: 35812  wr_en: 1  rd_en: 0  data_out: 29472  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 700: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 700: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 700: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:80
+# WRITE_POINER = 2
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 700: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  700  rst_n:1  data_in: 80  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 700: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  700  rst_n:1  data_in: 80  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 720: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  720  rst_n:1  data_in: 80  wr_en: 1  rd_en: 0  data_out: 29472  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 720: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 720: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 720: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:17921
+# WRITE_POINER = 3
+# READ_POINER = 4
+# UVM_INFO components/predictor.svh(75) @ 720: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  720  rst_n:1  data_in: 17921  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 720: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  720  rst_n:1  data_in: 17921  wr_en: 1  rd_en: 0  data_out: 21564  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 740: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  740  rst_n:1  data_in: 17921  wr_en: 1  rd_en: 0  data_out: 29472  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 740: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 740: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 740: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 5
+# UVM_INFO components/predictor.svh(75) @ 740: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  740  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 29472  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 740: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  740  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 29472  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 760: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  760  rst_n:1  data_in: 17921  wr_en: 0  rd_en: 1  data_out: 4306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 760: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 760: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 760: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 760: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  760  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 4306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 760: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  760  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 4306  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 780: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  780  rst_n:1  data_in: 17921  wr_en: 0  rd_en: 1  data_out: 35812  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 780: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 780: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 780: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:1 ,rd_en:0 , data_in:32232
+# UVM_INFO components/predictor.svh(75) @ 780: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  780  rst_n:0  data_in: 32232  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 780: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  780  rst_n:0  data_in: 32232  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 800: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  800  rst_n:0  data_in: 17921  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 800: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 800: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 800: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 6
+# UVM_INFO components/predictor.svh(75) @ 800: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  800  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 800: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  800  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 820: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  820  rst_n:1  data_in: 17921  wr_en: 0  rd_en: 1  data_out: 17921  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 820: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 820: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 820: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 3
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 820: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  820  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 35812  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 820: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  820  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 35812  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 1
+# UVM_INFO components/comparator.svh(51) @ 840: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  840  rst_n:1  data_in: 17921  wr_en: 0  rd_en: 1  data_out: 17921  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 840: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 840: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 840: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:62357
+# WRITE_POINER = 4
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 840: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  840  rst_n:1  data_in: 62357  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 840: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  840  rst_n:1  data_in: 62357  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# ** Error: Assertion error.
+#    Time: 845 ns Started: 835 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 860: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  860  rst_n:1  data_in: 62357  wr_en: 1  rd_en: 0  data_out: 17921  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 860: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 860: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 860: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:53826
+# WRITE_POINER = 5
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 860: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  860  rst_n:1  data_in: 53826  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 860: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  860  rst_n:1  data_in: 53826  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 880: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  880  rst_n:1  data_in: 53826  wr_en: 1  rd_en: 0  data_out: 17921  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 880: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 880: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 880: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:62329
+# WRITE_POINER = 6
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 880: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  880  rst_n:1  data_in: 62329  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 880: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  880  rst_n:1  data_in: 62329  wr_en: 1  rd_en: 0  data_out: 35812  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 900: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  900  rst_n:1  data_in: 62329  wr_en: 1  rd_en: 0  data_out: 17921  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 900: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 900: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 900: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:1 , data_in:0
+# UVM_INFO components/predictor.svh(75) @ 900: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  900  rst_n:0  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 900: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  900  rst_n:0  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 920: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  920  rst_n:0  data_in: 62329  wr_en: 0  rd_en: 1  data_out: 62357  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 920: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 920: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 920: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 6
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 920: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  920  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 920: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  920  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 940: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  940  rst_n:1  data_in: 62329  wr_en: 0  rd_en: 1  data_out: 62357  wr_ack: 0  overflow:0  underflow: 1  almost_empty: 0  empty: 1   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 940: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 940: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 940: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:61130
+# WRITE_POINER = 7
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 940: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  940  rst_n:1  data_in: 61130  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 940: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  940  rst_n:1  data_in: 61130  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# ** Error: Assertion error.
+#    Time: 945 ns Started: 935 ns  Scope: top.DUT.sva.underflow_high_assert File: FIFO_sva.sv Line: 74
+# UVM_INFO components/comparator.svh(51) @ 960: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  960  rst_n:1  data_in: 61130  wr_en: 1  rd_en: 0  data_out: 62357  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 960: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 960: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 960: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:35068
+# WRITE_POINER = 7
+# READ_POINER = 7
+# UVM_INFO components/predictor.svh(75) @ 960: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  960  rst_n:1  data_in: 35068  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:1  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 960: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  960  rst_n:1  data_in: 35068  wr_en: 1  rd_en: 0  data_out: 0  wr_ack: 0  overflow:1  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 980: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                  980  rst_n:1  data_in: 35068  wr_en: 1  rd_en: 0  data_out: 62357  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 980: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 980: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 980: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 7
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 980: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                  980  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 62357  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 980: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                  980  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 62357  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 1000: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                 1000  rst_n:1  data_in: 35068  wr_en: 0  rd_en: 1  data_out: 61130  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 1000: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 1000: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 1000: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:1 ,rd_en:0 , data_in:54333
+# WRITE_POINER = 0
+# READ_POINER = 0
+# UVM_INFO components/predictor.svh(75) @ 1000: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                 1000  rst_n:1  data_in: 54333  wr_en: 1  rd_en: 0  data_out: 62357  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 1000: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                 1000  rst_n:1  data_in: 54333  wr_en: 1  rd_en: 0  data_out: 62357  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 1  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 1020: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                 1020  rst_n:1  data_in: 54333  wr_en: 1  rd_en: 0  data_out: 61130  wr_ack: 1  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 1020: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 1020: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# start of pre_body task
+# start of body task
+# start item has been invoked
+# UVM_INFO components/predictor.svh(71) @ 1020: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:1 ,wr_en:0 ,rd_en:1 , data_in:0
+# WRITE_POINER = 0
+# READ_POINER = 1
+# UVM_INFO components/predictor.svh(75) @ 1020: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                 1020  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 61130  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# my_predictor run phase
+# UVM_INFO components/comparator.svh(48) @ 1020: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                 1020  rst_n:1  data_in: 0  wr_en: 0  rd_en: 1  data_out: 61130  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 1   full: 0  half_full: 0
+# UVM_INFO components/comparator.svh(51) @ 1040: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] actual_SEQ_ITEM RECIEVED:  time:                 1040  rst_n:1  data_in: 54333  wr_en: 0  rd_en: 1  data_out: 35068  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 1  empty: 0   almost_full: 0   full: 0  half_full: x
+# UVM_ERROR components/comparator.svh(58) @ 1040: uvm_test_top.env_h.scoreboard_h.comparator_h [SCOREBOARD] FAIL
+# UVM_INFO components/comparator.svh(46) @ 1040: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
+# finish item has been invoked
+# my_test run phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1040: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  281
+# UVM_WARNING :    0
+# UVM_ERROR :   42
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARATOR]   157
+# [PREDICTOR]   104
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]    52
+# [TEST_DONE]     1
+# [env_h]     6
+# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1040 ns  Iteration: 66  Instance: /top/top1
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/OPERATION_covgrp'.
+# ** Warning: (vsim-19042) No matching item found for '/FIFO_uvm_pkg/coverage/FLAGS_covgrp'.
+# ** Note: (vsim-17388) No matching coverage data found.
+# QuestaSim-64 vcover 2021.1 Coverage Utility 2021.01 Jan 19 2021
+# Start time: 21:54:29 on Aug 08,2024
+# vcover merge FIFO.ucdb reset_write_read_all_test.ucdb write_read_rand_test.ucdb -out FIFO_tb.ucdb 
+# QuestaSim-64 vcover 2021.1 Coverage Utility 2021.01 Jan 19 2021
+# ** Warning: (vcover-17386) Ignoring missing input file 'FIFO.ucdb'.
+# Merging file reset_write_read_all_test.ucdb
+# Merging file write_read_rand_test.ucdb
+# Writing merged result to FIFO_tb.ucdb
+# 
+# End time: 21:54:29 on Aug 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
-# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
-# Start time: 00:28:00 on Aug 07,2024
-# Loading sv_std.std
-# Loading work.top(fast)
-# Loading work.inf(fast)
-# Loading mtiUvm.uvm_pkg(fast)
-# Loading work.FIFO_pkg(fast)
-# Loading mtiUvm.questa_uvm_pkg(fast)
-# Loading work.inf(fast__2)
-# Loading work.FIFO(fast)
-# Loading work.FIFO_sva(fast)
-# Loading work.top_test_uvm(fast)
-# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
-run
-# ----------------------------------------------------------------
-# UVM-1.1d
-# (C) 2007-2013 Mentor Graphics Corporation
-# (C) 2007-2013 Cadence Design Systems, Inc.
-# (C) 2006-2013 Synopsys, Inc.
-# (C) 2011-2013 Cypress Semiconductor Corp.
-# ----------------------------------------------------------------
-# 
-#   ***********       IMPORTANT RELEASE NOTES         ************
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_NO_DEPRECATED undefined.
-#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
-#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
-# 
-#       (Specify +UVM_NO_RELNOTES to turn off this notice)
-# 
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
-# base_test build phase
-# my_test build phase
-# env build phase
-# my_agent build phase
-# my_driver build phase
-# my_monitor build phase
-# my_monitor build phase
-# sequencer build phase
-# coverage build_phase
-# my_scoreboard build phase
-# my_compartor build phase
-# my_predictor build phase
-# my_driver connect phase
-# my_monitor connect phase
-# my_monitor connect phase
-# sequencer connect phase
-# my_agent connect phase
-# my_compartor connect phase
-# my_scoreboard connect phase
-# my_scoreboard connect phase
-# envconnect phase
-# my_test connect phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# UVM_INFO components/env.svh(48) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# UVM_INFO components/env.svh(50) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
-# UVM_INFO components/env.svh(52) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# FINISHED GET_PROVIDED_TO
-# UVM_INFO components/env.svh(55) @ 0: uvm_test_top.env_h [env_h] '{ }
-# UVM_INFO components/env.svh(57) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
-# UVM_INFO components/env.svh(59) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
-# my_monitor end_of_elaboration_phase
-# env run phase
-# my_predictor run phase
-# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
-# coverage run_phase
-# my_agent run phase
-# sequencer run phase
-# start of pre_body task
-# start of body task
-# start item has been invoked
-# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
-# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
-# FIFO HAS BEEN RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaa                    0
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssbbbbbbbbbbbbbbbbbbb                    0
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-# UVM_INFO components/predictor.svh(77) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_predictor run phase
-# finish item has been invoked
-# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_test run phase
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# 
-# --- UVM Report Summary ---
-# 
-# ** Report counts by severity
-# UVM_INFO :   14
-# UVM_WARNING :    0
-# UVM_ERROR :    0
-# UVM_FATAL :    0
-# ** Report counts by id
-# [COMPARATOR]     2
-# [PREDICTOR]     2
-# [Questa UVM]     2
-# [RNTST]     1
-# [TEST_DONE]     1
-# [env_h]     6
-# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 0 ns  Iteration: 226  Instance: /top/top1
-# 1
-# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-run
-# clk: 0
-do run.do
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
-# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
-# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work".
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:30:56 on Aug 07,2024
-# vlog -reportprogress 300 -f dut.f 
-# -- Compiling module FIFO
-# 
-# Top level modules:
-# 	FIFO
-# End time: 00:30:56 on Aug 07,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:30:56 on Aug 07,2024
-# vlog -reportprogress 300 -f tb.f 
-# -- Compiling module FIFO_sva
-# -- Compiling package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# -- Compiling interface inf
-# -- Importing package FIFO_pkg
-# -- Compiling module top_test_uvm
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 00:30:57 on Aug 07,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:30:57 on Aug 07,2024
-# vopt -reportprogress 300 top -o top_optimized "+acc" "+cover=sbfec" 
-# 
-# Top level modules:
-# 	top
-# 
-# Analyzing design...
-# -- Loading module top
-# -- Loading interface inf
-# -- Importing package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# -- Loading package mtiUvm.questa_uvm_pkg
-# -- Loading module FIFO
-# -- Loading module top_test_uvm
-# -- Loading module FIFO_sva
-# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-# Optimizing 9 design-units (inlining 0/5 module instances):
-# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
-# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
-# -- Optimizing package FIFO_pkg(fast)
-# -- Optimizing module FIFO_sva(fast)
-# -- Optimizing module FIFO(fast)
-# -- Optimizing interface inf(fast__2)
-# -- Optimizing module top_test_uvm(fast)
-# -- Optimizing module top(fast)
-# -- Optimizing interface inf(fast)
-# Optimized design name is top_optimized
-# End time: 00:31:00 on Aug 07,2024, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 1
-# End time: 00:31:16 on Aug 07,2024, Elapsed time: 0:03:16
-# Errors: 0, Warnings: 0
-# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
-# Start time: 00:31:16 on Aug 07,2024
-# Loading sv_std.std
-# Loading work.top(fast)
-# Loading work.inf(fast)
-# Loading mtiUvm.uvm_pkg(fast)
-# Loading work.FIFO_pkg(fast)
-# Loading mtiUvm.questa_uvm_pkg(fast)
-# Loading work.inf(fast__2)
-# Loading work.FIFO(fast)
-# Loading work.FIFO_sva(fast)
-# Loading work.top_test_uvm(fast)
-# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
-run
-# ----------------------------------------------------------------
-# UVM-1.1d
-# (C) 2007-2013 Mentor Graphics Corporation
-# (C) 2007-2013 Cadence Design Systems, Inc.
-# (C) 2006-2013 Synopsys, Inc.
-# (C) 2011-2013 Cypress Semiconductor Corp.
-# ----------------------------------------------------------------
-# 
-#   ***********       IMPORTANT RELEASE NOTES         ************
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_NO_DEPRECATED undefined.
-#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
-#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
-# 
-#       (Specify +UVM_NO_RELNOTES to turn off this notice)
-# 
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
-# base_test build phase
-# my_test build phase
-# env build phase
-# my_agent build phase
-# my_driver build phase
-# my_monitor build phase
-# my_monitor build phase
-# sequencer build phase
-# coverage build_phase
-# my_scoreboard build phase
-# my_compartor build phase
-# my_predictor build phase
-# my_driver connect phase
-# my_monitor connect phase
-# my_monitor connect phase
-# sequencer connect phase
-# my_agent connect phase
-# my_compartor connect phase
-# my_scoreboard connect phase
-# my_scoreboard connect phase
-# envconnect phase
-# my_test connect phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# UVM_INFO components/env.svh(48) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# UVM_INFO components/env.svh(50) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
-# UVM_INFO components/env.svh(52) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# FINISHED GET_PROVIDED_TO
-# UVM_INFO components/env.svh(55) @ 0: uvm_test_top.env_h [env_h] '{ }
-# UVM_INFO components/env.svh(57) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
-# UVM_INFO components/env.svh(59) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
-# my_monitor end_of_elaboration_phase
-# env run phase
-# my_predictor run phase
-# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
-# coverage run_phase
-# my_agent run phase
-# sequencer run phase
-# start of pre_body task
-# start of body task
-# start item has been invoked
-# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
-# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
-# FIFO HAS BEEN RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaa                    0
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssbbbbbbbbbbbbbbbbbbb                    0
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-# UVM_INFO components/predictor.svh(77) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_predictor run phase
-# finish item has been invoked
-# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_test run phase
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# 
-# --- UVM Report Summary ---
-# 
-# ** Report counts by severity
-# UVM_INFO :   14
-# UVM_WARNING :    0
-# UVM_ERROR :    0
-# UVM_FATAL :    0
-# ** Report counts by id
-# [COMPARATOR]     2
-# [PREDICTOR]     2
-# [Questa UVM]     2
-# [RNTST]     1
-# [TEST_DONE]     1
-# [env_h]     6
-# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 0 ns  Iteration: 226  Instance: /top/top1
-# 1
-# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-do run.do
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
-# Error 31: Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
-# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
-# Error 133: Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work".
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:33:00 on Aug 07,2024
-# vlog -reportprogress 300 -f dut.f 
-# -- Compiling module FIFO
-# 
-# Top level modules:
-# 	FIFO
-# End time: 00:33:00 on Aug 07,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:33:00 on Aug 07,2024
-# vlog -reportprogress 300 -f tb.f 
-# -- Compiling module FIFO_sva
-# -- Compiling package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# -- Compiling interface inf
-# -- Importing package FIFO_pkg
-# -- Compiling module top_test_uvm
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 00:33:00 on Aug 07,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:33:01 on Aug 07,2024
-# vopt -reportprogress 300 top -o top_optimized "+acc" "+cover=sbfec" 
-# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib.qdb".
-# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qdb".
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qpg".
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# ** Warning: (vopt-31) Unable to unlink file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib3_0.qtl".
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# ** Warning: (vopt-133) Unable to remove directory "F:/ic_design/repos/FIFO_UVM/work/top_optimized".
-# 
-# Top level modules:
-# 	top
-# 
-# Analyzing design...
-# -- Loading module top
-# -- Loading interface inf
-# -- Importing package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# -- Loading package mtiUvm.questa_uvm_pkg
-# -- Loading module FIFO
-# -- Loading module top_test_uvm
-# -- Loading module FIFO_sva
-# init_auxdbinfo(): INTERNAL ERROR: Cannot open page file "F:/ic_design/repos/FIFO_UVM/work/top_optimized/_lib1_0.qpg" in read mode
-# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-# Optimizing 9 design-units (inlining 0/5 module instances):
-# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
-# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
-# -- Optimizing package FIFO_pkg(fast)
-# -- Optimizing module FIFO_sva(fast)
-# -- Optimizing module FIFO(fast)
-# -- Optimizing interface inf(fast__2)
-# -- Optimizing module top_test_uvm(fast)
-# -- Optimizing module top(fast)
-# -- Optimizing interface inf(fast)
-# Optimized design name is top_optimized
-# End time: 00:33:04 on Aug 07,2024, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 6
-# End time: 00:33:18 on Aug 07,2024, Elapsed time: 0:02:02
-# Errors: 0, Warnings: 0
-# vsim top_optimized -coverage "+UVM_TESTNAME=reset_test" 
-# Start time: 00:33:19 on Aug 07,2024
-# Loading sv_std.std
-# Loading work.top(fast)
-# Loading work.inf(fast)
-# Loading mtiUvm.uvm_pkg(fast)
-# Loading work.FIFO_pkg(fast)
-# Loading mtiUvm.questa_uvm_pkg(fast)
-# Loading work.inf(fast__2)
-# Loading work.FIFO(fast)
-# Loading work.FIFO_sva(fast)
-# Loading work.top_test_uvm(fast)
-# Loading F:/questasim/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
-run
-# ----------------------------------------------------------------
-# UVM-1.1d
-# (C) 2007-2013 Mentor Graphics Corporation
-# (C) 2007-2013 Cadence Design Systems, Inc.
-# (C) 2006-2013 Synopsys, Inc.
-# (C) 2011-2013 Cypress Semiconductor Corp.
-# ----------------------------------------------------------------
-# 
-#   ***********       IMPORTANT RELEASE NOTES         ************
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_NO_DEPRECATED undefined.
-#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
-# 
-#   You are using a version of the UVM library that has been compiled
-#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
-#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
-# 
-#       (Specify +UVM_NO_RELNOTES to turn off this notice)
-# 
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test reset_test...
-# base_test build phase
-# my_test build phase
-# env build phase
-# my_agent build phase
-# my_driver build phase
-# my_monitor build phase
-# my_monitor build phase
-# sequencer build phase
-# coverage build_phase
-# my_scoreboard build phase
-# my_compartor build phase
-# my_predictor build phase
-# my_driver connect phase
-# my_monitor connect phase
-# my_monitor connect phase
-# sequencer connect phase
-# my_agent connect phase
-# my_compartor connect phase
-# my_scoreboard connect phase
-# my_scoreboard connect phase
-# envconnect phase
-# my_test connect phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# my_monitor end_of_elaboration_phase
-# UVM_INFO components/env.svh(48) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13, "uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# UVM_INFO components/env.svh(50) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_inputs":@uvm_port_component__5@13 }
-# UVM_INFO components/env.svh(52) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.agent_h.tlm_analysis_port_outputs":@uvm_port_component__5@14 }
-# FINISHED GET_PROVIDED_TO
-# UVM_INFO components/env.svh(55) @ 0: uvm_test_top.env_h [env_h] '{ }
-# UVM_INFO components/env.svh(57) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.predictor_h.analysis_imp":@uvm_port_component__5@19 }
-# UVM_INFO components/env.svh(59) @ 0: uvm_test_top.env_h [env_h] '{"uvm_test_top.env_h.scoreboard_h.comparator_h.analysis_actual_outputs":@uvm_port_component__5@31 }
-# my_monitor end_of_elaboration_phase
-# env run phase
-# my_predictor run phase
-# UVM_INFO components/comparator.svh(46) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] RUN PHASE
-# coverage run_phase
-# my_agent run phase
-# sequencer run phase
-# start of pre_body task
-# start of body task
-# start item has been invoked
-# UVM_INFO components/predictor.svh(71) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] WRITTEN_DATA: rst_n:0 ,wr_en:0 ,rd_en:0 , data_in:0
-# RESET_TASK CALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
-# FIFO HAS BEEN RESETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaa                    0
-# send_resultssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssbbbbbbbbbbbbbbbbbbb                    0
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-# UVM_INFO components/predictor.svh(77) @ 0: uvm_test_top.env_h.scoreboard_h.predictor_h [PREDICTOR] EXPECTED_DATA:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_predictor run phase
-# finish item has been invoked
-# UVM_INFO components/comparator.svh(48) @ 0: uvm_test_top.env_h.scoreboard_h.comparator_h [COMPARATOR] EXPECTED_SEQ_ITEM RECIEVED:  time:                    0  rst_n:0  data_in: 0  wr_en: 0  rd_en: 0  data_out: 0  wr_ack: 0  overflow:0  underflow: 0  almost_empty: 0  empty: 0   almost_full: 0   full: 0  half_full: 0
-# my_test run phase
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# 
-# --- UVM Report Summary ---
-# 
-# ** Report counts by severity
-# UVM_INFO :   14
-# UVM_WARNING :    0
-# UVM_ERROR :    0
-# UVM_FATAL :    0
-# ** Report counts by id
-# [COMPARATOR]     2
-# [PREDICTOR]     2
-# [Questa UVM]     2
-# [RNTST]     1
-# [TEST_DONE]     1
-# [env_h]     6
-# ** Note: $finish    : F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 0 ns  Iteration: 226  Instance: /top/top1
-# 1
-# Break in Task uvm_pkg/uvm_root::run_test at F:/questasim/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-run
-# clk: 0
-run
-do run.do
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:34:59 on Aug 07,2024
-# vlog -reportprogress 300 -f dut.f 
-# -- Compiling module FIFO
-# 
-# Top level modules:
-# 	FIFO
-# End time: 00:34:59 on Aug 07,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:35:00 on Aug 07,2024
-# vlog -reportprogress 300 -f tb.f 
-# -- Compiling module FIFO_sva
-# -- Compiling package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) FIFO_uvm_pkg.sv(4): Using implicit +incdir+F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# -- Compiling interface inf
-# -- Importing package FIFO_pkg
-# -- Compiling module top_test_uvm
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 00:35:00 on Aug 07,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:35:01 on Aug 07,2024
-# vopt -reportprogress 300 top -o top_optimized "+acc" "+cover=sbfec" 
-# 
-# Top level modules:
-# 	top
-# 
-# Analyzing design...
-# -- Loading module top
-# -- Loading interface inf
-# -- Importing package FIFO_pkg
-# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# -- Loading package mtiUvm.questa_uvm_pkg
-# -- Loading module FIFO
-# -- Loading module top_test_uvm
-# -- Loading module FIFO_sva
-# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-# Optimizing 9 design-units (inlining 0/5 module instances):
-# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
-# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
-# -- Optimizing package FIFO_pkg(fast)
-# -- Optimizing module FIFO_sva(fast)
-# -- Optimizing module FIFO(fast)
-# -- Optimizing interface inf(fast__2)
-# -- Optimizing module top_test_uvm(fast)
-# -- Optimizing module top(fast)
-# -- Optimizing interface inf(fast)
-# Optimized design name is top_optimized
-# End time: 00:35:04 on Aug 07,2024, Elapsed time: 0:00:03
+# QuestaSim-64 vcover 2021.1 Coverage Utility 2021.01 Jan 19 2021
+# Start time: 21:54:37 on Aug 08,2024
+# vcover report -file FIFO_coverage_report.txt FIFO_tb.ucdb -zeros -details -annotate -all 
+# ** Warning: (vcover-19053) Option '-file' has been deprecated. Please use option '-output' instead.
+# End time: 21:54:37 on Aug 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
