@@ -15540,3 +15540,5 @@ do run.do
 # vcover report -output FIFO_coverage_report.txt FIFO_tb.ucdb -zeros -details -annotate -all 
 # End time: 10:00:56 on Aug 09,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# End time: 11:50:13 on Aug 09,2024, Elapsed time: 1:49:44
+# Errors: 20, Warnings: 0
