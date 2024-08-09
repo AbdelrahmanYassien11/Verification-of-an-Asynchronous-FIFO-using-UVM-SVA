@@ -33,6 +33,9 @@ rand  bit                     rd_en;
       constraint rst_c { rst_n dist {0:=5, 1:=95};
       }
 
+      constraint RESET_c { operation dist {0:=5, [1:2]:=95};
+      }
+
       constraint en_c { wr_en == !rd_en; rd_en == !wr_en;
       }
 
@@ -44,8 +47,10 @@ rand  bit                     rd_en;
                               operation == READ -> rst_n == 1'b1 && wr_en == 1'b0 && rd_en == 1'b1;
                               }
 
-      constraint randomized_test_number_c { randomized_number_of_tests inside {[50 :100]};    
+      constraint randomized_test_number_c { randomized_number_of_tests inside {[100 :150]};    
       }
+
+
 
     function bit do_compare(uvm_object rhs, uvm_comparer comparer);
       sequence_item tested;

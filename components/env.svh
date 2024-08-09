@@ -43,7 +43,7 @@
 
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		agent_h.tlm_analysis_port_inputs.connect(coverage_h.analysis_export);
+		//agent_h.tlm_analysis_port_inputs.connect(coverage_h.analysis_export);
 		agent_h.tlm_analysis_port_outputs.connect(coverage_h.analysis_export);
 
 		agent_h.tlm_analysis_port_inputs.connect(scoreboard_h.analysis_export_inputs);

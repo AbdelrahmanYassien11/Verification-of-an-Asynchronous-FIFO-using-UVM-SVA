@@ -49,7 +49,7 @@ class outputs_monitor extends uvm_monitor;
 											input bit iwr_en, input bit ird_en, input logic [FIFO_WIDTH-1:0] idata_out,
 											input logic iwr_ack, input logic ioverflow, input logic iunderflow,
 											input logic ialmost_empty, input logic iempty, input logic ialmost_full,
-											input logic ifull, input logic ihalf_full);
+											input logic ifull, input logic ihalf_full, input STATE_e ioperation);
 
 		sequence_item seq_item;
 
@@ -69,6 +69,8 @@ class outputs_monitor extends uvm_monitor;
 			seq_item.almost_full 		= ialmost_full;
 			seq_item.full				= ifull;
 			seq_item.half_full			= ihalf_full;
+
+			seq_item.operation			= ioperation;
 
 			tlm_analysis_port.write(seq_item);
 

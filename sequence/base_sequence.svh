@@ -15,4 +15,6 @@ class base_sequence extends uvm_sequence #(sequence_item);
       $fatal(1,"You cannot use base directly. You must override it");
    endtask : body
 
+
+
 endclass : base_sequence

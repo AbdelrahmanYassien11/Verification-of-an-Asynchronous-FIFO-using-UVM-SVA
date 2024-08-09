@@ -126,14 +126,12 @@
 
 
  	function void write (sequence_item t); //t is the packet
-      if(!((t.rst_n === 'bx )&& (t.data_in === 'b0) && (t.wr_en === 'b0) && (t.rd_en === 'b0))) begin
+
          rst_n          = t.rst_n;
          data_in_cov    = t.data_in;
          wr_en_cov      = t.wr_en;
          rd_en_cov      = t.rd_en;
-         OPERATION_covgrp.sample();
-      end
-      else begin
+         
          data_out_expected_cov      = t.data_out;
          wr_ack_expected_cov        = t.wr_ack;
          overflow_expected_cov      = t.overflow;
@@ -143,9 +141,10 @@
          almost_full_expected_cov   = t.almost_full;
          full_expected_cov          = t.full;
          half_full_expected_cov     = t.half_full;
-         FLAGS_covgrp.sample();
-      end
 
+         operation_cov = t.operation;
+         FLAGS_covgrp.sample();
+         OPERATION_covgrp.sample();
 
  		`uvm_info ("COVERAGE", {"SAMPLE: ",t.convert2string}, UVM_HIGH)
 

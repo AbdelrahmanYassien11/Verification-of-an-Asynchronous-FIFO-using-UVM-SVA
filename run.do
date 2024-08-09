@@ -1,17 +1,17 @@
 if [file exists "work"] {vdel -all}
 vlib work
-vlog -f dut.f
-vlog -f tb.f
-vopt top -o top_optimized +acc +cover=sbfec+FIFO(rtl)
+vlog -f dut.f +cover -covercells
+vlog -f tb.f +cover -covercells
+vopt top -o top_optimized +acc +cover=bcefsx+FIFO(rtl)
 
 
 
-#vsim top_optimized -coverage +UVM_TESTNAME=reset_test
+#vsim top_optimized -cover +UVM_TESTNAME=reset_test
 #set NoQuitOnFinish 1
 #onbreak {resume}
 #log /* -r
 #run -all
-#coverage report -assert -detail -verbose -output F:/ic_design/repos/FIFO_UVM/assertion_based_coverage_report.txt -append /.
+#coverage report -assert -details -zeros -verbose -output F:/ic_design/repos/FIFO_UVM/assertion_based_coverage_report.txt -append /.
 #coverage report -detail -cvg -directive -comments -output Assertion_based_coverage_report.txt
 #coverage report -detail -cvg -directive -comments -option -output functional_coverage_report.txt {} /FIFO_uvm_pkg/coverage/OPERATION_covgrp /FIFO_uvm_pkg/coverage/FLAGS_covgrp
 
@@ -20,13 +20,13 @@ vopt top -o top_optimized +acc +cover=sbfec+FIFO(rtl)
 
 
 
-#vsim top_optimized -coverage +UVM_TESTNAME=reset_write_read_all_test
+#vsim top_optimized -cover +UVM_TESTNAME=reset_write_read_all_test
 #set NoQuitOnFinish 1
 #onbreak {resume}
 #log /* -r
 #run -all
-#coverage report -assert -detail -verbose -output F:/ic_design/repos/FIFO_UVM/assertion_based_coverage_report.txt -append /.
-#coverage report -detail -cvg -directive -comments -output Assertion_based_coverage_report.txt
+#coverage report -assert -details -zeros -verbose -output assertion_based_coverage_report.txt -append /.
+#coverage report -detail - zeros -cvg -directive -comments -output code_based_coverage_report.txt
 #coverage report -detail -cvg -directive -comments -option -output functional_coverage_report.txt {} /FIFO_uvm_pkg/coverage/OPERATION_covgrp /FIFO_uvm_pkg/coverage/FLAGS_covgrp
 
 #coverage attribute -name TESTNAME -value reset_write_read_all_test
@@ -34,21 +34,21 @@ vopt top -o top_optimized +acc +cover=sbfec+FIFO(rtl)
 
 
 
-vsim top_optimized -coverage +UVM_TESTNAME=write_read_rand_test
+vsim top_optimized -cover +UVM_TESTNAME=write_read_rand_test
 set NoQuitOnFinish 1
 onbreak {resume}
 log /* -r
 run -all
-coverage report -assert -detail -verbose -output F:/ic_design/repos/FIFO_UVM/assertion_based_coverage_report.txt -append /.
+coverage report -assert -details -zeros -verbose -output assertion_based_coverage_report.txt -append /.
 coverage report -detail -cvg -directive -comments -output Assertion_based_coverage_report.txt
-coverage report -detail -cvg -directive -comments -option -output functional_coverage_report.txt {} /FIFO_uvm_pkg/coverage/OPERATION_covgrp /FIFO_uvm_pkg/coverage/FLAGS_covgrp
+coverage report -detail -cvg -directive -comments -output functional_coverage_report.txt {} /FIFO_pkg/coverage/OPERATION_covgrp /FIFO_pkg/coverage/FLAGS_covgrp
 
 coverage attribute -name TESTNAME -value write_read_rand_test
 coverage save write_read_rand_test.ucdb
 
 
-#vcover merge FIFO.ucdb reset_write_read_all_test.ucdb write_read_rand_test.ucdb -out FIFO_tb.ucdb
+vcover merge FIFO.ucdb reset_write_read_all_test.ucdb write_read_rand_test.ucdb -out FIFO_tb.ucdb
 
 #quit
 
-#vcover report -file FIFO_coverage_report.txt FIFO_tb.ucdb -zeros -details -annotate -all
+vcover report -output FIFO_coverage_report.txt FIFO_tb.ucdb -zeros -details -annotate -all

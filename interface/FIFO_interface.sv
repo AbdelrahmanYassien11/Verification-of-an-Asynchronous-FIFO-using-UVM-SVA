@@ -26,8 +26,11 @@ import FIFO_pkg::*;
 
    inputs_monitor inputs_monitor_h;
    outputs_monitor outputs_monitor_h;
+   STATE_e operation_interface;
 
-	task generic_reciever(input bit irst_n, input bit [31:0] idata_in, input bit iwr_en, input bit ird_en);
+
+	task generic_reciever(input bit irst_n, input bit [31:0] idata_in, input bit iwr_en, input bit ird_en, input STATE_e ioperation);
+      operation_interface = ioperation; 
       send_inputs(irst_n, idata_in, iwr_en, ird_en);
 			if(irst_n === 1'b0) begin
         wr_en = iwr_en;
@@ -82,7 +85,7 @@ import FIFO_pkg::*;
    function void send_outputs();
    		outputs_monitor_h.write_to_monitor(rst_n, data_in, wr_en, rd_en, data_out, 
                                          wr_ack, overflow, underflow, almostempty, empty, almostfull, full,
-                                         half_full);
+                                         half_full, operation_interface);
    endfunction : send_outputs
 
 
