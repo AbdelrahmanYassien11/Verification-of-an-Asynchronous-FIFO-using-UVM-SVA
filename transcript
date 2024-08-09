@@ -1306,3 +1306,5 @@ do run.do
 # ** Warning: (vcover-19053) Option '-file' has been deprecated. Please use option '-output' instead.
 # End time: 21:54:37 on Aug 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
+# End time: 03:40:59 on Aug 09,2024, Elapsed time: 5:46:53
+# Errors: 7, Warnings: 2
