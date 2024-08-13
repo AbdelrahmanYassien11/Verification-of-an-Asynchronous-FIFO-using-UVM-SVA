@@ -11,7 +11,7 @@
 
  	uvm_port_list list;
 
- 	virtual inf.TEST my_vif;
+ 	virtual inf my_vif;
 
  	function new(string name = "environment", uvm_component parent);
 		super.new(name,parent);
@@ -30,9 +30,9 @@
 
 		uvm_config_db#(agent_config)::set(this,"agent_h", "config", agent_config_h);
 
-		//uvm_config_db#(virtual inf.TEST)::set(this,"agent_h", "my_vif", my_vif);
-		uvm_config_db#(virtual inf.TEST)::set(this,"coverage_h", "my_vif", my_vif);
-		uvm_config_db#(virtual inf.TEST)::set(this,"scoreboard_h", "my_vif", my_vif);
+		//uvm_config_db#(virtual inf)::set(this,"agent_h", "my_vif", my_vif);
+		uvm_config_db#(virtual inf)::set(this,"coverage_h", "my_vif", my_vif);
+		uvm_config_db#(virtual inf)::set(this,"scoreboard_h", "my_vif", my_vif);
 
 		agent_h = agent::type_id::create("agent_h",this);
 		scoreboard_h = scoreboard::type_id::create("scoreboard_h",this);

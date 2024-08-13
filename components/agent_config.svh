@@ -1,11 +1,11 @@
 class agent_config;
 
 
-	virtual inf.TEST agent_config_my_vif;
+	virtual inf agent_config_my_vif;
 
 	protected uvm_active_passive_enum is_active;
 
-	function new (virtual inf.TEST agent_config_my_vif, uvm_active_passive_enum is_active);
+	function new (virtual inf agent_config_my_vif, uvm_active_passive_enum is_active);
 		this.agent_config_my_vif = agent_config_my_vif;
 		this.is_active = is_active;
 	endfunction : new

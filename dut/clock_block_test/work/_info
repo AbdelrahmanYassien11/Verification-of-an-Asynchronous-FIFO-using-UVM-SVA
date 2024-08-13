@@ -1,0 +1,98 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dF:/ic_design/repos/Asynch_FIFO_UVM/dut/clock_block_test
+T_opt
+!s110 1723578037
+VY6kX@8F[fYU0>:fP3QK9U0
+04 5 4 work ff_tb fast 0
+=7-98e743467fb1-66bbb6b4-127-28a8
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vff
+Z3 !s110 1723576901
+!i10b 1
+!s100 <=e1L^`K4WQVX?]enLYWM0
+I9aEX1`17<V7E878f_1@nl2
+R1
+w1723573207
+8ff_dut.v
+Fff_dut.v
+!i122 10
+L0 1 20
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1723576901.000000
+Z7 !s107 ff_tb.sv|inf.sv|ff_dut.v|
+Z8 !s90 ff_dut.v|inf.sv|ff_tb.sv|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vff_tb
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1723578032
+!i10b 1
+!s100 <<0nk4HG0`FJeWzl_d>252
+I3UP32D]MbHlm7l[PVI2VX1
+S1
+R1
+w1723578029
+8ff_tb.sv
+Fff_tb.sv
+!i122 16
+L0 1 50
+R4
+R5
+r1
+!s85 0
+31
+!s108 1723578032.000000
+!s107 ff_tb.sv|
+!s90 ff_tb.sv|
+!i113 0
+R9
+R2
+Yinf
+R10
+R3
+!i10b 1
+!s100 bme:FAP[iH<CJdV3:G9Vo1
+IXAOJQl3iLgP3FoF13_a@W2
+S1
+R1
+w1723572484
+8inf.sv
+Finf.sv
+!i122 10
+L0 1 0
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2

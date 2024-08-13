@@ -3,6 +3,9 @@ package FIFO_pkg;
 	import uvm_pkg::*;
 	`include "uvm_macros.svh"
 
+	parameter CYCLE_WRITE = 5;
+	parameter CYCLE_READ  = 10;
+
 	typedef enum {RESET, READ , WRITE} STATE_e;
 	parameter FIFO_WIDTH = 16;
    	parameter FIFO_DEPTH = 8;
