@@ -2,9 +2,7 @@
 class inputs_monitor extends uvm_monitor;
   	`uvm_component_utils(inputs_monitor);
 
-  	virtual inf.TEST my_vif;
-
-  	virtual inf my_vif1;
+  	virtual inf my_vif;
 
   	uvm_analysis_port #(sequence_item) tlm_analysis_port;
 
@@ -16,11 +14,7 @@ class inputs_monitor extends uvm_monitor;
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
-		if(!uvm_config_db#(virtual inf.TEST)::get(this,"", "my_vif", my_vif)) begin
-			`uvm_fatal(get_full_name(),"Error");
-		end
-
-		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif1", my_vif1)) begin
+		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif", my_vif)) begin
 			`uvm_fatal(get_full_name(),"Error");
 		end
 
@@ -45,17 +39,18 @@ class inputs_monitor extends uvm_monitor;
 
 
 
-	virtual function void write_to_monitor (input bit irst_n, input bit [FIFO_WIDTH-1:0] idata_in, 
-											input bit iwr_en, input bit ird_en);
+	virtual function void write_to_monitor (input bit irrst_n, input bit iwrst_n, input bit [FIFO_WIDTH-1:0] idata_in, 
+											input bit iw_en, input bit ir_en);
 
 		sequence_item seq_item;
 
 		seq_item = new("seq_item");
 
-			seq_item.rst_n 				= irst_n;
+			seq_item.rrst_n 			= irrst_n;
+			seq_item.wrst_n				= wrst_n;
 			seq_item.data_in 			= idata_in;
-			seq_item.wr_en 				= iwr_en;
-			seq_item.rd_en 				= ird_en;
+			seq_item.w_en 				= iw_en;
+			seq_item.r_en 				= ir_en;
 
 			tlm_analysis_port.write(seq_item);
 

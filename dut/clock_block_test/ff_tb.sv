@@ -42,7 +42,13 @@ assign inf1.rst_n = rst_n;
   	##1;
   	$display("time: %t rst_n = %0d cb_r.rst_n = %0d",$time, rst_n, cb_r.rst_n);
   	$display("time: %t q = %0d cb_r.q = %0d",$time, q, cb_r.q);
-
+  	cb_r.rst_n <=1;
+  	cb_r.d <= 1;
+  	##1;
+  	#5ps;
+  	$display("time: %t q = %0d cb_r.q = %0d",$time, q, cb_r.q);
+  	##1;
+  	$display("time: %t q = %0d cb_r.q = %0d",$time, q, cb_r.q);
 
   end
 

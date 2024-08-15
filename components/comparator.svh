@@ -47,9 +47,17 @@ class comparator extends uvm_component;
 			fifo_expected_outputs.get(seq_item_expected);
 			`uvm_info("COMPARATOR",{"EXPECTED_SEQ_ITEM RECIEVED: ", 
 						seq_item_expected.convert2string()}, UVM_HIGH)	
-			fifo_actual_outputs.get(seq_item_actual);
+			//fifo_actual_outputs.get(seq_item_actual);
+			fork
+				assert(@(fifo_actual_outputs.get(seq_item_actual)) |-> ##[1:2] seq_item_actual.empty === seq_item_expected.empty;
+				assert(@(fifo_actual_outputs.get(seq_item_actual)) |-> ##[1:2] seq_item_actual.full === seq_item_expected.full;
+				assert(@(fifo_actual_outputs.get(seq_item_actual)) |-> ##[1:2] seq_item_actual.data_out === seq_item_expected.data_out;
+			join
 			`uvm_info("COMPARATOR",{"actual_SEQ_ITEM RECIEVED: ", 
-						seq_item_actual.convert2string()}, UVM_HIGH)
+			seq_item_actual.convert2string()}, UVM_HIGH)
+
+
+
 
 			if(seq_item_actual.do_compare(seq_item_expected, comparer_h)) begin
 				`uvm_info("SCOREBOARD", "PASS", UVM_HIGH)

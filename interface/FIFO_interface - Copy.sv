@@ -40,7 +40,7 @@ import FIFO_pkg::*;
 
 
 	task reset_FIFO();
-    if((wrst_n === 1'b0) && (rrst_n === 1'b0))begin
+    if((wrst_n === 1'b1) && (rrst_n === 1'b1))begin
       fork
         read_reset();
         write_reset();
@@ -49,12 +49,12 @@ import FIFO_pkg::*;
       wrst_n = 1;
       rrst_n = 1;
     end
-    else if ((wrst_n === 1'b0) && (rrst_n === 1'b1)) begin
+    else if ((wrst_n === 1'b1) && (rrst_n === 1'b0)) begin
       write_reset();
       send_outputs();
       wrst_n = 1;
     end
-    else if ((wrst_n === 1'b1) && (rrst_n === 1'b0)) begin
+    else if ((wrst_n === 1'b0) && (rrst_n === 1'b1)) begin
       read_reset();
       send_outputs();
       rrst_n = 1;
@@ -81,18 +81,18 @@ import FIFO_pkg::*;
         write_FIFO(idata_in);
       join
       send_outputs();
-      w_en = 0;
-      r_en = 0;
+      w_en = 1;
+      r_en = 1;
     end
     else if ((w_en === 1'b1) && (r_en === 1'b0)) begin
       write_reset(idata_in);
       send_outputs();
-      w_en = 0;
+      w_en = 1;
     end
     else if ((w_en === 1'b0) && (r_en === 1'b1)) begin
       read_reset();
       send_outputs();
-      r_en = 0;
+      r_en = 1;
     end
   endtask : write_read_FIFO
 
@@ -103,7 +103,7 @@ import FIFO_pkg::*;
  			w_en = 1'b1;
  			data_in = idata_in;
  		@(negedge wclk);
-	endtask : write_FIFO
+	 endtask : write_FIFO
 
 
  	task read_FIFO();
@@ -114,12 +114,15 @@ import FIFO_pkg::*;
  	endtask : read_FIFO
 
 
+
+
+
    function void send_inputs(input bit irrst_n, input bit iwrst_n, input bit [31:0] idata_in, input bit iw_en, input bit ir_en);
       inputs_monitor_h.write_to_monitor(irst_n, iwrst_n, idata_in, iw_en, ir_en);
    endfunction : send_inputs
 
    function void send_outputs();
-   		outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, w_en, r_en, data_out, empty, full, operation_interface);
+   		outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, w_en, r_en, data_out, , empty, full, operation_interface);
    endfunction : send_outputs
 
 
