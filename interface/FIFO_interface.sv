@@ -10,7 +10,6 @@ import FIFO_pkg::*;
   bit   [FIFO_WIDTH-1:0]  data_in;
   bit                     w_en;
   bit                     r_en;
-  bit   
 
   logic [FIFO_WIDTH-1:0]  data_out;
   logic                   empty;
@@ -22,20 +21,19 @@ import FIFO_pkg::*;
    STATE_e operation_interface;
 
 
-	task generic_reciever(input bit irrst_n, input bit iwrst_n, input bit [FIFO_WIDHT-1:0] idata_in, input bit iw_en, input bit ir_en, input STATE_e ioperation);
+	task generic_reciever(input bit irrst_n, input bit iwrst_n, input bit [FIFO_WIDTH-1:0] idata_in, input bit iw_en, input bit ir_en, input STATE_e ioperation);
       operation_interface = ioperation; 
       send_inputs(irrst_n, iwrst_n, idata_in, iw_en, ir_en);
-			if((wrst_n === 1'b0) && (rrst_n === 1'b0)) begin
+			if((wrst_n === 1'b0) || (rrst_n === 1'b0)) begin
          w_en = iw_en;
          r_en = ir_en;
 				reset_FIFO();
       end
-			else if(iwr_en === 1'b1 && ird_en === 1'b0) begin
-				write_FIFO(idata_in);
-			end
-			else if(iwr_en === 1'b0 && ird_en === 1'b1) begin
-				read_FIFO();
-			end
+			else begin
+
+      write_read_FIFO(idata_in); 
+
+      end
 	endtask : generic_reciever
 
 
@@ -62,13 +60,11 @@ import FIFO_pkg::*;
  	endtask : reset_FIFO
 
   task read_reset();
-    @(negedge rclk);
     rrst_n = 0;
     @(negedge rclk);
   endtask : read_reset
 
   task write_reset();
-    @(negedge wclk);
     wrst_n = 0;
     @(negedge wclk);
   endtask : write_reset
@@ -85,12 +81,12 @@ import FIFO_pkg::*;
       r_en = 0;
     end
     else if ((w_en === 1'b1) && (r_en === 1'b0)) begin
-      write_reset(idata_in);
+      write_FIFO(idata_in);
       send_outputs();
       w_en = 0;
     end
     else if ((w_en === 1'b0) && (r_en === 1'b1)) begin
-      read_reset();
+      read_FIFO();
       send_outputs();
       r_en = 0;
     end
@@ -114,14 +110,24 @@ import FIFO_pkg::*;
  	endtask : read_FIFO
 
 
+  // property full_p;
+  //   @(negedge wclk) FIFO_full |-> (($rose(full) until_with (!FIFO_full));
+  // endproperty
+
+  // full_check: assert (full_p);
+
+
    function void send_inputs(input bit irrst_n, input bit iwrst_n, input bit [31:0] idata_in, input bit iw_en, input bit ir_en);
-      inputs_monitor_h.write_to_monitor(irst_n, iwrst_n, idata_in, iw_en, ir_en);
+      inputs_monitor_h.write_to_monitor(irrst_n, iwrst_n, idata_in, iw_en, ir_en);
    endfunction : send_inputs
 
    function void send_outputs();
    		outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, w_en, r_en, data_out, empty, full, operation_interface);
    endfunction : send_outputs
 
+  // assign FIFO_full = (((wrap_around) ^ (write_pointer === read_pointer)) === 0);
+  // assign FIFO_empy = (write_pointer === read_pointer);
+  
 
 endinterface : inf
 

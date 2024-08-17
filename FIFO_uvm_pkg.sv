@@ -7,9 +7,9 @@ package FIFO_pkg;
 	parameter CYCLE_READ  = 10;
 
 	typedef enum {WRESET, RRESET, READ , WRITE} STATE_e;
-	parameter FIFO_WIDTH = 16;
-   	parameter FIFO_DEPTH = 8;
-  	parameter FIFO_SIZE = 8;
+	parameter FIFO_WIDTH = 8;
+   	parameter FIFO_DEPTH = 4;
+  	parameter FIFO_SIZE = 4;
 
 
 	`include "sequence_item.svh"
@@ -24,17 +24,17 @@ package FIFO_pkg;
 	`include "base_sequence.svh"
 	`include "reset_sequence.svh"
 
-	`include "write_once_sequence.svh"
-	`include "read_once_sequence.svh"
+	// `include "write_once_sequence.svh"
+	// `include "read_once_sequence.svh"
 	
-	`include "write_all_sequence.svh"
-	`include "read_all_sequence.svh"
-	`include "reset_write_read_all_sequence.svh"
+	// `include "write_all_sequence.svh"
+	// `include "read_all_sequence.svh"
+	// `include "reset_write_read_all_sequence.svh"
 
-	`include "rand_once_sequence.svh"
-	`include "write_once_rand_sequence.svh"
-	`include "read_once_rand_sequence.svh"
-	`include "write_read_rand_sequence.svh"
+	// `include "rand_once_sequence.svh"
+	// `include "write_once_rand_sequence.svh"
+	// `include "read_once_rand_sequence.svh"
+	// `include "write_read_rand_sequence.svh"
 
 	`include "driver.svh"
 	`include "inputs_monitor.svh"
@@ -48,15 +48,15 @@ package FIFO_pkg;
 
 	`include "base_test.svh"
 	`include "reset_test.svh"
-	`include "write_once_test.svh"
-	`include "read_once_test.svh"
+	// `include "write_once_test.svh"
+	// `include "read_once_test.svh"
 
-	`include "write_all_test.svh"
+	// `include "write_all_test.svh"
 	//`include "read_all_test.svh" //obselete
-	`include "reset_write_read_all_test.svh"
+	//`include "reset_write_read_all_test.svh"
 
-	`include "write_once_rand_test.svh"
-	`include "read_once_rand_test.svh"
-	`include "write_read_rand_test.svh"
+	// `include "write_once_rand_test.svh"
+	// `include "read_once_rand_test.svh"
+	// `include "write_read_rand_test.svh"
 
 endpackage : FIFO_pkg

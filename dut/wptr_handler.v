@@ -5,8 +5,8 @@ module wptr_handler #(parameter PTR_WIDTH=3) (
   output reg full
 );
 
-  reg [PTR_WIDTH:0] b_wptr_next;
-  reg [PTR_WIDTH:0] g_wptr_next;
+  wire [PTR_WIDTH:0] b_wptr_next;
+  wire [PTR_WIDTH:0] g_wptr_next;
    
   reg wrap_around;
   wire wfull;

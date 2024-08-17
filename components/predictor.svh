@@ -2,7 +2,7 @@ class predictor extends uvm_subscriber #(sequence_item);
   `uvm_component_utils(predictor);
 
 
-  virtual inf.TEST my_vif;
+  virtual inf my_vif;
 
   uvm_analysis_port #(sequence_item) analysis_port_expected_outputs;
 
@@ -18,7 +18,7 @@ class predictor extends uvm_subscriber #(sequence_item);
    logic [FIFO_WIDTH-1:0]   data_out;
 
    bit   [FIFO_WIDTH-1:0]   data_in;
-   bit                      rrst_n, iwrst_n, w_en, r_en;
+   bit                      rrst_n, wrst_n, w_en, r_en;
 
 
   logic  [FIFO_WIDTH-1:0] 	data_out_expected;
@@ -43,7 +43,7 @@ class predictor extends uvm_subscriber #(sequence_item);
 
     seq_item_expected = sequence_item::type_id::create("seq_item_expected");
 
-    if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+    if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
       `uvm_fatal(get_full_name(),"Error");
     end
 
@@ -77,20 +77,17 @@ class predictor extends uvm_subscriber #(sequence_item);
     data_in   = t.data_in;
     w_en     = t.w_en;
     r_en     = t.r_en;
-    data_str = $sformatf("rst_n:%0d ,w_en:%0d ,r_en:%0d , data_in:%0d",
-                         rst_n, w_en, r_en, data_in);
+    data_str = $sformatf("rrst_n:%0d, wrst_n:%0d ,w_en:%0d ,r_en:%0d , data_in:%0d",
+                         rrst_n, wrst_n, w_en, r_en, data_in);
     -> inputs_written;
   endfunction
 
   task predictor_idk();
-      if(rst_n === 1'b0) begin
+      if(rrst_n === 1'b0 || wrst_n === 1'b0) begin
         reset_FIFO();
       end
-      else if(w_en === 1'b1 && r_en === 1'b0) begin
-        FIFO_WRITE();
-      end
-      else if(w_en === 1'b0 && r_en === 1'b1) begin
-        FIFO_READ();
+      else begin
+        write_read_FIFO();
       end
       send_results();
   endtask : predictor_idk
@@ -138,16 +135,16 @@ class predictor extends uvm_subscriber #(sequence_item);
   endtask : write_reset
 
 
-  task write_read_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
+  task write_read_FIFO();
     if((w_en === 1'b1) && (r_en === 1'b1))begin
       fork
         read_FIFO();
-        write_FIFO(idata_in);
+        write_FIFO();
       join
       FLAGS();
     end
     else if ((w_en === 1'b1) && (r_en === 1'b0)) begin
-      write_FIFO(idata_in);
+      write_FIFO();
       FLAGS();
     end
     else if ((w_en === 1'b0) && (r_en === 1'b1)) begin
@@ -157,9 +154,9 @@ class predictor extends uvm_subscriber #(sequence_item);
   endtask : write_read_FIFO
 
    //A task that writes address and data
-  task write_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
+  task write_FIFO();
     if(full_expected === 0) begin
-      data_write_queue.push_back(idata_in);
+      data_write_queue.push_back(data_in);
       if(write_pointer === FIFO_SIZE-1)begin
         write_pointer = 0;
         wrap_around = 1;

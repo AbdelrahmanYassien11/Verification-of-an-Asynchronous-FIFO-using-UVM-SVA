@@ -8,15 +8,15 @@ module asynchronous_fifo #(parameter DEPTH=8, DATA_WIDTH=8) (
   input rclk, rrst_n,
   input w_en, r_en,
   input [DATA_WIDTH-1:0] data_in,
-  output reg [DATA_WIDTH-1:0] data_out,
-  output reg full, empty
+  output [DATA_WIDTH-1:0] data_out,
+  output full, empty
 );
   
   parameter PTR_WIDTH = $clog2(DEPTH);
  
-  reg [PTR_WIDTH:0] g_wptr_sync, g_rptr_sync;
-  reg [PTR_WIDTH:0] b_wptr, b_rptr;
-  reg [PTR_WIDTH:0] g_wptr, g_rptr;
+  wire [PTR_WIDTH:0] g_wptr_sync, g_rptr_sync;
+  wire [PTR_WIDTH:0] b_wptr, b_rptr;
+  wire [PTR_WIDTH:0] g_wptr, g_rptr;
 
   wire [PTR_WIDTH-1:0] waddr, raddr;
 

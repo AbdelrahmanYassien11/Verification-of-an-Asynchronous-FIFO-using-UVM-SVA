@@ -1,7 +1,7 @@
 class reset_test extends base_test;
  	`uvm_component_utils(reset_test);
  	
- 	virtual inf.TEST my_vif;
+ 	virtual inf my_vif;
 
  
 

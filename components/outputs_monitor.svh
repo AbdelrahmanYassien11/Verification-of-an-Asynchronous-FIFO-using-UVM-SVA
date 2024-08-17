@@ -28,7 +28,7 @@ class outputs_monitor extends uvm_monitor;
 
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		my_vif1.outputs_monitor_h = this;
+		my_vif.outputs_monitor_h = this;
 		$display("my_monitor connect phase");
 	endfunction
 

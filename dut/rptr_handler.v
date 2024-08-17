@@ -5,8 +5,8 @@ module rptr_handler #(parameter PTR_WIDTH=3) (
   output reg empty
 );
 
-  reg [PTR_WIDTH:0] b_rptr_next;
-  reg [PTR_WIDTH:0] g_rptr_next;
+  wire [PTR_WIDTH:0] b_rptr_next;
+  wire [PTR_WIDTH:0] g_rptr_next;
 
   assign b_rptr_next = b_rptr+(r_en & !empty);
   assign g_rptr_next = (b_rptr_next >>1)^b_rptr_next;

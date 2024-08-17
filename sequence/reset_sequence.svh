@@ -9,7 +9,8 @@ class reset_sequence extends base_sequence;
  			$display("start of body task");
  			start_item(seq_item);
  			$display("start item has been invoked");
- 			seq_item.rst_n = 1'b0;
+ 			seq_item.rrst_n = 1'b0;
+      seq_item.wrst_n = 1'b0;
  			finish_item(seq_item);
       `uvm_info("RESET_SEQUENCE", $sformatf(" reset only: %s", seq_item.convert2string), UVM_HIGH)
  			$display("finish item has been invoked");

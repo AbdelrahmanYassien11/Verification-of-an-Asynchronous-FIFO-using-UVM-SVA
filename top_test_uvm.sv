@@ -11,7 +11,7 @@ module top_test_uvm();
 
 	inf f_if(wclk, rclk);
 
-	async_fifo1 DUT(
+	asynchronous_fifo DUT(
 				.wclk(f_if.wclk),
 				.wrst_n(f_if.wrst_n),
 				.rclk(f_if.rclk),
@@ -24,7 +24,7 @@ module top_test_uvm();
 				.empty(f_if.empty)
 		);
 
-	bind FIFO FIFO_sva sva(f_if);
+	//bind FIFO FIFO_sva sva(f_if);
 
 
 

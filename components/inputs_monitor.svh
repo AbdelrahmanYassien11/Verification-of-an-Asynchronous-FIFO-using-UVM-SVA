@@ -26,7 +26,7 @@ class inputs_monitor extends uvm_monitor;
 
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		my_vif1.inputs_monitor_h = this;
+		my_vif.inputs_monitor_h = this;
 		$display("my_monitor connect phase");
 	endfunction
 
@@ -47,7 +47,7 @@ class inputs_monitor extends uvm_monitor;
 		seq_item = new("seq_item");
 
 			seq_item.rrst_n 			= irrst_n;
-			seq_item.wrst_n				= wrst_n;
+			seq_item.wrst_n				= iwrst_n;
 			seq_item.data_in 			= idata_in;
 			seq_item.w_en 				= iw_en;
 			seq_item.r_en 				= ir_en;
