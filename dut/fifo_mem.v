@@ -3,7 +3,7 @@ module fifo_mem #(parameter DEPTH=8, DATA_WIDTH=8, PTR_WIDTH=3) (
   input [PTR_WIDTH:0] b_wptr, b_rptr,
   input [DATA_WIDTH-1:0] data_in,
   input full, empty,
-  output [DATA_WIDTH-1:0] data_out
+  output reg [DATA_WIDTH-1:0] data_out
 );
   reg [DATA_WIDTH-1:0] fifo[0:DEPTH-1];
   
@@ -12,12 +12,11 @@ module fifo_mem #(parameter DEPTH=8, DATA_WIDTH=8, PTR_WIDTH=3) (
       fifo[b_wptr[PTR_WIDTH-1:0]] <= data_in;
     end
   end
-  /*
   always@(posedge rclk) begin
     if(r_en & !empty) begin
       data_out <= fifo[b_rptr[PTR_WIDTH-1:0]];
     end
   end
-  */
-  assign data_out = fifo[b_rptr[PTR_WIDTH-1:0]];
+  
+  //assign data_out = fifo[b_rptr[PTR_WIDTH-1:0]];
 endmodule

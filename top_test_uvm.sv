@@ -29,7 +29,7 @@ module top_test_uvm();
 
 
 	initial begin
-		uvm_config_db#(virtual inf.TEST)::set(null,"uvm_test_top", "my_vif", f_if);
+		uvm_config_db#(virtual inf)::set(null,"uvm_test_top", "my_vif", f_if);
 		run_test();
 	end
 

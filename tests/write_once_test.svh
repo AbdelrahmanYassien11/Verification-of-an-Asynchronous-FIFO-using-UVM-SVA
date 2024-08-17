@@ -1,7 +1,7 @@
 class write_once_test extends base_test;
    `uvm_component_utils(write_once_test);
    
-   virtual inf.TEST my_vif;
+   virtual inf my_vif;
 
  
 

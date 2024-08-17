@@ -24,7 +24,7 @@ package FIFO_pkg;
 	`include "base_sequence.svh"
 	`include "reset_sequence.svh"
 
-	// `include "write_once_sequence.svh"
+	`include "write_once_sequence.svh"
 	// `include "read_once_sequence.svh"
 	
 	// `include "write_all_sequence.svh"
@@ -48,7 +48,7 @@ package FIFO_pkg;
 
 	`include "base_test.svh"
 	`include "reset_test.svh"
-	// `include "write_once_test.svh"
+	`include "write_once_test.svh"
 	// `include "read_once_test.svh"
 
 	// `include "write_all_test.svh"

@@ -20,19 +20,25 @@ import FIFO_pkg::*;
    outputs_monitor outputs_monitor_h;
    STATE_e operation_interface;
 
+   bit [FIFO_SIZE-1:0] write_pointer, read_pointer;
+   bit wrap_around;
+   bit FIFO_full, FIFO_empty;
+   int incorrect_counter;
+   int correct_counter;
+  // bit full_covered, empty_covered;
+
 
 	task generic_reciever(input bit irrst_n, input bit iwrst_n, input bit [FIFO_WIDTH-1:0] idata_in, input bit iw_en, input bit ir_en, input STATE_e ioperation);
       operation_interface = ioperation; 
       send_inputs(irrst_n, iwrst_n, idata_in, iw_en, ir_en);
+      wrst_n = iwrst_n;
+      rrst_n = irrst_n;
 			if((wrst_n === 1'b0) || (rrst_n === 1'b0)) begin
-         w_en = iw_en;
-         r_en = ir_en;
 				reset_FIFO();
       end
 			else begin
-
-      write_read_FIFO(idata_in); 
-
+      $display("ABOUT TO ENTER WRITE_READ_FIFO ");
+      write_read_FIFO(idata_in, ir_en, iw_en); 
       end
 	endtask : generic_reciever
 
@@ -70,8 +76,9 @@ import FIFO_pkg::*;
   endtask : write_reset
 
 
-  task write_read_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
-    if((w_en === 1'b1) && (r_en === 1'b1))begin
+  task write_read_FIFO(input bit [FIFO_WIDTH-1:0] idata_in, input bit ir_en, iw_en);
+    $display("ENTERED WRITE_READ_FIFO ");
+    if((iw_en === 1'b1) && (ir_en === 1'b1))begin
       fork
         read_FIFO();
         write_FIFO(idata_in);
@@ -80,12 +87,13 @@ import FIFO_pkg::*;
       w_en = 0;
       r_en = 0;
     end
-    else if ((w_en === 1'b1) && (r_en === 1'b0)) begin
+    else if ((iw_en === 1'b1) && (ir_en === 1'b0)) begin
+      $display("ABOUT TO ENTER WRITE_FIFO ");
       write_FIFO(idata_in);
       send_outputs();
       w_en = 0;
     end
-    else if ((w_en === 1'b0) && (r_en === 1'b1)) begin
+    else if ((iw_en === 1'b0) && (ir_en === 1'b1)) begin
       read_FIFO();
       send_outputs();
       r_en = 0;
@@ -94,11 +102,20 @@ import FIFO_pkg::*;
 
 
  	task write_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
+    $display("ENTERED WRITE FIFO");
  		@(negedge wclk);
       wrst_n = 1'b1;
  			w_en = 1'b1;
  			data_in = idata_in;
  		@(negedge wclk);
+    if(!FIFO_full) begin
+      if(write_pointer === FIFO_SIZE) begin
+        write_pointer = 0;
+      end
+      else begin
+        write_pointer = write_pointer +1;
+      end
+    end
 	endtask : write_FIFO
 
 
@@ -107,14 +124,32 @@ import FIFO_pkg::*;
       rrst_n = 1'b1;
   		r_en = 1'b1;
  		@(negedge rclk);
+    read_pointer = read_pointer +1;
  	endtask : read_FIFO
 
 
-  // property full_p;
-  //   @(negedge wclk) FIFO_full |-> (($rose(full) until_with (!FIFO_full));
-  // endproperty
+   property full_p;
+    @(negedge wclk)
+    if(rrst_n && wrst_n)
+      ($rose(FIFO_full)) |-> ((full) until_with (!FIFO_full));
+    endproperty
 
-  // full_check: assert (full_p);
+
+  assert property (full_p) else
+    $display("full flag asserted and deasserted INCORRECTLY");
+
+  cover property (full_p);
+
+  property empty_p;
+    @(negedge rclk)
+    if(rrst_n && wrst_n)
+      (FIFO_empty) |=> ((!empty) until_with (!FIFO_empty) /*, $display("empty flag asserted and deasserted CORRECTLY")*/);
+  endproperty
+
+  assert property (empty_p) else
+        $display("time: %0t empty flag asserted and deasserted INCORRECTLY", $time());
+
+  cover property (empty_p);
 
 
    function void send_inputs(input bit irrst_n, input bit iwrst_n, input bit [31:0] idata_in, input bit iw_en, input bit ir_en);
@@ -125,9 +160,11 @@ import FIFO_pkg::*;
    		outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, w_en, r_en, data_out, empty, full, operation_interface);
    endfunction : send_outputs
 
-  // assign FIFO_full = (((wrap_around) ^ (write_pointer === read_pointer)) === 0);
-  // assign FIFO_empy = (write_pointer === read_pointer);
+   assign FIFO_full = ((wrap_around) & (write_pointer === read_pointer));
+   assign FIFO_empty = (write_pointer === read_pointer);
   
+
+
 
 endinterface : inf
 

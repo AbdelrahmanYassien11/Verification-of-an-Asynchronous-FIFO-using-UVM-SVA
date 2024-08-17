@@ -5,7 +5,7 @@
 class base_test extends uvm_test;
 //`endif
 
-   virtual inf.TEST my_vif;
+   virtual inf my_vif;
 
    env_config env_config_h;
 
@@ -20,7 +20,7 @@ class base_test extends uvm_test;
    virtual function void build_phase(uvm_phase phase);
 
 
-      if(!uvm_config_db#(virtual inf.TEST)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+      if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
          `uvm_fatal(get_full_name(),"Error");
       end
 
