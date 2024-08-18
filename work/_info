@@ -9,9 +9,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dF:/ic_design/repos/asynch_FIFO_UVM
+Z0 dF:/ic_design/repos/Asynch_FIFO_UVM
 vasynchronous_fifo
-Z1 !s110 1723925034
+Z1 !s110 1724012586
 !i10b 1
 !s100 [T<aRQeHiC0e?3@2IYU4]1
 IQJiQCnPR=X<P0jNJd4A2Q3
@@ -26,9 +26,9 @@ Z3 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z4 !s108 1723925034.000000
+Z4 !s108 1724012586.000000
 Z5 !s107 dut/top.v|dut/synchronizer.v|dut/wptr_handler.v|dut/rptr_handler.v|dut/fifo_mem.v|
-Z6 !s90 -reportprogress|300|-f|dut.f|+cover|-covercells|
+Z6 !s90 -f|dut.f|+cover|-covercells|
 !i113 0
 Z7 !s102 +cover -covercells
 Z8 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -60,13 +60,13 @@ XFIFO_pkg
 !s115 inf
 Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z11 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
-Z12 !s110 1723925035
+Z12 !s110 1724012587
 !i10b 1
-!s100 B^RAVOnFPDLlDZnIc<]_;0
-IITD```aBQSLf]DIXWl[7f2
+!s100 dOT:1CDNFNTLa0A<]67Y?2
+ImgKPPaHA:gP_VjQ4S^DLZ0
 S1
 R0
-w1723871481
+w1723988655
 8FIFO_uvm_pkg.sv
 FFIFO_uvm_pkg.sv
 FF:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
@@ -90,6 +90,7 @@ Fcomponents/comparator.svh
 Fsequence/base_sequence.svh
 Fsequence/reset_sequence.svh
 Fsequence/write_once_sequence.svh
+Fsequence/write_all_sequence.svh
 Fcomponents/driver.svh
 Fcomponents/inputs_monitor.svh
 Fcomponents/outputs_monitor.svh
@@ -100,25 +101,26 @@ Fcomponents/env.svh
 Ftests/base_test.svh
 Ftests/reset_test.svh
 Ftests/write_once_test.svh
+Ftests/write_all_test.svh
 !i122 1
 Z13 L0 1 0
-VITD```aBQSLf]DIXWl[7f2
+VmgKPPaHA:gP_VjQ4S^DLZ0
 R3
 r1
 !s85 0
 31
-R4
-Z14 !s107 tests/write_once_test.svh|tests/reset_test.svh|tests/base_test.svh|components/env.svh|components/coverage.svh|components/scoreboard.svh|components/agent.svh|components/outputs_monitor.svh|components/inputs_monitor.svh|components/driver.svh|sequence/write_once_sequence.svh|sequence/reset_sequence.svh|sequence/base_sequence.svh|components/comparator.svh|components/predictor.svh|components/env_config.svh|components/agent_config.svh|components/sequencer.svh|sequence_item/sequence_item.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top_test_uvm.sv|interface/FIFO_interface.sv|FIFO_uvm_pkg.sv|FIFO_sva.sv|
-Z15 !s90 -reportprogress|300|-f|tb.f|+cover|-covercells|
+Z14 !s108 1724012587.000000
+Z15 !s107 tests/write_all_test.svh|tests/write_once_test.svh|tests/reset_test.svh|tests/base_test.svh|components/env.svh|components/coverage.svh|components/scoreboard.svh|components/agent.svh|components/outputs_monitor.svh|components/inputs_monitor.svh|components/driver.svh|sequence/write_all_sequence.svh|sequence/write_once_sequence.svh|sequence/reset_sequence.svh|sequence/base_sequence.svh|components/comparator.svh|components/predictor.svh|components/env_config.svh|components/agent_config.svh|components/sequencer.svh|sequence_item/sequence_item.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|F:/questasim/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top_test_uvm.sv|interface/FIFO_interface.sv|FIFO_uvm_pkg.sv|FIFO_sva.sv|
+Z16 !s90 -f|tb.f|+cover|-covercells|
 !i113 0
 R7
 R8
-Z16 !s92 +incdir+sequence +incdir+sequence_item +incdir+tests +incdir+components +cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 !s92 +incdir+sequence +incdir+sequence_item +incdir+tests +incdir+components +cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R9
 n@f@i@f@o_pkg
 vFIFO_sva
 R10
-R1
+R12
 !i10b 1
 !s100 jKFD:ioXCYoeL4?PIl]e21
 I3[4SEK?>[SFd3Q<6R_Rgm1
@@ -134,26 +136,26 @@ R3
 r1
 !s85 0
 31
-R4
 R14
 R15
+R16
 !i113 0
 R7
 R8
-R16
+R17
 R9
 n@f@i@f@o_sva
 Yinf
 R10
 R11
-Z17 DXx4 work 8 FIFO_pkg 0 22 ITD```aBQSLf]DIXWl[7f2
+Z18 DXx4 work 8 FIFO_pkg 0 22 mgKPPaHA:gP_VjQ4S^DLZ0
 R12
 !i10b 1
-!s100 2MEnWXm=BVS8GZKVET:YD1
-Ib>Q_5:W>d_T`m]@i:DA^83
+!s100 PA23Ph5e1gS?FY?<IG`<J2
+I5fkLcm2dlCSZVLS@[gSEP0
 S1
 R0
-w1723925031
+w1724012452
 8interface/FIFO_interface.sv
 Finterface/FIFO_interface.sv
 !i122 1
@@ -163,13 +165,13 @@ R3
 r1
 !s85 0
 31
-R4
 R14
 R15
+R16
 !i113 0
 R7
 R8
-R16
+R17
 R9
 vrptr_handler
 R1
@@ -218,9 +220,9 @@ R7
 R8
 R9
 Ttop_optimized
-!s11d FIFO_pkg F:/ic_design/repos/asynch_FIFO_UVM/work 1 inf 1 F:/ic_design/repos/asynch_FIFO_UVM/work 
-!s110 1723925037
-VCHD7YlWVaz7iQSXS8Pn`n2
+!s11d FIFO_pkg F:/ic_design/repos/Asynch_FIFO_UVM/work 1 inf 1 F:/ic_design/repos/Asynch_FIFO_UVM/work 
+!s110 1724012589
+VBFY06e8ID9J`08jD0@VUG3
 04 12 4 work top_test_uvm fast 0
 !s124 OEM100
 o+acc +cover=bcefsx+asynchronous_fifo(rtl)
@@ -230,14 +232,14 @@ OL;O;2021.1;73
 vtop_test_uvm
 R10
 R11
-R17
+R18
 R12
 !i10b 1
 !s100 20Y5Q@ZZI`OKAVn:?^Vem1
 IF3kIoT^4VoOaIJNS8F4zj3
 S1
 R0
-w1723871571
+w1723983858
 8top_test_uvm.sv
 Ftop_test_uvm.sv
 !i122 1
@@ -247,13 +249,13 @@ R3
 r1
 !s85 0
 31
-R4
 R14
 R15
+R16
 !i113 0
 R7
 R8
-R16
+R17
 R9
 vwptr_handler
 R1

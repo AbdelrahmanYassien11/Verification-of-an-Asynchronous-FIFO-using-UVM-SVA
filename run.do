@@ -6,7 +6,7 @@ vopt top_test_uvm -o top_optimized +acc +cover=bcefsx+asynchronous_fifo(rtl)
 
 
 
-vsim top_optimized -cover +UVM_TESTNAME=write_once_test
+vsim top_optimized -cover +UVM_TESTNAME=write_all_test
 set NoQuitOnFinish 1
 onbreak {resume}
 log /* -r

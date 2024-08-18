@@ -8,8 +8,8 @@ package FIFO_pkg;
 
 	typedef enum {WRESET, RRESET, READ , WRITE} STATE_e;
 	parameter FIFO_WIDTH = 8;
-   	parameter FIFO_DEPTH = 4;
-  	parameter FIFO_SIZE = 4;
+   	parameter FIFO_DEPTH = 8;
+  	parameter FIFO_SIZE = 8;
 
 
 	`include "sequence_item.svh"
@@ -27,7 +27,7 @@ package FIFO_pkg;
 	`include "write_once_sequence.svh"
 	// `include "read_once_sequence.svh"
 	
-	// `include "write_all_sequence.svh"
+	`include "write_all_sequence.svh"
 	// `include "read_all_sequence.svh"
 	// `include "reset_write_read_all_sequence.svh"
 
@@ -51,7 +51,7 @@ package FIFO_pkg;
 	`include "write_once_test.svh"
 	// `include "read_once_test.svh"
 
-	// `include "write_all_test.svh"
+	`include "write_all_test.svh"
 	//`include "read_all_test.svh" //obselete
 	//`include "reset_write_read_all_test.svh"
 

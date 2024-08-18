@@ -22,7 +22,7 @@ import FIFO_pkg::*;
 
    bit [FIFO_SIZE-1:0] write_pointer, read_pointer;
    bit wrap_around;
-   bit FIFO_full, FIFO_empty;
+   logic FIFO_full, FIFO_empty;
    int incorrect_counter;
    int correct_counter;
   // bit full_covered, empty_covered;
@@ -33,6 +33,7 @@ import FIFO_pkg::*;
       send_inputs(irrst_n, iwrst_n, idata_in, iw_en, ir_en);
       wrst_n = iwrst_n;
       rrst_n = irrst_n;
+
 			if((wrst_n === 1'b0) || (rrst_n === 1'b0)) begin
 				reset_FIFO();
       end
@@ -66,11 +67,13 @@ import FIFO_pkg::*;
  	endtask : reset_FIFO
 
   task read_reset();
+    read_pointer = 0;
     rrst_n = 0;
     @(negedge rclk);
   endtask : read_reset
 
   task write_reset();
+    read_pointer = 0;
     wrst_n = 0;
     @(negedge wclk);
   endtask : write_reset
@@ -109,8 +112,9 @@ import FIFO_pkg::*;
  			data_in = idata_in;
  		@(negedge wclk);
     if(!FIFO_full) begin
-      if(write_pointer === FIFO_SIZE) begin
+      if(write_pointer === FIFO_SIZE-1) begin
         write_pointer = 0;
+        wrap_around = 1;
       end
       else begin
         write_pointer = write_pointer +1;
@@ -131,24 +135,35 @@ import FIFO_pkg::*;
    property full_p;
     @(negedge wclk)
     if(rrst_n && wrst_n)
-      ($rose(FIFO_full)) |-> ((full) until_with (!FIFO_full));
+      (FIFO_full) |-> (full) throughout (FIFO_full) ##[2:3] $fell(full);
     endproperty
 
 
-  assert property (full_p) else
-    $display("full flag asserted and deasserted INCORRECTLY");
-
+  assert property (full_p) else begin
+        incorrect_counter = incorrect_counter +1;
+        $display("full flag asserted and deasserted INCORRECTLY");
+      end
   cover property (full_p);
+
+
+
+  // property empty_p;
+  //   @(negedge rclk)
+  //   if(rrst_n && wrst_n)
+  //     (FIFO_empty) |-> (empty throughout !FIFO_empty) ##[2:3] (!empty); /*((empty)  until (!FIFO_empty ##1 $fell(empty)) ##[1:2] $fell(empty));*/
+  // endproperty
+
 
   property empty_p;
     @(negedge rclk)
     if(rrst_n && wrst_n)
-      (FIFO_empty) |=> ((!empty) until_with (!FIFO_empty) /*, $display("empty flag asserted and deasserted CORRECTLY")*/);
+      (FIFO_empty) |-> (empty throughout FIFO_empty) ##[2:3] $fell(empty); /*((empty)  until (!FIFO_empty ##1 $fell(empty)) ##[1:2] $fell(empty));*/
   endproperty
 
-  assert property (empty_p) else
+  assert property (empty_p) else begin
+        incorrect_counter = incorrect_counter +1;
         $display("time: %0t empty flag asserted and deasserted INCORRECTLY", $time());
-
+      end
   cover property (empty_p);
 
 
@@ -161,11 +176,16 @@ import FIFO_pkg::*;
    endfunction : send_outputs
 
    assign FIFO_full = ((wrap_around) & (write_pointer === read_pointer));
-   assign FIFO_empty = (write_pointer === read_pointer);
+   assign FIFO_empty = (!wrap_around) & (write_pointer === read_pointer);
   
-
-
-
+  initial begin
+    forever begin
+      @(incorrect_counter)
+      $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+      $display("INCORRECT FLAG ASSERTION/DEASSERTION COUNTER = %0d", incorrect_counter);
+      $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    end
+  end
 endinterface : inf
 
 

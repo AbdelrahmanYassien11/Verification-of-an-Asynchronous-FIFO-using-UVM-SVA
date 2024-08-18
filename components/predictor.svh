@@ -190,7 +190,7 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   task FLAGS();
     if(read_pointer === write_pointer) begin
-      if(!( wrap_around ^ (read_pointer[FIFO_SIZE-1:0] === write_pointer[FIFO_SIZE-1:0]))) begin
+      if(!( wrap_around & (read_pointer[FIFO_SIZE-1:0] === write_pointer[FIFO_SIZE-1:0]))) begin
         full_expected = 1;
         empty_expected = 0;
       end
