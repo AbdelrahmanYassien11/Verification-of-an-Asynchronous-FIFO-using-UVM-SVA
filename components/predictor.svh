@@ -14,9 +14,6 @@ class predictor extends uvm_subscriber #(sequence_item);
    logic                    full_expected;
    logic                    empty_expected;
 
-
-   logic [FIFO_WIDTH-1:0]   data_out;
-
    bit   [FIFO_WIDTH-1:0]   data_in;
    bit                      rrst_n, wrst_n, w_en, r_en;
 
@@ -53,7 +50,6 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
-    //tlm_analysis_export.connect(tlm_analysis_fifo.analysis_export);
     $display("my_scoreboard connect phase");
   endfunction
 
@@ -89,25 +85,27 @@ class predictor extends uvm_subscriber #(sequence_item);
       else begin
         write_read_FIFO();
       end
+      // if(w_en && r_en)
+      //   concurrent_send_results();
+      // else
       send_results();
   endtask : predictor_idk
 
   function void send_results();
-    seq_item_expected.wrst_n   = wrst_n;
-    seq_item_expected.rrst_n   = rrst_n;
-    seq_item_expected.w_en   = w_en;
-    seq_item_expected.r_en   = r_en;
-    seq_item_expected.data_in = data_in;
+    seq_item_expected.wrst_n          = wrst_n;
+    seq_item_expected.rrst_n          = rrst_n;
+    seq_item_expected.w_en            = w_en;
+    seq_item_expected.r_en            = r_en;
+    seq_item_expected.data_in         = data_in;
 
-    seq_item_expected.data_out       =      data_out_expected;
-    seq_item_expected.empty          =         empty_expected;
-    seq_item_expected.full           =          full_expected;
+    seq_item_expected.data_out        =      data_out_expected;
+    seq_item_expected.empty           =         empty_expected;
+    seq_item_expected.full            =          full_expected;
     -> expected_outputs_written;
   endfunction : send_results
 
 
-
-   //FIFO_reeset task
+  //FIFO_reeset task
   task reset_FIFO();
     if((wrst_n === 1'b0) && (rrst_n === 1'b0))begin
       data_out_expected     = 0;
@@ -117,6 +115,7 @@ class predictor extends uvm_subscriber #(sequence_item);
         read_reset();
         write_reset();
       join
+      data_write_queue.delete();
     end
     else if ((wrst_n === 1'b0) && (rrst_n === 1'b1)) begin
       write_reset();
@@ -153,7 +152,7 @@ class predictor extends uvm_subscriber #(sequence_item);
     end
   endtask : write_read_FIFO
 
-   //A task that writes address and data
+  //A task that writes address and data
   task write_FIFO();
     if(full_expected === 0) begin
       data_write_queue.push_back(data_in);
@@ -168,18 +167,18 @@ class predictor extends uvm_subscriber #(sequence_item);
     FLAGS();
      $display("WRITE_POINER = %0d", write_pointer);
      $display("READ_POINER = %0d", read_pointer);
-     wrap_around = 0;
    endtask : write_FIFO
 
-   //A task that reads data
+  //A task that reads data
   task read_FIFO();
     if(empty_expected === 0) begin
-      data_out = data_write_queue.pop_front();
+      data_out_expected = data_write_queue.pop_front();
       if(read_pointer === FIFO_SIZE-1)begin
         read_pointer = 0;
+        wrap_around = 0;
       end
       else begin
-        read_pointer = write_pointer + 1;
+        read_pointer = read_pointer + 1;
       end
     end
     FLAGS();
@@ -190,11 +189,11 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   task FLAGS();
     if(read_pointer === write_pointer) begin
-      if(!( wrap_around & (read_pointer[FIFO_SIZE-1:0] === write_pointer[FIFO_SIZE-1:0]))) begin
+      if(( wrap_around & (read_pointer[FIFO_SIZE-1:0] === write_pointer[FIFO_SIZE-1:0]))) begin
         full_expected = 1;
         empty_expected = 0;
       end
-      else begin
+      else if(read_pointer === write_pointer)begin
         full_expected = 0;
         empty_expected = 1;
       end

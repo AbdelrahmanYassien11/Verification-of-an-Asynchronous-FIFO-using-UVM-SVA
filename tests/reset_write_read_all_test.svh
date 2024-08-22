@@ -1,7 +1,7 @@
 class reset_write_read_all_test extends base_test;
    `uvm_component_utils(reset_write_read_all_test);
    
-   virtual inf.TEST my_vif;
+   virtual inf my_vif;
 
  
 
@@ -19,4 +19,8 @@ class reset_write_read_all_test extends base_test;
       super.connect_phase(phase);
       $display("my_test connect phase");
    endfunction
+
+   function void report_phase(uvm_phase phase);
+      super.report_phase(phase);
+   endfunction 
  endclass

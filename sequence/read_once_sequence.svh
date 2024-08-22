@@ -20,9 +20,10 @@ class read_once_sequence extends base_sequence;
  				reset_sequence_h.start(m_sequencer);
 
  			start_item(seq_item);
- 			seq_item.rst_n = 1'b1;
- 			seq_item.wr_en = 1'b0;
- 			seq_item.rd_en = 1'b1;
+ 			seq_item.wrst_n = 1'b1;
+ 			seq_item.rrst_n = 1'b1;
+ 			seq_item.w_en 	= 1'b0;
+ 			seq_item.r_en 	= 1'b1;
  			finish_item(seq_item);
       `uvm_info("read_once_SEQUENCE", $sformatf(" read_once only: %s", seq_item.convert2string), UVM_HIGH)
  	endtask : body

@@ -13,8 +13,8 @@ class write_once_rand_sequence extends rand_once_sequence;
  			reset_sequence_h = reset_sequence::type_id::create("reset_sequence_h");
  			reset_sequence_h.start(m_sequencer);
  		end
- 		seq_item.rd_en.rand_mode(0);
+ 		seq_item.operation.rand_mode(0);
+ 		seq_item.operation = WRITE;
  		super.body();
  	endtask : body
-
  endclass

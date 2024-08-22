@@ -262,3 +262,58 @@ Exception c0000005 has occurred at address 6b9bef4a. Traceback:
 StackWalk failed 0
 # End of Stack Trace
 
+# Current time Wed Aug 21 15:43:33 2024
+# Program = vish
+# Id = "2021.1"
+# Version = "2021.01"
+# Date = "Jan 19 2021"
+# Platform = win64
+
+Exception c0000005 has occurred at address 6b9bef4a. Traceback:
+# 0    0x6b9bef4a: 'TkSetFocusWin + 0x36a'
+# 1    0x6b95f90c: 'Tk_SetGrid + 0x2a7c'
+# 2    0x6b9644b4: 'Tk_SetGrid + 0x7624'
+# 3    0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 4    0x28760d9a: 'Itcl_EvalMemberCode + 0x3ba'
+# 5    0x28761f5b: 'Itcl_ExecMethod + 0x23b'
+# 6    0x28769a19: 'Itcl_EvalArgs + 0x1c9'
+# 7    0x28764cf1: 'Itcl_HandleInstance + 0x2c1'
+# 8    0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 9    0x28760d9a: 'Itcl_EvalMemberCode + 0x3ba'
+# 10   0x28761f5b: 'Itcl_ExecMethod + 0x23b'
+# 11   0x28769a19: 'Itcl_EvalArgs + 0x1c9'
+# 12   0x28764cf1: 'Itcl_HandleInstance + 0x2c1'
+# 13   0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 14   0x6bb38974: 'Tcl_EvalEx + 0xa34'
+# 15   0x6bb391a8: 'Tcl_Eval + 0x38'
+# 16   0x6bb3a4f0: 'Tcl_GlobalEval + 0x30'
+# 17   0x4012abe5: '<unknown (@0x4012abe5)>'
+# 18   0x4012b3d5: '<unknown (@0x4012b3d5)>'
+# 19   0x4012c035: '<unknown (@0x4012c035)>'
+# 20   0x401298e5: '<unknown (@0x401298e5)>'
+# 21   0x6bb35226: 'TclInvokeStringCommand + 0xc6'
+# 22   0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 23   0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 24   0x28760d9a: 'Itcl_EvalMemberCode + 0x3ba'
+# 25   0x28761f5b: 'Itcl_ExecMethod + 0x23b'
+# 26   0x28769a19: 'Itcl_EvalArgs + 0x1c9'
+# 27   0x28764cf1: 'Itcl_HandleInstance + 0x2c1'
+# 28   0x6bb37103: 'TclNRRunCallbacks + 0x63'
+# 29   0x6bb38974: 'Tcl_EvalEx + 0xa34'
+# 30   0x6bb37f68: 'Tcl_EvalEx + 0x28'
+# 31   0x6b97431a: 'Tk_BindEvent + 0x91a'
+# 32   0x6b9abd41: 'TkBindEventProc + 0x291'
+# 33   0x6b9bc614: 'Tk_HandleEvent + 0x2f4'
+# 34   0x6b9bb2da: 'TkDeleteThreadExitHandler + 0x31a'
+# 35   0x6bbea56d: 'Tcl_ServiceEvent + 0xed'
+# 36   0x6bbea9e4: 'Tcl_DoOneEvent + 0x184'
+# 37   0x6b9baee5: 'Tk_MainLoop + 0x25'
+# 38   0x6b9fd282: 'Tk_MainEx + 0x932'
+# 39   0x401ab032: 'Mtirpc_Init + 0x23642'
+# 40   0x401adc14: 'Mtirpc_Init + 0x26224'
+# 41   0x40771eb0: 'Tclsqlite3_Init + 0x1c000'
+# 42   0x41607374: 'BaseThreadInitThunk + 0x14'
+# 43   0x4245cc91: 'RtlUserThreadStart + 0x21'
+StackWalk failed 0
+# End of Stack Trace
+

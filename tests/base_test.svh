@@ -44,7 +44,8 @@ class base_test extends uvm_test;
 
     
    virtual function void end_of_elaboration_phase(uvm_phase phase);
-      sequencer_h = env_h.agent_h.sequencer_h;
+      sequencer_h = env_h.active_agent_h.sequencer_h;
+      base_sequence_h.sequencer_h = sequencer_h;
    endfunction : end_of_elaboration_phase
 
 
@@ -58,6 +59,14 @@ class base_test extends uvm_test;
       $display("my_test run phase");
 
    endtask
+
+   function void report_phase (uvm_phase phase);
+      super.report_phase(phase);
+      $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+      $display("INCORRECT FLAG ASSERTION/DEASSERTION COUNTER = %0d", incorrect_counter);
+      $display("CORRECT FLAG ASSERTION/DEASSERTION COUNTER = %0d", correct_counter);
+      $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+   endfunction 
 
 endclass
    

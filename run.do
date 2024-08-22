@@ -6,49 +6,46 @@ vopt top_test_uvm -o top_optimized +acc +cover=bcefsx+asynchronous_fifo(rtl)
 
 
 
-vsim top_optimized -cover +UVM_TESTNAME=write_all_test
+vsim top_optimized -cover +UVM_TESTNAME=reset_test
 set NoQuitOnFinish 1
 onbreak {resume}
 log /* -r
 run -all
-#coverage report -assert -details -zeros -verbose -output F:/ic_design/repos/FIFO_UVM/assertion_based_coverage_report.txt -append /.
-#coverage report -detail -cvg -directive -comments -output Assertion_based_coverage_report.txt
-#coverage report -detail -cvg -directive -comments -option -output functional_coverage_report.txt {} /FIFO_uvm_pkg/coverage/OPERATION_covgrp /FIFO_uvm_pkg/coverage/FLAGS_covgrp
+coverage report -assert -details -zeros -verbose -output reports/assertion_based_coverage_report.txt -append /.
+coverage report -detail -cvg -directive -comments -option -memory -output reports/functional_coverage_report.txt {}
 
-#coverage attribute -name TESTNAME -value reset_test
-#coverage save reset_test.ucdb
-
-
-
-#vsim top_optimized -cover +UVM_TESTNAME=reset_write_read_all_test
-#set NoQuitOnFinish 1
-#onbreak {resume}
-#log /* -r
-#run -all
-#coverage report -assert -details -zeros -verbose -output assertion_based_coverage_report.txt -append /.
-#coverage report -detail - zeros -cvg -directive -comments -output code_based_coverage_report.txt
-#coverage report -detail -cvg -directive -comments -option -output functional_coverage_report.txt {} /FIFO_uvm_pkg/coverage/OPERATION_covgrp /FIFO_uvm_pkg/coverage/FLAGS_covgrp
-
-#coverage attribute -name TESTNAME -value reset_write_read_all_test
-#coverage save reset_write_read_all_test.ucdb
+coverage attribute -name TESTNAME -value reset_test
+coverage save reports/reset_test.ucdb
 
 
 
-#vsim top_optimized -cover +UVM_TESTNAME=write_read_rand_test
-#set NoQuitOnFinish 1
-#onbreak {resume}
-#log /* -r
-#run -all
-#coverage report -assert -details -zeros -verbose -output assertion_based_coverage_report.txt -append /.
-#coverage report -detail -cvg -directive -comments -output Assertion_based_coverage_report.txt
-#coverage report -detail -cvg -directive -comments -output functional_coverage_report.txt {} /FIFO_pkg/coverage/OPERATION_covgrp /FIFO_pkg/coverage/FLAGS_covgrp
+vsim top_optimized -cover +UVM_TESTNAME=reset_write_read_all_test
+set NoQuitOnFinish 1
+onbreak {resume}
+log /* -r
+run -all
+coverage report -assert -details -zeros -verbose -output reports/assertion_based_coverage_report.txt -append /.
+coverage report -detail -cvg -directive -comments -option -memory -output reports/functional_coverage_report.txt {}
 
-#coverage attribute -name TESTNAME -value write_read_rand_test
-#coverage save write_read_rand_test.ucdb
+coverage attribute -name TESTNAME -value reset_write_read_all_test
+coverage save reports/reset_write_read_all_test.ucdb
 
 
-#vcover merge FIFO.ucdb reset_write_read_all_test.ucdb write_read_rand_test.ucdb -out FIFO_tb.ucdb
 
-#quit
+vsim top_optimized -cover +UVM_TESTNAME=write_read_rand_test
+set NoQuitOnFinish 1
+onbreak {resume}
+log /* -r
+run -all
+coverage report -assert -details -zeros -verbose -output reports/assertion_based_coverage_report.txt -append /.
+coverage report -detail -cvg -directive -comments -option -memory -output reports/functional_coverage_report.txt {}
 
-#vcover report -output FIFO_coverage_report.txt FIFO_tb.ucdb -zeros -details -annotate -all
+coverage attribute -name TESTNAME -value write_read_rand_test
+coverage save reports/write_read_rand_test.ucdb
+
+
+vcover merge reports/reset_write_read_all_test.ucdb reports/write_read_rand_test.ucdb reports/reset_test.ucdb -out reports/FIFO_tb.ucdb
+
+#quit -sim
+
+#vcover report -output reports/FIFO_coverage_report.txt reports/FIFO_tb.ucdb -zeros -details -annotate -all

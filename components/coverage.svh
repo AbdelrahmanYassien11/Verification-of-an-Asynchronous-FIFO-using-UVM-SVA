@@ -20,25 +20,81 @@
 
 
       STATE_e operation_cov;
-      
+
       // operation covergroup
       covergroup OPERATION_covgrp;
 
          /* --------------------------------------------------------------------------------------Data Frame coverage of the current operation (either write or read)---------------------------------------------------------------------------------------------- */
       
-         df_operation: coverpoint operation_cov iff (rrst_n && wrst_n) {
+         df_operation: coverpoint operation_cov  {
             bins WRITE_Operation = {WRITE};
+            bins WRITE_Operation_for_FIFO_SIZE = (WRITE [* 8]);
             bins READ_Operation =  {READ};
+            bins READ_Operation_for_FIFO_SIZE = (READ [* 8]);
+            bins RESET_Operation = {RESET};
+
          }
 
          /* -------------------------------------------------------------------------------Data Transition coverage of the current operation (from write tor read and vice versa)---------------------------------------------------------------------------------------------- */
         
-         dt_operation: coverpoint operation_cov iff (rrst_n && wrst_n) {
-            bins WRITE_READ_Transtion = (READ => WRITE);
-            bins READ_WRITE_Transition =  (WRITE => READ);
+         dt_operation: coverpoint operation_cov  {
+            bins WRITE_READ_Transtion     = (READ => WRITE);
+            bins READ_WRITE_Transition    = (WRITE => READ);
+            bins WRITE_RESET_Transition   = (WRITE => RESET);
+            bins READ_RESET_Transition    = (READ => RESET);
+            bins RESET_WRITE_Transition   = (RESET => WRITE);
+            bins RESET_READ_Transition    = (RESET => READ);
          }
 
       endgroup
+
+      // INPUTS covergroup
+      covergroup INPUTS_covgrp;
+
+         /* ---------------------------------------------------------------------------------------------------Data Frame coverage of the DATA_IN --------------------------------------------------------------------------------------------------------------------------------- */
+      
+         df_data_in: coverpoint data_in_cov iff (rrst_n && wrst_n && r_en_cov) {
+            bins DATA_IN_Values_others = {['hFE:'h00]};
+            bins DATA_IN_Values_zeros =  {'h00};
+            bins DATA_IN_Values_ones = {'hFF};
+         }
+
+         /* ------------------------------------------------------------------------------------------------------Data Frame coverage of the WRITE_ENABLE---------------------------------------------------------------------------------------------------------------------- */
+      
+         df_w_en: coverpoint w_en_cov iff (rrst_n && wrst_n) {
+            bins WRITE_On = {1};
+            bins WRITE_Off =  {0};
+            bins WRITE_ON_for_FIFO_SIZE = (1 [* 8]);
+         }
+
+         /* ----------------------------------------------------------------------------------------------------Data Transition coverage of the WRITE_ENABLE------------------------------------------------------------------------------------------------------------ */
+        
+         dt_w_en: coverpoint w_en_cov iff (rrst_n && wrst_n) {
+            bins WRITE_OFF_ON       = (0 => 1);
+            bins WRITE_ON_OFF       = (1 => 0);
+            bins WRITE_ON_ON        = (1 => 1);
+            bins WRITE_OFF_OFF      = (0 => 0);
+         }
+
+         /* -------------------------------------------------------------------------------------------------------Data Frame coverage of the READ_ENABLE----------------------------------------------------------------------------------------------------------------- */
+      
+         df_r_en: coverpoint r_en_cov iff (rrst_n && wrst_n) {
+            bins READ_On = {1};
+            bins READ_Off =  {0};
+            bins READ_ON_for_FIFO_SIZE = (1 [* 8]);
+         }
+
+         /* -----------------------------------------------------------------------------------------------------Data Transition coverage of the READ_ENABLE-------------------------------------------------------------------------------------------------------- */
+        
+         dt_r_en: coverpoint r_en_cov iff (rrst_n && wrst_n) {
+            bins READ_OFF_ON       = (0 => 1);
+            bins READ_ON_OFF       = (1 => 0);
+            bins READ_ON_ON        = (1 => 1);
+            bins READ_OFF_OFF      = (0 => 0);
+         }
+      endgroup
+
+
 
       // flags covergroup
       covergroup FLAGS_covgrp;
@@ -86,6 +142,7 @@
          operation_cov = t.operation;
          FLAGS_covgrp.sample();
          OPERATION_covgrp.sample();
+         INPUTS_covgrp.sample();
 
  		`uvm_info ("COVERAGE", {"SAMPLE: ",t.convert2string}, UVM_HIGH)
 
@@ -95,6 +152,7 @@
  	 	super.new(name, parent);
          OPERATION_covgrp = new;
          FLAGS_covgrp     = new;
+         INPUTS_covgrp    = new;
  	endfunction
 
  	function void build_phase(uvm_phase phase);

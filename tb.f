@@ -1,4 +1,4 @@
-+incdir+sequence
++incdir+sequence_macros
 +incdir+sequence_item
 +incdir+tests
 +incdir+components

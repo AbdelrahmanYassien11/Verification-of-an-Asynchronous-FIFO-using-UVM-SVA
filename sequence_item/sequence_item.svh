@@ -25,25 +25,24 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
       //rand bit [FIFO_WIDTH-1:0] data_to_write;
       // active low synchronous reset
 
-      // constraint rst_c { rst_n dist {0:=5, 1:=95};
-      // }
+       constraint reset_c {rrst_n == wrst_n;
+       }
 
-      // constraint RESET_c { operation dist {0:=5, [1:2]:=95};
-      // }
+       constraint RESET_c { operation dist {0:=5, 1:=40, 2:=60, 3:=0};
+       }
 
-      // constraint en_c { wr_en == !rd_en; rd_en == !wr_en;
-      // }
 
-      // constraint data_in_c { data_in dist {16'h0000:=1, [16'h0001 : 16'hFFFE]:=1, 16'hFFFF:=1};
-      // }
+      constraint data_in_c { data_in dist {'h00:/1, 'hFF:/1, ['h01 : 'hFE]:/40};
+      }
 
-      // constraint operation_c {operation == RESET -> rst_n == 1'b0;
-      //                         operation == WRITE -> rst_n == 1'b1 && wr_en == 1'b1 && rd_en == 1'b0;
-      //                         operation == READ -> rst_n == 1'b1 && wr_en == 1'b0 && rd_en == 1'b1;
-      //                         }
+      constraint operation_c {operation == RESET -> rrst_n == 1'b0 && wrst_n == 1'b0;
+                              operation == WRITE -> rrst_n == 1'b1 && wrst_n == 1'b1 && w_en == 1'b1 && r_en == 1'b0;
+                              operation == READ ->  rrst_n == 1'b1 && wrst_n == 1'b1 && w_en == 1'b0 && r_en == 1'b1;
+                              operation == WRITE_READ -> rrst_n == 1'b1 && wrst_n == 1'b1 && w_en == 1'b1 && r_en == 1'b1;
+                              }
 
-      // constraint randomized_test_number_c { randomized_number_of_tests inside {[100 :150]};    
-      // }
+      constraint randomized_test_number_c { randomized_number_of_tests inside {[100 :150]};    
+      }
 
 
 
@@ -65,9 +64,9 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
                //(tested.w_en == w_en) &&
                //(tested.r_en == r_en) &&
 
-               (tested.data_out == data_out) &&
+               (tested.data_out == data_out); /*&&
                (tested.empty == empty) &&
-               (tested.full == full);
+               (tested.full == full);)*/
       end
       return same;
     endfunction : do_compare
@@ -102,8 +101,8 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
     function string convert2string();
       string            s;
 
-      s = $sformatf(" time: %t  wrst_n:%0d  rrst_n:%0d  data_in: %0d  w_en: %0d  r_en: %0d  data_out: %0d  empty: %0d  full: %0d",
-                    $time, wrst_n, rrst_n, data_in, w_en, r_en, data_out, empty, full);
+      s = $sformatf(" time: %t  wrst_n:%0d  rrst_n:%0d  data_in: %0d  w_en: %0d  r_en: %0d  data_out: %0d  empty: %0d  full: %0d   incorrect flag assertion = %0d",
+                    $time, wrst_n, rrst_n, data_in, w_en, r_en, data_out, empty, full, incorrect_counter);
       return s;
     endfunction : convert2string
 

@@ -23,8 +23,6 @@ import FIFO_pkg::*;
    bit [FIFO_SIZE-1:0] write_pointer, read_pointer;
    bit wrap_around;
    logic FIFO_full, FIFO_empty;
-   int incorrect_counter;
-   int correct_counter;
   // bit full_covered, empty_covered;
 
 
@@ -38,7 +36,6 @@ import FIFO_pkg::*;
 				reset_FIFO();
       end
 			else begin
-      $display("ABOUT TO ENTER WRITE_READ_FIFO ");
       write_read_FIFO(idata_in, ir_en, iw_en); 
       end
 	endtask : generic_reciever
@@ -69,29 +66,34 @@ import FIFO_pkg::*;
   task read_reset();
     read_pointer = 0;
     rrst_n = 0;
+    wrap_around = 0;
     @(negedge rclk);
   endtask : read_reset
 
   task write_reset();
-    read_pointer = 0;
+    write_pointer = 0;
     wrst_n = 0;
+    wrap_around = 0;
     @(negedge wclk);
   endtask : write_reset
 
 
   task write_read_FIFO(input bit [FIFO_WIDTH-1:0] idata_in, input bit ir_en, iw_en);
-    $display("ENTERED WRITE_READ_FIFO ");
     if((iw_en === 1'b1) && (ir_en === 1'b1))begin
       fork
-        read_FIFO();
-        write_FIFO(idata_in);
+        begin
+          read_FIFO();
+        end
+        begin
+          write_FIFO(idata_in);
+        end
       join
       send_outputs();
+      //send_concurrent_outputs(ir_en, iw_en);
       w_en = 0;
       r_en = 0;
     end
     else if ((iw_en === 1'b1) && (ir_en === 1'b0)) begin
-      $display("ABOUT TO ENTER WRITE_FIFO ");
       write_FIFO(idata_in);
       send_outputs();
       w_en = 0;
@@ -105,7 +107,6 @@ import FIFO_pkg::*;
 
 
  	task write_FIFO(input bit [FIFO_WIDTH-1:0] idata_in);
-    $display("ENTERED WRITE FIFO");
  		@(negedge wclk);
       wrst_n = 1'b1;
  			w_en = 1'b1;
@@ -128,42 +129,44 @@ import FIFO_pkg::*;
       rrst_n = 1'b1;
   		r_en = 1'b1;
  		@(negedge rclk);
-    read_pointer = read_pointer +1;
+    if(!FIFO_empty)begin
+      if(read_pointer === FIFO_SIZE-1) begin
+        read_pointer = 0;
+        wrap_around = 0;
+      end
+      else begin
+        read_pointer = read_pointer +1;
+      end
+    end
  	endtask : read_FIFO
 
 
-   property full_p;
+  property full_p;
     @(negedge wclk)
-    if(rrst_n && wrst_n)
-      (FIFO_full) |-> (full) throughout (FIFO_full) ##[2:3] $fell(full);
-    endproperty
+    disable iff(!rrst_n && !wrst_n)
+      $rose(FIFO_full) |-> ##[0:$] (!FIFO_full ##[1:3] $fell(full));
+  endproperty
 
 
-  assert property (full_p) else begin
-        incorrect_counter = incorrect_counter +1;
-        $display("full flag asserted and deasserted INCORRECTLY");
-      end
+  assert property (full_p) correct_counter = correct_counter+1;
+   else begin
+      incorrect_counter = incorrect_counter +1;
+      $display("time: %0t  full flag asserted and deasserted INCORRECTLY", $time());
+    end
   cover property (full_p);
-
-
-
-  // property empty_p;
-  //   @(negedge rclk)
-  //   if(rrst_n && wrst_n)
-  //     (FIFO_empty) |-> (empty throughout !FIFO_empty) ##[2:3] (!empty); /*((empty)  until (!FIFO_empty ##1 $fell(empty)) ##[1:2] $fell(empty));*/
-  // endproperty
 
 
   property empty_p;
     @(negedge rclk)
-    if(rrst_n && wrst_n)
-      (FIFO_empty) |-> (empty throughout FIFO_empty) ##[2:3] $fell(empty); /*((empty)  until (!FIFO_empty ##1 $fell(empty)) ##[1:2] $fell(empty));*/
+    disable iff(!rrst_n && !wrst_n)
+      (FIFO_empty) |-> ##[0:$] (!FIFO_empty ##[2:3] $fell(empty)); /*( (empty)  until (!FIFO_empty ##1 $fell(empty)) ##[1:2] $fell(empty));*/ /*(empty throughout FIFO_empty) ##[2:3] $fell(empty)*/
   endproperty
 
-  assert property (empty_p) else begin
-        incorrect_counter = incorrect_counter +1;
-        $display("time: %0t empty flag asserted and deasserted INCORRECTLY", $time());
-      end
+  assert property (empty_p) correct_counter = correct_counter+1; 
+    else begin
+      incorrect_counter = incorrect_counter +1;
+      $display("time: %0t empty flag asserted and deasserted INCORRECTLY", $time());
+    end
   cover property (empty_p);
 
 
@@ -174,6 +177,10 @@ import FIFO_pkg::*;
    function void send_outputs();
    		outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, w_en, r_en, data_out, empty, full, operation_interface);
    endfunction : send_outputs
+
+   //  function void send_concurrent_outputs(input bit ir_en, iw_en);
+   //    outputs_monitor_h.write_to_monitor(rrst_n, wrst_n, data_in, iw_en, ir_en, data_out, empty, full, operation_interface);
+   // endfunction : send_concurrent_outputs
 
    assign FIFO_full = ((wrap_around) & (write_pointer === read_pointer));
    assign FIFO_empty = (!wrap_around) & (write_pointer === read_pointer);
@@ -188,35 +195,3 @@ import FIFO_pkg::*;
   end
 endinterface : inf
 
-
-
-  // clocking cb_w @(negedge clk);
-  //   default input #CYCLE_WRITE/2 output;
-  //   input full;
-  //   output [FIFO_WIDTH-1:0] data_in;
-  //   output wrst_n, w_en;
-  // endclocking
-
-
-  // clocking cb_r @(negedge clk);
-  //   default input #CYCLE_READ/2 output #2;
-
-  //   input  [FIFO_WIDTH-1:0] data_out;
-  //   input empty;
-
-  //   output rrst_n, r_en;
-  // endclocking
-
-
-  // assign data_out = cb_r.data_out;
-
-  // assign empty    = cb_r.empty;
-  // assign full     = cb_w.full;
-
-  // assign cb_w.data_in = data_in;
-
-  // assign rrst_n    = cb_r.rrst_n;
-  // assign r_en     = cb_r.r_en;
-
-  // assign wrst_n    = cb_w.wrst_n;
-  // assign w_en     = cb_w.w_en;
