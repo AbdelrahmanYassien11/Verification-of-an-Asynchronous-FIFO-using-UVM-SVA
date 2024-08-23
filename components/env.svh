@@ -7,10 +7,9 @@
  	active_agent_config active_agent_config_h;
  	passive_agent_config passive_agent_config_h;
 
- 	active_agent active_WRITE_agent_h;
- 	active_agent active_READ_agent_h;
-
  	passive_agent passive_agent_h;
+ 	active_agent active_agent_h;
+
 
  	scoreboard scoreboard_h;
  	coverage coverage_h;
@@ -35,19 +34,16 @@
 		active_agent_config_h = new(.active_agent_config_my_vif(env_config_h.env_config_my_vif), .is_active(UVM_ACTIVE));
 		passive_agent_config_h = new(.passive_agent_config_my_vif(env_config_h.env_config_my_vif), .is_passive(UVM_PASSIVE));
 
+		uvm_config_db#(passive_agent_config)::set(this,"passive_agent_h", "config", passive_agent_config_h);
+		uvm_config_db#(active_agent_config)::set(this,"active_agent_h", "active_config", active_agent_config_h);
 
-		uvm_config_db#(active_agent_config)::set(this,"active_WRITE_agent_h", "config", active_agent_config_h);
-		uvm_config_db#(active_agent_config)::set(this,"active_READ_agent_h", "config", active_agent_config_h);
-		//uvm_config_db#(passive_agent_config)::set(this,"passive_agent_h", "config", passive_agent_config_h);
 
 		//uvm_config_db#(virtual inf)::set(this,"agent_h", "my_vif", my_vif);
 		uvm_config_db#(virtual inf)::set(this,"coverage_h", "my_vif", my_vif);
 		uvm_config_db#(virtual inf)::set(this,"scoreboard_h", "my_vif", my_vif);
 
-		active_WRIE_agent_h = active_agent::type_id::create("active_WRITE_agent_h",this);
-		active_READ_agent_h = active_agent::type_id::create("active_READ_agent_h",this);
-
-		//passive_agent_h = passive_agent::type_id::create("passive_agent_h",this);
+		active_agent_h = active_agent::type_id::create("active_agent_h",this);
+		passive_agent_h = passive_agent::type_id::create("passive_agent_h",this);
 
 		scoreboard_h = scoreboard::type_id::create("scoreboard_h",this);
 		coverage_h = coverage::type_id::create("coverage_h", this);
@@ -57,15 +53,11 @@
 
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		active_WRITE_agent_h.tlm_analysis_port_outputs.connect(coverage_h.analysis_export);
-		active_READ_agent_h.tlm_analysis_port_outputs.connect(coverage_h.analysis_export);
+		passive_agent_h.tlm_analysis_port_outputs.connect(coverage_h.analysis_export);
 
-		active_WRITE_agent_h.tlm_analysis_port_inputs.connect(scoreboard_h.analysis_export_inputs);
-		active_READ_agent_h.tlm_analysis_port_inputs.connect(scoreboard_h.analysis_export_inputs);
+		active_agent_h.tlm_analysis_port_inputs.connect(scoreboard_h.analysis_export_inputs);
 
-		active_agent_WRITE_h.tlm_analysis_port_outputs.connect(scoreboard_h.analysis_export_outputs);
-		active_agent_READ_h.tlm_analysis_port_outputs.connect(scoreboard_h.analysis_export_outputs);
-		//passive_agent_h.tlm_analysis_port_outputs.connect(scoreboard_h.analysis_export_outputs);
+		passive_agent_h.tlm_analysis_port_outputs.connect(scoreboard_h.analysis_export_outputs);
 		$display("envconnect phase");
 	endfunction
 

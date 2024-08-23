@@ -1,5 +1,6 @@
-dut/fifo_mem.v
-dut/rptr_handler.v
-dut/wptr_handler.v
-dut/synchronizer.v
-dut/top.v
+dut/fifomem.v
+dut/rptr_empty.v
+dut/wptr_full.v
+dut/sync_r2w.v
+dut/sync_w2r.v
+dut/fifo1.v

@@ -22,10 +22,13 @@ class predictor extends uvm_subscriber #(sequence_item);
   bit 	 [FIFO_WIDTH-1:0]   data_write_queue [$];
 
 
+  static logic  [FIFO_WIDTH-1:0]   data_out_old;
   bit [FIFO_SIZE-1:0] write_pointer;
   bit [FIFO_SIZE-1:0] read_pointer;
   bit wrap_around;
+
   string data_str;
+  bit just_reset;
 
 
   function new(string name = "predictor", uvm_component parent);
@@ -68,7 +71,7 @@ class predictor extends uvm_subscriber #(sequence_item);
   endtask
 
   function void write(sequence_item t);
-    rrst_n     = t.rrst_n;
+    rrst_n    = t.rrst_n;
     wrst_n    = t.wrst_n;
     data_in   = t.data_in;
     w_en     = t.w_en;
@@ -79,15 +82,12 @@ class predictor extends uvm_subscriber #(sequence_item);
   endfunction
 
   task predictor_idk();
-      if(rrst_n === 1'b0 || wrst_n === 1'b0) begin
+      if(rrst_n === 1'b0 && wrst_n === 1'b0) begin
         reset_FIFO();
       end
       else begin
         write_read_FIFO();
       end
-      // if(w_en && r_en)
-      //   concurrent_send_results();
-      // else
       send_results();
   endtask : predictor_idk
 
@@ -107,22 +107,15 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   //FIFO_reeset task
   task reset_FIFO();
-    if((wrst_n === 1'b0) && (rrst_n === 1'b0))begin
-      data_out_expected     = 0;
+      //data_out_expected     = 0;
       empty_expected        = 1;
       full_expected         = 0;
       fork
         read_reset();
         write_reset();
       join
+      just_reset = 1;
       data_write_queue.delete();
-    end
-    else if ((wrst_n === 1'b0) && (rrst_n === 1'b1)) begin
-      write_reset();
-    end
-    else if ((wrst_n === 1'b1) && (rrst_n === 1'b0)) begin
-      read_reset();
-    end
   endtask : reset_FIFO
 
   task read_reset();
@@ -164,6 +157,11 @@ class predictor extends uvm_subscriber #(sequence_item);
         write_pointer = write_pointer + 1;
       end
     end
+    if(just_reset) begin
+      data_out_expected = data_write_queue.pop_front();
+      just_reset = 0;
+      read_pointer = read_pointer + 1;
+    end
     FLAGS();
      $display("WRITE_POINER = %0d", write_pointer);
      $display("READ_POINER = %0d", read_pointer);
@@ -173,6 +171,8 @@ class predictor extends uvm_subscriber #(sequence_item);
   task read_FIFO();
     if(empty_expected === 0) begin
       data_out_expected = data_write_queue.pop_front();
+      $display("QUEUEEEEEEEEEEEEEEEEEEEEEEEE= %p", data_write_queue);
+      data_out_old = data_out_expected;
       if(read_pointer === FIFO_SIZE-1)begin
         read_pointer = 0;
         wrap_around = 0;
@@ -180,6 +180,9 @@ class predictor extends uvm_subscriber #(sequence_item);
       else begin
         read_pointer = read_pointer + 1;
       end
+    end
+    else begin
+      data_out_expected = data_out_old;
     end
     FLAGS();
      $display("WRITE_POINER = %0d", write_pointer);
@@ -189,11 +192,11 @@ class predictor extends uvm_subscriber #(sequence_item);
 
   task FLAGS();
     if(read_pointer === write_pointer) begin
-      if(( wrap_around & (read_pointer[FIFO_SIZE-1:0] === write_pointer[FIFO_SIZE-1:0]))) begin
+      if(( wrap_around && (read_pointer === write_pointer))) begin
         full_expected = 1;
         empty_expected = 0;
       end
-      else if(read_pointer === write_pointer)begin
+      else begin
         full_expected = 0;
         empty_expected = 1;
       end

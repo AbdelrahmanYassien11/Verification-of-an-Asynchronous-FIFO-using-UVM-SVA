@@ -8,8 +8,8 @@ package FIFO_pkg;
 
 	typedef enum {RESET, READ , WRITE, WRITE_READ} STATE_e;
 	parameter FIFO_WIDTH = 8;
-   	parameter FIFO_DEPTH = 8;
-  	parameter FIFO_SIZE = 8;
+   	parameter FIFO_DEPTH = 16;
+  	parameter FIFO_SIZE = 16;
   	int incorrect_counter;
    	int correct_counter;
 

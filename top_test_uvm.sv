@@ -11,17 +11,17 @@ module top_test_uvm();
 
 	inf f_if(wclk, rclk);
 
-	asynchronous_fifo DUT(
+	fifo1	 DUT(
 				.wclk(f_if.wclk),
 				.wrst_n(f_if.wrst_n),
 				.rclk(f_if.rclk),
 				.rrst_n(f_if.rrst_n),
-				.w_en(f_if.w_en),
-				.r_en(f_if.r_en),
-				.data_in(f_if.data_in),
-				.data_out(f_if.data_out),
-				.full(f_if.full),
-				.empty(f_if.empty)
+				.winc(f_if.w_en),
+				.rinc(f_if.r_en),
+				.wdata(f_if.data_in),
+				.rdata(f_if.data_out),
+				.wfull(f_if.full),
+				.rempty(f_if.empty)
 		);
 
 	//bind FIFO FIFO_sva sva(f_if);

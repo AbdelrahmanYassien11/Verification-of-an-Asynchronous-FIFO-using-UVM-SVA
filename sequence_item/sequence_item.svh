@@ -55,6 +55,7 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
       
       if (!$cast(tested,rhs)) begin
         same = 0;
+        $display("couldnt compare");
       end
       else begin
         same = super.do_compare(rhs, comparer) && 
@@ -64,7 +65,7 @@ rand  bit   [FIFO_WIDTH-1:0]  data_in;
                //(tested.w_en == w_en) &&
                //(tested.r_en == r_en) &&
 
-               (tested.data_out == data_out); /*&&
+               (tested.data_out === data_out); /*&&
                (tested.empty == empty) &&
                (tested.full == full);)*/
       end

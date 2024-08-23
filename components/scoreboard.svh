@@ -6,8 +6,6 @@ class scoreboard extends uvm_scoreboard;
   predictor predictor_h;
   comparator comparator_h;
 
- 	//uvm_tlm_analysis_fifo #(sequence_item) tlm_analysis_fifo;
-
  	uvm_analysis_export #(sequence_item) analysis_export_inputs;
   uvm_analysis_export #(sequence_item) analysis_export_outputs;
 

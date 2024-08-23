@@ -55,6 +55,7 @@ class outputs_monitor extends uvm_monitor;
 			seq_item.w_en 				= iw_en;
 			seq_item.r_en 				= ir_en;
 
+			$display(" time = %0t dataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_out =  %0d",$time(), idata_out);
 			seq_item.data_out 			= idata_out;
 			seq_item.empty 				= iempty;
 			seq_item.full				= ifull;

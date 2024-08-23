@@ -7,10 +7,8 @@ class active_agent extends uvm_agent;
   	driver driver_h;
 
   	inputs_monitor inputs_monitor_h;
-  	outputs_monitor outputs_monitor_h;
 
   	uvm_analysis_port #(sequence_item) tlm_analysis_port_inputs;
-  	uvm_analysis_port #(sequence_item) tlm_analysis_port_outputs;
 
   	uvm_port_list list;
 
@@ -24,7 +22,7 @@ class active_agent extends uvm_agent;
   	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 
-		if(!uvm_config_db#(active_agent_config)::get(this,"","config",active_agent_config_h)) begin
+		if(!uvm_config_db#(active_agent_config)::get(this,"","active_config",active_agent_config_h)) begin
 			`uvm_fatal("active_agent" , "Failed to get active_agent_config object");
 		end
 
@@ -39,10 +37,8 @@ class active_agent extends uvm_agent;
 
 		uvm_config_db#(virtual inf)::set(this,"driver_h", "my_vif", active_agent_config_h.active_agent_config_my_vif);
 		uvm_config_db#(virtual inf)::set(this,"inputs_monitor_h", "my_vif", active_agent_config_h.active_agent_config_my_vif);
-		uvm_config_db#(virtual inf)::set(this,"outpus_monitor_h", "my_vif", active_agent_config_h.active_agent_config_my_vif);
 
  		tlm_analysis_port_inputs = new("tlm_analysis_port_inputs", this);
- 		tlm_analysis_port_inputs = new("tlm_analysis_port_outputs", this);
 
 		$display("my_active_agent build phase");
 	endfunction
@@ -50,8 +46,6 @@ class active_agent extends uvm_agent;
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
 		inputs_monitor_h.tlm_analysis_port.connect(tlm_analysis_port_inputs);
-		outputs_monitor_h.tlm_analysis_port.connect(tlm_analysis_port_outputs);
-
 
 		if (get_is_active() == UVM_ACTIVE)
 			driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
