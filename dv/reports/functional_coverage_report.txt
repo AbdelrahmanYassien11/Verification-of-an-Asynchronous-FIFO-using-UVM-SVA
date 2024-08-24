@@ -1,0 +1,651 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top_test_uvm/f_if
+=== Design Unit: work.inf
+=================================================================================
+
+Directive Coverage:
+    Directives                       2         1         1    50.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top_test_uvm/f_if/cover__empty_p        inf    Verilog  SVA  interface/FIFO_interface.sv(189)
+                                                                               100 Covered   
+/top_test_uvm/f_if/cover__full_p         inf    Verilog  SVA  interface/FIFO_interface.sv(175)
+                                                                                 0 ZERO      
+
+=================================================================================
+=== Instance: /FIFO_pkg
+=== Design Unit: work.FIFO_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      3        na        na    30.55%
+        Coverpoints/Crosses         11        na        na        na
+            Covergroup Bins         36        12        24    33.33%
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status                Persistent Memory   Transient Memory     Peak Transient    PeakTransMemory 
+                                                                                                                                                           Memory              Time  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp              10.00%        100          -    Uncovered                         3.2KB              1.3KB              4.1KB               0 ns 
+    covered/total bins:                                     1         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    missing/total bins:                                    10         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    % Hit:                                              9.09%        100          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint df_operation                            20.00%        100          -    Uncovered                          784B              1.2KB              1.2KB              80 ns 
+        covered/total bins:                                 1          5          -                                      na                 na                 na                 na 
+        missing/total bins:                                 4          5          -                                      na                 na                 na                 na 
+        % Hit:                                         20.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                              1.2KB              1.9KB              1.9KB               0 ns 
+        covered/total bins:                                 0          6          -                                      na                 na                 na                 na 
+        missing/total bins:                                 6          6          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                       10.00%        100          -    Uncovered                         3.2KB              1.3KB              4.1KB               0 ns 
+    covered/total bins:                                     1         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    missing/total bins:                                    10         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    % Hit:                                              9.09%        100          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::OPERATION_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint df_operation                            20.00%        100          -    Uncovered                          784B              1.2KB              1.2KB              80 ns 
+        covered/total bins:                                 1          5          -                                      na                 na                 na                 na 
+        missing/total bins:                                 4          5          -                                      na                 na                 na                 na 
+        % Hit:                                         20.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_Operation                                 0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_Operation_for_FIFO_SIZE                   0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_Operation                                  0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_Operation_for_FIFO_SIZE                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_Operation                                 1          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                              1.2KB              1.9KB              1.9KB               0 ns 
+        covered/total bins:                                 0          6          -                                      na                 na                 na                 na 
+        missing/total bins:                                 6          6          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_READ_Transtion                            0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_WRITE_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_RESET_Transition                          0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_RESET_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_WRITE_Transition                          0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_READ_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+ TYPE /FIFO_pkg/coverage/INPUTS_covgrp                 56.66%        100          -    Uncovered                         5.8KB              2.5KB              5.2KB               0 ns 
+    covered/total bins:                                     9         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    missing/total bins:                                     8         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    % Hit:                                             52.94%        100          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint df_data_in                             100.00%        100          -    Covered                            552B               592B               592B            1040 ns 
+        covered/total bins:                                 3          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 0          3          -                                      na                 na                 na                 na 
+        % Hit:                                        100.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_w_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_w_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_r_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_r_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::INPUTS_covgrp  
+                                                       56.66%        100          -    Uncovered                         5.8KB              2.5KB              5.2KB               0 ns 
+    covered/total bins:                                     9         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    missing/total bins:                                     8         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    % Hit:                                             52.94%        100          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::INPUTS_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint df_data_in                             100.00%        100          -    Covered                            552B               592B               592B            1040 ns 
+        covered/total bins:                                 3          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 0          3          -                                      na                 na                 na                 na 
+        % Hit:                                        100.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin DATA_IN_Values_others                          98          1          -    Covered                              na                 na                 na                 na 
+        bin DATA_IN_Values_zeros                            4          1          -    Covered                              na                 na                 na                 na 
+        bin DATA_IN_Values_ones                             3          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint df_w_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_On                                      101          1          -    Covered                              na                 na                 na                 na 
+        bin WRITE_Off                                       0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_for_FIFO_SIZE                         94          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_w_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_OFF_ON                                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_OFF                                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_ON                                   100          1          -    Covered                              na                 na                 na                 na 
+        bin WRITE_OFF_OFF                                   0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint df_r_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin READ_On                                       101          1          -    Covered                              na                 na                 na                 na 
+        bin READ_Off                                        0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_for_FIFO_SIZE                          94          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_r_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin READ_OFF_ON                                     0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_OFF                                     0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_ON                                    100          1          -    Covered                              na                 na                 na                 na 
+        bin READ_OFF_OFF                                    0          1          -    ZERO                                 na                 na                 na                 na 
+ TYPE /FIFO_pkg/coverage/FLAGS_covgrp                  25.00%        100          -    Uncovered                         3.4KB              2.1KB              3.2KB               0 ns 
+    covered/total bins:                                     2          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    missing/total bins:                                     6          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    % Hit:                                             25.00%        100          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_full                                 50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_empty                                50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::FLAGS_covgrp  
+                                                       25.00%        100          -    Uncovered                         3.4KB              2.1KB              3.2KB               0 ns 
+    covered/total bins:                                     2          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    missing/total bins:                                     6          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    % Hit:                                             25.00%        100          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::FLAGS_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin full_expected_off_on                            0          1          -    ZERO                                 na                 na                 na                 na 
+        bin full_expected_on_off                            0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin empty_expected_off_on                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin empty_expected_on_off                           0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint df_full                                 50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin full_expected_ON                                0          1          -    ZERO                                 na                 na                 na                 na 
+        bin full_expected_OFF                             101          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint df_empty                                50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin empty_expected_ON                               0          1          -    ZERO                                 na                 na                 na                 na 
+        bin empty_expected_OFF                            101          1          -    Covered                              na                 na                 na                 na 
+
+COVERGROUP COVERAGE:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status                Persistent Memory   Transient Memory     Peak Transient    PeakTransMemory 
+                                                                                                                                                           Memory              Time  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp              10.00%        100          -    Uncovered                         3.2KB              1.3KB              4.1KB               0 ns 
+    covered/total bins:                                     1         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    missing/total bins:                                    10         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    % Hit:                                              9.09%        100          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint df_operation                            20.00%        100          -    Uncovered                          784B              1.2KB              1.2KB              80 ns 
+        covered/total bins:                                 1          5          -                                      na                 na                 na                 na 
+        missing/total bins:                                 4          5          -                                      na                 na                 na                 na 
+        % Hit:                                         20.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                              1.2KB              1.9KB              1.9KB               0 ns 
+        covered/total bins:                                 0          6          -                                      na                 na                 na                 na 
+        missing/total bins:                                 6          6          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                       10.00%        100          -    Uncovered                         3.2KB              1.3KB              4.1KB               0 ns 
+    covered/total bins:                                     1         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    missing/total bins:                                    10         11          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    % Hit:                                              9.09%        100          -                                   3.2KB              1.3KB              4.1KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::OPERATION_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint df_operation                            20.00%        100          -    Uncovered                          784B              1.2KB              1.2KB              80 ns 
+        covered/total bins:                                 1          5          -                                      na                 na                 na                 na 
+        missing/total bins:                                 4          5          -                                      na                 na                 na                 na 
+        % Hit:                                         20.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_Operation                                 0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_Operation_for_FIFO_SIZE                   0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_Operation                                  0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_Operation_for_FIFO_SIZE                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_Operation                                 1          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_operation                             0.00%        100          -    ZERO                              1.2KB              1.9KB              1.9KB               0 ns 
+        covered/total bins:                                 0          6          -                                      na                 na                 na                 na 
+        missing/total bins:                                 6          6          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_READ_Transtion                            0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_WRITE_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_RESET_Transition                          0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_RESET_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_WRITE_Transition                          0          1          -    ZERO                                 na                 na                 na                 na 
+        bin RESET_READ_Transition                           0          1          -    ZERO                                 na                 na                 na                 na 
+ TYPE /FIFO_pkg/coverage/INPUTS_covgrp                 56.66%        100          -    Uncovered                         5.8KB              2.5KB              5.2KB               0 ns 
+    covered/total bins:                                     9         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    missing/total bins:                                     8         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    % Hit:                                             52.94%        100          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint df_data_in                             100.00%        100          -    Covered                            552B               592B               592B            1040 ns 
+        covered/total bins:                                 3          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 0          3          -                                      na                 na                 na                 na 
+        % Hit:                                        100.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_w_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_w_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_r_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_r_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::INPUTS_covgrp  
+                                                       56.66%        100          -    Uncovered                         5.8KB              2.5KB              5.2KB               0 ns 
+    covered/total bins:                                     9         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    missing/total bins:                                     8         17          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    % Hit:                                             52.94%        100          -                                   5.8KB              2.5KB              5.2KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::INPUTS_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint df_data_in                             100.00%        100          -    Covered                            552B               592B               592B            1040 ns 
+        covered/total bins:                                 3          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 0          3          -                                      na                 na                 na                 na 
+        % Hit:                                        100.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin DATA_IN_Values_others                          98          1          -    Covered                              na                 na                 na                 na 
+        bin DATA_IN_Values_zeros                            4          1          -    Covered                              na                 na                 na                 na 
+        bin DATA_IN_Values_ones                             3          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint df_w_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_On                                      101          1          -    Covered                              na                 na                 na                 na 
+        bin WRITE_Off                                       0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_for_FIFO_SIZE                         94          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_w_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin WRITE_OFF_ON                                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_OFF                                    0          1          -    ZERO                                 na                 na                 na                 na 
+        bin WRITE_ON_ON                                   100          1          -    Covered                              na                 na                 na                 na 
+        bin WRITE_OFF_OFF                                   0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint df_r_en                                 66.66%        100          -    Uncovered                          416B               408B               408B             720 ns 
+        covered/total bins:                                 2          3          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          3          -                                      na                 na                 na                 na 
+        % Hit:                                         66.66%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin READ_On                                       101          1          -    Covered                              na                 na                 na                 na 
+        bin READ_Off                                        0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_for_FIFO_SIZE                          94          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint dt_r_en                                 25.00%        100          -    Uncovered                          848B              1.2KB              1.2KB             240 ns 
+        covered/total bins:                                 1          4          -                                      na                 na                 na                 na 
+        missing/total bins:                                 3          4          -                                      na                 na                 na                 na 
+        % Hit:                                         25.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin READ_OFF_ON                                     0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_OFF                                     0          1          -    ZERO                                 na                 na                 na                 na 
+        bin READ_ON_ON                                    100          1          -    Covered                              na                 na                 na                 na 
+        bin READ_OFF_OFF                                    0          1          -    ZERO                                 na                 na                 na                 na 
+ TYPE /FIFO_pkg/coverage/FLAGS_covgrp                  25.00%        100          -    Uncovered                         3.4KB              2.1KB              3.2KB               0 ns 
+    covered/total bins:                                     2          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    missing/total bins:                                     6          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    % Hit:                                             25.00%        100          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    type_option.weight=1
+    type_option.goal=100
+    type_option.comment=
+    type_option.strobe=0
+    type_option.merge_instances=auto(0)
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_full                                 50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+    Coverpoint df_empty                                50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
+ Covergroup instance \/FIFO_pkg::coverage::FLAGS_covgrp  
+                                                       25.00%        100          -    Uncovered                         3.4KB              2.1KB              3.2KB               0 ns 
+    covered/total bins:                                     2          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    missing/total bins:                                     6          8          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    % Hit:                                             25.00%        100          -                                   3.4KB              2.1KB              3.2KB               0 ns 
+    option.name=\/FIFO_pkg::coverage::FLAGS_covgrp 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=0
+    Coverpoint dt_full                                  0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin full_expected_off_on                            0          1          -    ZERO                                 na                 na                 na                 na 
+        bin full_expected_on_off                            0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint dt_empty                                 0.00%        100          -    ZERO                               496B               560B               560B               0 ns 
+        covered/total bins:                                 0          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 2          2          -                                      na                 na                 na                 na 
+        % Hit:                                          0.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin empty_expected_off_on                           0          1          -    ZERO                                 na                 na                 na                 na 
+        bin empty_expected_on_off                           0          1          -    ZERO                                 na                 na                 na                 na 
+    Coverpoint df_full                                 50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin full_expected_ON                                0          1          -    ZERO                                 na                 na                 na                 na 
+        bin full_expected_OFF                             101          1          -    Covered                              na                 na                 na                 na 
+    Coverpoint df_empty                                50.00%        100          -    Uncovered                          288B               208B               208B             160 ns 
+        covered/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        missing/total bins:                                 1          2          -                                      na                 na                 na                 na 
+        % Hit:                                         50.00%        100          -                                      na                 na                 na                 na 
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin empty_expected_ON                               0          1          -    ZERO                                 na                 na                 na                 na 
+        bin empty_expected_OFF                            101          1          -    Covered                              na                 na                 na                 na 
+
+TOTAL COVERGROUP COVERAGE: 30.55%  COVERGROUP TYPES: 3
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top_test_uvm/f_if/cover__empty_p        inf    Verilog  SVA  interface/FIFO_interface.sv(189)
+                                                                               100 Covered   
+/top_test_uvm/f_if/cover__full_p         inf    Verilog  SVA  interface/FIFO_interface.sv(175)
+                                                                                 0 ZERO      
+
+TOTAL DIRECTIVE COVERAGE: 50.00%  COVERS: 2
+
+Total Coverage By Instance (filtered view): 40.27%
+
+
+COVERGROUP MEMORY USAGE: Total 57.6KB, Peak 57.6KB at time 8160 ns for total 11 coverpoints/crosses.
+ASSERT/COVER MEMORY USAGE: Total 480B Peak 560B at time 140 ns for total 6 threads.
+CONSTRAINT SOLVER MEMORY USAGE: Total 1.1MB,Peak 1.2MB at time 80 ns for total 205 randomize() calls.
+CLASS OBJECTS MEMORY USAGE: Total Memory 2.2MB and Peak Memory 2.2MB used at time 8160 ns for total 3024 class objects.
+DYNAMIC OBJECTS MEMORY USAGE: Total Memory 330.3KB and Peak Memory 332.3KB used at time 8160 ns for total 2762 dynamic objects.

@@ -1,0 +1,2559 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top_test_uvm/f_if
+=== Design Unit: work.inf
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16        15         1    93.75%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_test_uvm/f_if
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File interface/FIFO_interface.sv
+------------------------------------IF Branch------------------------------------
+    88                                       265     Count coming in to IF
+    88              1                        101         if((iw_en === 1'b1) && (ir_en === 1'b1))begin
+    94              1                         94         else if ((iw_en === 1'b1) && (ir_en === 1'b0)) begin
+    97              1                         70         else if ((iw_en === 1'b0) && (ir_en === 1'b1)) begin
+                                         ***0***     All False Count
+Branch totals: 3 hits of 4 branches = 75.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      12         8         4    66.66%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_test_uvm/f_if --
+
+  File interface/FIFO_interface.sv
+----------------Focused Condition View-------------------
+Line       34 Item    1  ((wrst_n === 1'b0) || (rrst_n === 1'b0))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (rrst_n === 1'b0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          3  (wrst_n === 1'b0)_0   ~(rrst_n === 1'b0)            
+  Row   2:          4  (wrst_n === 1'b0)_1   -                             
+  Row   3:          3  (rrst_n === 1'b0)_0   ~(wrst_n === 1'b0)            
+  Row   4:    ***0***  (rrst_n === 1'b0)_1   ~(wrst_n === 1'b0)            
+
+
+----------------Focused Condition View-------------------
+Line       94 Item    1  ((iw_en === 1'b1) && (ir_en === 1'b0))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (ir_en === 1'b0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          2  (iw_en === 1'b1)_0    -                             
+  Row   2:          2  (iw_en === 1'b1)_1    (ir_en === 1'b0)              
+  Row   3:    ***0***  (ir_en === 1'b0)_0    (iw_en === 1'b1)              
+  Row   4:          2  (ir_en === 1'b0)_1    (iw_en === 1'b1)              
+
+----------------Focused Condition View-------------------
+Line       97 Item    1  ((iw_en === 1'b0) && (ir_en === 1'b1))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (iw_en === 1'b0)         N  '_0' not hit             Hit '_0'
+  (ir_en === 1'b1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (iw_en === 1'b0)_0    -                             
+  Row   2:          2  (iw_en === 1'b0)_1    (ir_en === 1'b1)              
+  Row   3:    ***0***  (ir_en === 1'b1)_0    (iw_en === 1'b0)              
+  Row   4:          2  (ir_en === 1'b1)_1    (iw_en === 1'b0)              
+
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      63        59         4    93.65%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_test_uvm/f_if --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File interface/FIFO_interface.sv
+    209             1           @(incorrect_counter)
+    210             1           $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    211             1           $display("INCORRECT FLAG ASSERTION/DEASSERTION COUNTER = %0d", incorrect_counter);
+    212             1           $display("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        124        75        49    60.48%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_test_uvm/f_if --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                        FIFO_empty           3           3                                                                  100.00 
+                                         FIFO_full           2           2                                                                  100.00 
+                                      data_in[0-7]           3           3                                                                  100.00 
+                                     data_out[0-7]           3           3                                                                  100.00 
+                                             empty           3           3                                                                  100.00 
+                                              full           2           2                                                                  100.00 
+                                 just_became_empty           0           2                                                                   50.00 
+                               operation_interface               ENUM type       Value       Count 
+                                                                     RESET           3      100.00 
+                                                                      READ          24      100.00 
+                                                                     WRITE          28      100.00 
+                                                                WRITE_READ           1      100.00 
+                                              r_en           3           3                                                                  100.00 
+                                              rclk           4           4                                                                  100.00 
+                                 read_pointer[0-3]           3           3                                                                  100.00 
+                                read_pointer[4-15]           0           0                                                                    0.00 
+                                            rrst_n           1           4                                                                  100.00 
+                                              w_en           3           3                                                                  100.00 
+                                              wclk           4           4                                                                  100.00 
+                                       wrap_around           3           3                                                                  100.00 
+                                write_pointer[0-3]           3           3                                                                  100.00 
+                               write_pointer[4-15]           0           0                                                                    0.00 
+                                            wrst_n           1           4                                                                  100.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         64 
+Toggled Node Count   =         39 
+Untoggled Node Count =         25 
+
+Toggle Coverage      =      60.48% (75 of 124 bins)
+
+=================================================================================
+=== Instance: /FIFO_pkg
+=== Design Unit: work.FIFO_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       468       125       343    26.70%
+
+================================Branch Details================================
+
+Branch Coverage for instance /FIFO_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File sequence_item/sequence_item.svh
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               1                    ***0***      	`uvm_object_utils(sequence_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               2                    ***0***      	`uvm_object_utils(sequence_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               3                    ***0***      	`uvm_object_utils(sequence_item);
+    3               4                    ***0***      	`uvm_object_utils(sequence_item);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               5                    ***0***      	`uvm_object_utils(sequence_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    3                                    ***0***     Count coming in to IF
+    3               6                    ***0***      	`uvm_object_utils(sequence_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                       272     Count coming in to IF
+    53              1                    ***0***           if (rhs==null) `uvm_fatal(get_type_name(), 
+                                             272     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                   ***0***     Count coming in to IF
+    53              2                    ***0***           if (rhs==null) `uvm_fatal(get_type_name(), 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                       272     Count coming in to IF
+    56              1                    ***0***           if (!$cast(tested,rhs)) begin
+    60              1                        272           else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File components/predictor.svh
+------------------------------------IF Branch------------------------------------
+    46                                         4     Count coming in to IF
+    46              1                    ***0***         if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                   ***0***     Count coming in to IF
+    47              1                    ***0***           `uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                       272     Count coming in to IF
+    65              1                        272           `uvm_info("PREDICTOR", {"WRITTEN_DATA: ", data_str}, UVM_HIGH)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                       272     Count coming in to IF
+    69              1                        272           `uvm_info("PREDICTOR", {"EXPECTED_DATA: ", seq_item_expected.convert2string()}, UVM_HIGH)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    131                                      265     Count coming in to IF
+    131             1                        101         if((w_en === 1'b1) && (r_en === 1'b1))begin
+    138             1                         94         else if ((w_en === 1'b1) && (r_en === 1'b0)) begin
+    142             1                         70         else if ((w_en === 1'b0) && (r_en === 1'b1)) begin
+                                         ***0***     All False Count
+Branch totals: 3 hits of 4 branches = 75.00%
+
+
+  File components/comparator.svh
+------------------------------------IF Branch------------------------------------
+    46                                       276     Count coming in to IF
+    46              1                        276     			`uvm_info("COMPARATOR", "RUN PHASE", UVM_HIGH)	
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                       272     Count coming in to IF
+    48              1                        272     			`uvm_info("COMPARATOR",{"EXPECTED_SEQ_ITEM RECIEVED: ", 
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                       272     Count coming in to IF
+    51              1                        272     			`uvm_info("COMPARATOR",{"actual_SEQ_ITEM RECIEVED: ", 
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    55                                       139     Count coming in to IF
+    55              1                        139     				`uvm_info("SCOREBOARD", "PASS", UVM_HIGH)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    58                                       133     Count coming in to IF
+    58              1                        133     				`uvm_error("SCOREBOARD", "FAIL")
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/base_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***     	`uvm_object_utils(base_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***     	`uvm_object_utils(base_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***     	`uvm_object_utils(base_sequence)
+    2               4                    ***0***     	`uvm_object_utils(base_sequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***     	`uvm_object_utils(base_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***     	`uvm_object_utils(base_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File sequence_macros/reset_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(reset_sequence);
+    2               4                    ***0***      	`uvm_object_utils(reset_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    10                                         7     Count coming in to IF
+    10              1                          7           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    10                                         7     Count coming in to IF
+    10              2                    ***0***           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+                                               7     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    10                                   ***0***     Count coming in to IF
+    10              3                    ***0***           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    10                                         7     Count coming in to IF
+    10              4                          7           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+    10              5                    ***0***           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                         7     Count coming in to IF
+    11              1                    ***0***           `uvm_info("RESET_SEQUENCE", $sformatf(" reset only: %s", seq_item.convert2string), UVM_HIGH)
+                                               7     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/write_once_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(write_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(write_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(write_once_sequence);
+    2               4                    ***0***      	`uvm_object_utils(write_once_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(write_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(write_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                        34     Count coming in to IF
+    21              1                    ***0***      		if(!reset_flag)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+    22              5                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                        34     Count coming in to IF
+    23              1                         34      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                        34     Count coming in to IF
+    23              2                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                   ***0***     Count coming in to IF
+    23              3                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                        34     Count coming in to IF
+    23              4                         34      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+    23              5                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                        34     Count coming in to IF
+    24              1                    ***0***            	`uvm_info("write_once_SEQUENCE", $sformatf(" write_once only: %s", seq_item.convert2string), UVM_HIGH)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/read_once_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(read_once_sequence);
+    2               4                    ***0***      	`uvm_object_utils(read_once_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                        34     Count coming in to IF
+    19              1                    ***0***      		if(!reset_flag)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+    20              5                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                        34     Count coming in to IF
+    22              1                         34      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                        34     Count coming in to IF
+    22              2                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                   ***0***     Count coming in to IF
+    22              3                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                        34     Count coming in to IF
+    22              4                         34      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+    22              5                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                        34     Count coming in to IF
+    23              1                    ***0***           `uvm_info("read_once_SEQUENCE", $sformatf(" read_once only: %s", seq_item.convert2string), UVM_HIGH)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/write_all_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(write_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(write_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(write_all_sequence);
+    2               4                    ***0***      	`uvm_object_utils(write_all_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(write_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(write_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                         1     Count coming in to IF
+    20              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    20              5                          1      			`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    25                                        34     Count coming in to IF
+    25              1                    ***0***      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    25                                        34     Count coming in to IF
+    25              2                    ***0***      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    25                                   ***0***     Count coming in to IF
+    25              3                    ***0***      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    25                                        34     Count coming in to IF
+    25              4                    ***0***      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+    25              5                         34      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/read_all_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(read_all_sequence);
+    2               4                    ***0***      	`uvm_object_utils(read_all_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                        34     Count coming in to IF
+    20              1                    ***0***      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                        34     Count coming in to IF
+    20              2                    ***0***      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+                                              34     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              3                    ***0***      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                        34     Count coming in to IF
+    20              4                    ***0***      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+    20              5                         34      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/reset_write_read_all_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+    2               4                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(reset_write_read_all_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                         1     Count coming in to IF
+    18              1                    ***0***      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                         1     Count coming in to IF
+    18              2                    ***0***      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                   ***0***     Count coming in to IF
+    18              3                    ***0***      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                         1     Count coming in to IF
+    18              4                    ***0***      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+    18              5                          1      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              1                    ***0***      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              2                    ***0***      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                   ***0***     Count coming in to IF
+    19              3                    ***0***      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                         1     Count coming in to IF
+    19              4                    ***0***      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+    19              5                          1      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/rand_once_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(rand_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(rand_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(rand_once_sequence);
+    2               4                    ***0***      	`uvm_object_utils(rand_once_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(rand_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(rand_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                   ***0***     Count coming in to IF
+    17              1                    ***0***      		`uvm_do_on(seq_item, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                   ***0***     Count coming in to IF
+    17              2                    ***0***      		`uvm_do_on(seq_item, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                   ***0***     Count coming in to IF
+    17              3                    ***0***      		`uvm_do_on(seq_item, sequencer_h);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                   ***0***     Count coming in to IF
+    17              4                    ***0***      		`uvm_do_on(seq_item, sequencer_h);
+    17              5                    ***0***      		`uvm_do_on(seq_item, sequencer_h);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                   ***0***     Count coming in to IF
+    18              1                    ***0***           	`uvm_info("rand_once_sequence", $sformatf(" read_once only: %s", seq_item.convert2string), UVM_HIGH)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File sequence_macros/write_once_rand_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+    2               4                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(write_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                        60     Count coming in to IF
+    12              1                    ***0***      		if(!reset_flag) begin 
+                                              60     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                   ***0***     Count coming in to IF
+    13              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                   ***0***     Count coming in to IF
+    13              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                   ***0***     Count coming in to IF
+    13              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                   ***0***     Count coming in to IF
+    13              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    13              5                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                        60     Count coming in to IF
+    15              1                         60      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                        60     Count coming in to IF
+    15              2                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                              60     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                   ***0***     Count coming in to IF
+    15              3                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                        60     Count coming in to IF
+    15              4                         60      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+    15              5                    ***0***      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/read_once_rand_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+    2               4                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(read_once_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                        36     Count coming in to IF
+    11              1                    ***0***      		if(!reset_flag) begin 
+                                              36     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    12              5                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    14                                        36     Count coming in to IF
+    14              1                         36      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    14                                        36     Count coming in to IF
+    14              2                    ***0***      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+                                              36     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    14                                   ***0***     Count coming in to IF
+    14              3                    ***0***      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    14                                        36     Count coming in to IF
+    14              4                         36      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+    14              5                    ***0***      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/write_read_rand_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+    2               4                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              1                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              2                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                   ***0***     Count coming in to IF
+    36              3                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                         1     Count coming in to IF
+    36              4                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+    36              5                          1      		`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    41                                       101     Count coming in to IF
+    41              1                         61      		 	if(seq_item.operation == WRITE) begin
+    50              1                         37      		 	else if(seq_item.operation == READ) begin
+    59              1                          3     			else if(seq_item.operation == RESET) begin
+                                         ***0***     All False Count
+Branch totals: 3 hits of 4 branches = 75.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              1                    ***0***      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              2                    ***0***      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                   ***0***     Count coming in to IF
+    43              3                    ***0***      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              4                    ***0***      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+    43              5                          1      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                        60     Count coming in to IF
+    47              1                    ***0***      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+                                              60     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                        60     Count coming in to IF
+    47              2                    ***0***      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+                                              60     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                   ***0***     Count coming in to IF
+    47              3                    ***0***      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                        60     Count coming in to IF
+    47              4                    ***0***      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+    47              5                         60      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                         1     Count coming in to IF
+    52              1                    ***0***      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                         1     Count coming in to IF
+    52              2                    ***0***      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                   ***0***     Count coming in to IF
+    52              3                    ***0***      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                         1     Count coming in to IF
+    52              4                    ***0***      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+    52              5                          1      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                        36     Count coming in to IF
+    56              1                    ***0***      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+                                              36     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                        36     Count coming in to IF
+    56              2                    ***0***      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+                                              36     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                   ***0***     Count coming in to IF
+    56              3                    ***0***      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                        36     Count coming in to IF
+    56              4                    ***0***      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+    56              5                         36      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                         3     Count coming in to IF
+    60              1                    ***0***     				`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               3     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                         3     Count coming in to IF
+    60              2                    ***0***     				`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               3     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                   ***0***     Count coming in to IF
+    60              3                    ***0***     				`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                         3     Count coming in to IF
+    60              4                    ***0***     				`uvm_do_on(reset_sequence_h, sequencer_h)
+    60              5                          3     				`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/concurrent_write_read_once_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+    2               4                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(concurrent_write_read_once_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                       101     Count coming in to IF
+    23              1                    ***0***      		if(!reset_flag)
+                                             101     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              1                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              2                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              3                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              4                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    24              5                    ***0***      			`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                       101     Count coming in to IF
+    29              1                        101      		`uvm_send(seq_item_concurrent)
+    29              2                    ***0***      		`uvm_send(seq_item_concurrent)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File sequence_macros/concurrent_write_read_rand_sequence.svh
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+    2               4                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              1                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              2                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                   ***0***     Count coming in to IF
+    27              3                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              4                    ***0***      		`uvm_do_on(reset_sequence_h, sequencer_h)
+    27              5                          1      		`uvm_do_on(reset_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                       101     Count coming in to IF
+    32              1                    ***0***      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+                                             101     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                       101     Count coming in to IF
+    32              2                    ***0***      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+                                             101     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                   ***0***     Count coming in to IF
+    32              3                    ***0***      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                       101     Count coming in to IF
+    32              4                    ***0***      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+    32              5                        101      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File components/driver.svh
+------------------------------------IF Branch------------------------------------
+    14                                         4     Count coming in to IF
+    14              1                    ***0***     		if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                   ***0***     Count coming in to IF
+    15              1                    ***0***     			`uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File components/inputs_monitor.svh
+------------------------------------IF Branch------------------------------------
+    17                                         4     Count coming in to IF
+    17              1                    ***0***     		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif", my_vif)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                   ***0***     Count coming in to IF
+    18              1                    ***0***     			`uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File components/outputs_monitor.svh
+------------------------------------IF Branch------------------------------------
+    18                                         4     Count coming in to IF
+    18              1                    ***0***     		if(!uvm_config_db#(virtual inf)::get(this,"", "my_vif", my_vif)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                   ***0***     Count coming in to IF
+    19              1                    ***0***     			`uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File components/active_agent.svh
+------------------------------------IF Branch------------------------------------
+    25                                         4     Count coming in to IF
+    25              1                    ***0***     		if(!uvm_config_db#(active_agent_config)::get(this,"","active_config",active_agent_config_h)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***     			`uvm_fatal("active_agent" , "Failed to get active_agent_config object");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                         4     Count coming in to IF
+    31              1                          4     		if (get_is_active() == UVM_ACTIVE) begin
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         4     Count coming in to IF
+    50              1                          4     		if (get_is_active() == UVM_ACTIVE)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File components/passive_agent.svh
+------------------------------------IF Branch------------------------------------
+    25                                         4     Count coming in to IF
+    25              1                    ***0***     		if(!uvm_config_db#(passive_agent_config)::get(this,"","config",passive_agent_config_h)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***     			`uvm_fatal("passive_agent" , "Failed to get passive_agent_config object");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                         4     Count coming in to IF
+    31              1                    ***0***     		if (get_is_active() == UVM_ACTIVE) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                         4     Count coming in to IF
+    50              1                    ***0***     		if (get_is_active() == UVM_ACTIVE)
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File components/scoreboard.svh
+------------------------------------IF Branch------------------------------------
+    30                                         4     Count coming in to IF
+    30              1                    ***0***         if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                   ***0***     Count coming in to IF
+    31              1                    ***0***           `uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File components/coverage.svh
+------------------------------------IF Branch------------------------------------
+    147                                      301     Count coming in to IF
+    147             1                    ***0***      		`uvm_info ("COVERAGE", {"SAMPLE: ",t.convert2string}, UVM_HIGH)
+                                             301     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    161                                        4     Count coming in to IF
+    161             1                    ***0***      		if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    162                                  ***0***     Count coming in to IF
+    162             1                    ***0***     			`uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+  File components/env.svh
+------------------------------------IF Branch------------------------------------
+    30                                         4     Count coming in to IF
+    30              1                    ***0***     		if(!uvm_config_db#(env_config)::get(this,"","config",env_config_h)) begin
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                   ***0***     Count coming in to IF
+    31              1                    ***0***     			`uvm_fatal(get_full_name(),"Failed to get env configuration");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                         4     Count coming in to IF
+    68              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                         4     Count coming in to IF
+    70              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                         4     Count coming in to IF
+    72              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                         4     Count coming in to IF
+    75              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                         4     Count coming in to IF
+    77              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                         4     Count coming in to IF
+    79              1                          4     		`uvm_info(get_name(), $sformatf("%p", list), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+  File tests/base_test.svh
+------------------------------------IF Branch------------------------------------
+    23                                         4     Count coming in to IF
+    23              1                    ***0***           if(!uvm_config_db#(virtual inf)::get(this,"","my_vif",my_vif)) begin //to fix the get warning of having no container to return to
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                   ***0***     Count coming in to IF
+    24              1                    ***0***              `uvm_fatal(get_full_name(),"Error");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      50        15        35    30.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /FIFO_pkg --
+
+  File sequence_item/sequence_item.svh
+----------------Focused Condition View-------------------
+Line       3 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       3 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       53 Item    1  (rhs == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (rhs == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          4  (rhs == null)_0       -                             
+  Row   2:    ***0***  (rhs == null)_1       -                             
+
+
+
+
+
+
+----------------Focused Condition View-------------------
+Line       85 Item    1  ((this.rrst_n === 1'b0) && (this.wrst_n === 1'b0))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (this.wrst_n === 1'b0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:          3  (this.rrst_n === 1'b0)_0  -                             
+  Row   2:          4  (this.rrst_n === 1'b0)_1  (this.wrst_n === 1'b0)        
+  Row   3:    ***0***  (this.wrst_n === 1'b0)_0  (this.rrst_n === 1'b0)        
+  Row   4:          4  (this.wrst_n === 1'b0)_1  (this.rrst_n === 1'b0)        
+
+
+----------------Focused Condition View-------------------
+Line       138 Item    1  ((this.w_en === 1'b1) && (this.r_en === 1'b0))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.r_en === 1'b0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          2  (this.w_en === 1'b1)_0  -                             
+  Row   2:          2  (this.w_en === 1'b1)_1  (this.r_en === 1'b0)          
+  Row   3:    ***0***  (this.r_en === 1'b0)_0  (this.w_en === 1'b1)          
+  Row   4:          2  (this.r_en === 1'b0)_1  (this.w_en === 1'b1)          
+
+----------------Focused Condition View-------------------
+Line       142 Item    1  ((this.w_en === 1'b0) && (this.r_en === 1'b1))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.w_en === 1'b0)         N  '_0' not hit             Hit '_0'
+  (this.r_en === 1'b1)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (this.w_en === 1'b0)_0  -                             
+  Row   2:          2  (this.w_en === 1'b0)_1  (this.r_en === 1'b1)          
+  Row   3:    ***0***  (this.r_en === 1'b1)_0  (this.w_en === 1'b0)          
+  Row   4:          2  (this.r_en === 1'b1)_1  (this.w_en === 1'b0)          
+
+
+
+
+
+
+
+
+----------------Focused Condition View-------------------
+Line       210 Item    1  (this.wrap_around && (this.read_pointer === this.write_pointer))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+                                  Input Term   Covered  Reason for no coverage   Hint
+                                 -----------  --------  -----------------------  --------------
+  (this.read_pointer === this.write_pointer)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                                    Non-masking condition(s)      
+ ---------  ---------  --------------------                          -------------------------     
+  Row   1:          3  this.wrap_around_0                            -                             
+  Row   2:          2  this.wrap_around_1                            (this.read_pointer === this.write_pointer)
+  Row   3:    ***0***  (this.read_pointer === this.write_pointer)_0  this.wrap_around              
+  Row   4:          2  (this.read_pointer === this.write_pointer)_1  this.wrap_around              
+
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+----------------Focused Condition View-------------------
+Line       59 Item    1  (this.seq_item.operation == RESET)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                          Input Term   Covered  Reason for no coverage   Hint
+                         -----------  --------  -----------------------  --------------
+  (this.seq_item.operation == RESET)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                            Non-masking condition(s)      
+ ---------  ---------  --------------------                  -------------------------     
+  Row   1:    ***0***  (this.seq_item.operation == RESET)_0  -                             
+  Row   2:          1  (this.seq_item.operation == RESET)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Covergroup Coverage:
+    Covergroups                      1        na        na    91.66%
+        Coverpoints/Crosses         11        na        na        na
+            Covergroup Bins         36        35         1    97.22%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp              91.66%        100          -    Uncovered            
+    covered/total bins:                                    10         11          -                      
+    missing/total bins:                                     1         11          -                      
+    % Hit:                                             90.90%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                       91.66%        100          -    Uncovered            
+    covered/total bins:                                    10         11          -                      
+    missing/total bins:                                     1         11          -                      
+    % Hit:                                             90.90%        100          -                      
+    Coverpoint dt_operation                            83.33%        100          -    Uncovered            
+        covered/total bins:                                 5          6          -                      
+        missing/total bins:                                 1          6          -                      
+        % Hit:                                         83.33%        100          -                      
+        bin RESET_READ_Transition                           0          1          -    ZERO                 
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      2         1         1    50.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /FIFO_pkg --
+
+  File sequence_item/sequence_item.svh
+----------------Focused Expression View-----------------
+Line       61 Item    1  (do_compare(this,rhs,comparer) && (tested.data_out === this.data_out))
+Expression totals: 1 of 2 input terms covered = 50.00%
+
+                           Input Term   Covered  Reason for no coverage   Hint
+                          -----------  --------  -----------------------  --------------
+        do_compare(this,rhs,comparer)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                             Non-masking condition(s)      
+ ---------  ---------  --------------------                   -------------------------     
+  Row   1:    ***0***  do_compare(this,rhs,comparer)_0        -                             
+  Row   2:          4  do_compare(this,rhs,comparer)_1        (tested.data_out === this.data_out)
+  Row   3:          2  (tested.data_out === this.data_out)_0  do_compare(this,rhs,comparer) 
+  Row   4:          4  (tested.data_out === this.data_out)_1  do_compare(this,rhs,comparer) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     790       444       346    56.20%
+
+================================Statement Details================================
+
+Statement Coverage for instance /FIFO_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File sequence_item/sequence_item.svh
+    3               2      	`uvm_object_utils(sequence_item);
+    3               3     
+    3               4     
+    3               5     
+    3               7     
+    3               8     
+    3               9     
+    3              10     
+    53              1           if (rhs==null) `uvm_fatal(get_type_name(), 
+    57              1             same = 0;
+    58              1             $display("couldnt compare");
+    87              1           super.do_copy(rhs);	// give all the variables to the parent class, so it can be used by to_be_copied
+    88              1           wrst_n = to_be_copied.wrst_n;
+    89              1           rrst_n = to_be_copied.rrst_n;
+    91              1           data_in = to_be_copied.data_in;
+    93              1           w_en = to_be_copied.w_en;
+    94              1           r_en = to_be_copied.r_en;
+    96              1           data_out = to_be_copied.data_out;
+    98              1           empty = to_be_copied.empty;
+    99              1           full = to_be_copied.full;
+    112             1           s= $sformatf(" time: %t  data_out: %0d  empty: %0d   full: %0d",
+    114             1           return s;
+    122             1         	tmp = this.clone;
+    123             1         	$cast(clone, tmp);
+    124             1         	return clone;
+  File components/sequencer.svh
+    2               1      	`uvm_component_utils(sequencer);
+    2               2     
+    2               3     
+  File components/predictor.svh
+    2               1       `uvm_component_utils(predictor);
+    2               2     
+    2               3     
+    47              1           `uvm_fatal(get_full_name(),"Error");
+  File components/comparator.svh
+    2               1     	`uvm_component_utils(comparator);
+    2               2     
+    2               3     
+  File sequence_macros/base_sequence.svh
+    2               1     	`uvm_object_utils(base_sequence)
+    2               2     
+    2               3     
+    2               4     
+    2               5     
+    2               6     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    16              1           $fatal(1,"You cannot use base directly. You must override it");
+  File sequence_macros/reset_sequence.svh
+    2               2      	`uvm_object_utils(reset_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    10              4           `uvm_do_with(seq_item, {seq_item.wrst_n == 1'b0; seq_item.rrst_n == 1'b0;})
+    10              6     
+    11              1           `uvm_info("RESET_SEQUENCE", $sformatf(" reset only: %s", seq_item.convert2string), UVM_HIGH)
+  File sequence_macros/write_once_sequence.svh
+    2               2      	`uvm_object_utils(write_once_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    14              1      		$display("start of pre_body task");
+    15              1      		super.pre_body();
+    22              1      			`uvm_do_on(reset_sequence_h, sequencer_h);
+    22              2     
+    22              3     
+    22              4     
+    22              5     
+    22              6     
+    23              4      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+    23              6     
+    24              1            	`uvm_info("write_once_SEQUENCE", $sformatf(" write_once only: %s", seq_item.convert2string), UVM_HIGH)
+  File sequence_macros/read_once_sequence.svh
+    2               2      	`uvm_object_utils(read_once_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    12              1      		$display("start of pre_body task");
+    13              1      		super.pre_body();
+    14              1      		reset_sequence_h = reset_sequence::type_id::create("reset_sequence_h");
+    20              1      			`uvm_do_on(reset_sequence_h, sequencer_h);
+    20              2     
+    20              3     
+    20              4     
+    20              5     
+    20              6     
+    22              4      		`uvm_do_on_with(seq_item, sequencer_h, {operation == READ;})
+    22              6     
+    23              1           `uvm_info("read_once_SEQUENCE", $sformatf(" read_once only: %s", seq_item.convert2string), UVM_HIGH)
+  File sequence_macros/write_all_sequence.svh
+    2               2      	`uvm_object_utils(write_all_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    13              1      		$display("start of pre_body task");
+    14              1      		super.pre_body();
+    15              1      		write_once_sequence_h = write_once_sequence::type_id::create("write_once_sequence_h");
+    20              3      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    20              4     
+    20              5     
+    25              3      			`uvm_do_on(write_once_sequence_h, sequencer_h)
+    25              4     
+    25              5     
+  File sequence_macros/read_all_sequence.svh
+    2               2      	`uvm_object_utils(read_all_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    10              1      		$display("start of pre_body task");
+    11              1      		super.pre_body();
+    12              1      		read_once_sequence_h = read_once_sequence::type_id::create("read_once_sequence_h");
+    20              3      			`uvm_do_on(read_once_sequence_h, sequencer_h)
+    20              4     
+    20              5     
+  File sequence_macros/reset_write_read_all_sequence.svh
+    2               1      	`uvm_object_utils(reset_write_read_all_sequence);
+    2               2     
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    18              3      			`uvm_do_on(write_all_sequence_h, sequencer_h)
+    18              4     
+    18              5     
+    19              3      			`uvm_do_on(read_all_sequence_h, sequencer_h)
+    19              4     
+    19              5     
+  File sequence_macros/rand_once_sequence.svh
+    2               1      	`uvm_object_utils(rand_once_sequence);
+    2               2     
+    2               3     
+    2               4     
+    2               5     
+    2               6     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    12              1      		super.pre_body();
+    13              1      		reset_sequence_h = reset_sequence::type_id::create("");
+    17              1      		`uvm_do_on(seq_item, sequencer_h);
+    17              2     
+    17              3     
+    17              4     
+    17              5     
+    17              6     
+    18              1           	`uvm_info("rand_once_sequence", $sformatf(" read_once only: %s", seq_item.convert2string), UVM_HIGH)
+  File sequence_macros/write_once_rand_sequence.svh
+    2               2      	`uvm_object_utils(write_once_rand_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    13              1      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    13              2     
+    13              3     
+    13              4     
+    13              5     
+    13              6     
+    15              4      		`uvm_do_on_with(seq_item, sequencer_h, {operation == WRITE;})
+    15              6     
+  File sequence_macros/read_once_rand_sequence.svh
+    2               2      	`uvm_object_utils(read_once_rand_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    12              1      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    12              2     
+    12              3     
+    12              4     
+    12              5     
+    12              6     
+    14              4      		`uvm_do_with (seq_item, {data_in == 0; operation == READ;})
+    14              6     
+  File sequence_macros/write_read_rand_sequence.svh
+    2               1      	`uvm_object_utils(write_read_rand_sequence);
+    2               2     
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    36              3      		`uvm_do_on(reset_sequence_h, sequencer_h)
+    36              4     
+    36              5     
+    43              3      		 			`uvm_do_on(write_all_sequence_h, sequencer_h)
+    43              4     
+    43              5     
+    47              3      		 			`uvm_do_on(write_once_rand_sequence_h, sequencer_h)
+    47              4     
+    47              5     
+    52              3      					`uvm_do_on(read_all_sequence_h, sequencer_h)	
+    52              4     
+    52              5     
+    56              3      		 		`uvm_do_on(read_once_rand_sequence_h, sequencer_h)
+    56              4     
+    56              5     
+    60              3     				`uvm_do_on(reset_sequence_h, sequencer_h)
+    60              4     
+    60              5     
+  File sequence_macros/concurrent_write_read_once_sequence.svh
+    2               2      	`uvm_object_utils(concurrent_write_read_once_sequence);
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    15              1      		$display("start of pre_body task");
+    16              1      		super.pre_body();
+    24              1      			`uvm_do_on(reset_sequence_h, sequencer_h)
+    24              2     
+    24              3     
+    24              4     
+    24              5     
+    24              6     
+    29              3      		`uvm_send(seq_item_concurrent)
+  File sequence_macros/concurrent_write_read_rand_sequence.svh
+    2               1      	`uvm_object_utils(concurrent_write_read_rand_sequence);
+    2               2     
+    2               3     
+    2               4     
+    2               5     
+    2               7     
+    2               8     
+    2               9     
+    2              10     
+    27              3      		`uvm_do_on(reset_sequence_h, sequencer_h)
+    27              4     
+    27              5     
+    32              3      			`uvm_do_on(concurrent_write_read_once_sequence_h, sequencer_h)
+    32              4     
+    32              5     
+  File components/driver.svh
+    2               1      	`uvm_component_utils(driver);
+    2               2     
+    2               3     
+    15              1     			`uvm_fatal(get_full_name(),"Error");
+    38              1     		$display("my_driver run phase");
+  File components/inputs_monitor.svh
+    3               1       	`uvm_component_utils(inputs_monitor);
+    3               2     
+    3               3     
+    18              1     			`uvm_fatal(get_full_name(),"Error");
+  File components/outputs_monitor.svh
+    3               1       	`uvm_component_utils(outputs_monitor);
+    3               2     
+    3               3     
+    19              1     			`uvm_fatal(get_full_name(),"Error");
+  File components/active_agent.svh
+    2               1      	`uvm_component_utils(active_agent);
+    2               2     
+    2               3     
+    26              1     			`uvm_fatal("active_agent" , "Failed to get active_agent_config object");
+  File components/passive_agent.svh
+    2               1      	`uvm_component_utils(passive_agent);
+    2               2     
+    2               3     
+    26              1     			`uvm_fatal("passive_agent" , "Failed to get passive_agent_config object");
+    32              1     			sequencer_h = sequencer::type_id::create("sequencer_h",this);
+    33              1     			driver_h = driver::type_id::create("driver_h",this);	
+    51              1     			driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
+  File components/scoreboard.svh
+    2               1      	`uvm_component_utils(scoreboard);
+    2               2     
+    2               3     
+    31              1           `uvm_fatal(get_full_name(),"Error");
+  File components/coverage.svh
+    2               1      	`uvm_component_utils(coverage);
+    2               2     
+    2               3     
+    147             1      		`uvm_info ("COVERAGE", {"SAMPLE: ",t.convert2string}, UVM_HIGH)
+    162             1     			`uvm_fatal(get_full_name(),"Error");
+  File components/env.svh
+    3               1      	`uvm_component_utils(env);
+    3               2     
+    3               3     
+    31              1     			`uvm_fatal(get_full_name(),"Failed to get env configuration");
+  File tests/base_test.svh
+    24              1              `uvm_fatal(get_full_name(),"Error");
+  File tests/reset_test.svh
+    2               1      	`uvm_component_utils(reset_test);
+    2               2     
+  File tests/write_once_test.svh
+    2               1        `uvm_component_utils(write_once_test);
+    2               2     
+    2               3     
+    9               1           super.new(name, parent);
+    13              1           base_sequence::type_id::set_type_override(write_once_sequence::type_id::get());
+    14              1           super.build_phase(phase);
+    15              1           $display("my_test build phase");
+    19              1           super.connect_phase(phase);
+    20              1           $display("my_test connect phase");
+  File tests/read_once_test.svh
+    2               1        `uvm_component_utils(read_once_test);
+    2               2     
+    2               3     
+    9               1           super.new(name, parent);
+    13              1           base_sequence::type_id::set_type_override(read_once_sequence::type_id::get());
+    14              1           super.build_phase(phase);
+    15              1           $display("my_test build phase");
+    19              1           super.connect_phase(phase);
+    20              1           $display("my_test connect phase");
+  File tests/write_all_test.svh
+    2               1        `uvm_component_utils(write_all_test);
+    2               2     
+    2               3     
+    9               1           super.new(name, parent);
+    13              1           base_sequence::type_id::set_type_override(write_all_sequence::type_id::get());
+    14              1           super.build_phase(phase);
+    15              1           $display("my_test build phase");
+    19              1           super.connect_phase(phase);
+    20              1           $display("my_test connect phase");
+  File tests/reset_write_read_all_test.svh
+    2               1        `uvm_component_utils(reset_write_read_all_test);
+    2               2     
+  File tests/write_once_rand_test.svh
+    2               1     	`uvm_component_utils(write_once_rand_test)
+    2               2     
+    2               3     
+    5               1     		super.new(name, parent);
+    9               1     		base_sequence::type_id::set_type_override(write_once_rand_sequence::type_id::get());
+    10              1     		super.build_phase(phase);	
+  File tests/read_once_rand_test.svh
+    2               1     	`uvm_component_utils(read_once_rand_test)
+    2               2     
+    2               3     
+    5               1     		super.new(name, parent);
+    9               1     		base_sequence::type_id::set_type_override(read_once_rand_sequence::type_id::get());
+    10              1     		super.build_phase(phase);
+  File tests/write_read_rand_test.svh
+    2               1     	`uvm_component_utils(write_read_rand_test)
+    2               2     
+  File tests/concurrent_write_read_once_test.svh
+    2               1        `uvm_component_utils(concurrent_write_read_once_test);
+    2               2     
+    2               3     
+    9               1           super.new(name, parent);
+    13              1           base_sequence::type_id::set_type_override(concurrent_write_read_once_sequence::type_id::get());
+    14              1           super.build_phase(phase);
+    15              1           $display("my_test build phase");
+    19              1           super.connect_phase(phase);
+    20              1           $display("my_test connect phase");
+  File tests/concurrent_write_read_rand_test.svh
+    2               1        `uvm_component_utils(concurrent_write_read_rand_test);
+    2               2     
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /FIFO_pkg/coverage/OPERATION_covgrp              91.66%        100          -    Uncovered            
+    covered/total bins:                                    10         11          -                      
+    missing/total bins:                                     1         11          -                      
+    % Hit:                                             90.90%        100          -                      
+ Covergroup instance \/FIFO_pkg::coverage::OPERATION_covgrp  
+                                                       91.66%        100          -    Uncovered            
+    covered/total bins:                                    10         11          -                      
+    missing/total bins:                                     1         11          -                      
+    % Hit:                                             90.90%        100          -                      
+    Coverpoint dt_operation                            83.33%        100          -    Uncovered            
+        covered/total bins:                                 5          6          -                      
+        missing/total bins:                                 1          6          -                      
+        % Hit:                                         83.33%        100          -                      
+        bin RESET_READ_Transition                           0          1          -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 91.66%  COVERGROUP TYPES: 1
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+
+Total Coverage By Instance (filtered view): 54.52%
+
