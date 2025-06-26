@@ -22,6 +22,11 @@ This project demonstrates the **design** and **verification** of an <span style=
 - **Verification with UVM (Universal Verification Methodology)**
 - **Assertion-based verification using SVA (SystemVerilog Assertions)**
 
+> **Note:**  
+> The asynchronous FIFO RTL design is sourced from Clifford E. Cummings’ classic paper:  
+> **"Simulation and Synthesis Techniques for Asynchronous FIFO Design"**  
+> [Read the original paper (PDF)](http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf)
+
 ---
 
 ## 📁 Project Structure
@@ -78,7 +83,8 @@ This project demonstrates the **design** and **verification** of an <span style=
 
 ## 🧩 Key Features
 
-- **Modular RTL Design** for Asynchronous FIFO
+- **Modular RTL Design** for Asynchronous FIFO  
+  <sub>RTL sourced from [Clifford Cummings’ paper](http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf)</sub>
 - **Comprehensive UVM Testbench**
 - **Assertion-based Verification (SVA)**
 - **Well-documented Report:**  
